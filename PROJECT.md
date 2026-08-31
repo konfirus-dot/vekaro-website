@@ -402,6 +402,18 @@ default `"right"`). Оскільки `.navContacts` видима лише до 1
 - `src/app/sitemap.ts` — `/sitemap.xml`, по одному запису на локаль, з hreflang alternates у кожному
 - `src/app/robots.ts` — `/robots.txt`, дозволяє все, посилається на sitemap (окрім preview-режиму,
   див. нижче)
+- `src/app/[locale]/opengraph-image.tsx` — картинка-прев'ю для месенджерів/соцмереж при розшаруванні
+  лінка (Open Graph, файлова конвенція Next.js — `og:image`/`twitter:image` підключаються
+  автоматично). Генерується кодом через `next/og` `ImageResponse` (1200×630, PNG), не статичний
+  файл: лого-мітка "V" + "Vekaro" + `hero.subtitle` (короткий слоган, не `metadata.title` — той
+  вже містить назву бренду, було б задвоєння "Vekaro — Vekaro...") + помаранчева пігулка з
+  телефоном, на чорному фоні `.theme-dark`. Одна на всю секцію `[locale]` (тобто однакова для
+  головної й усіх `/services/*` — не окрема під кожну сторінку). `generateMetadata` в layout.tsx
+  також явно задає `openGraph`/`twitter` (title/description/siteName/locale/card-type) —
+  доповнює авто-згенероване зображення, для максимальної сумісності з різними краулерами
+  месенджерів. Перевірено `curl`: `og:image`/`twitter:image` теги на місці, зображення 1200×630
+  PNG генерується коректно на всіх трьох мовах (кирилиця в UK теж рендериться нормально,
+  дефолтний шрифт Satori її підтримує).
 
 ### Умовна заборона індексації для preview-домену
 

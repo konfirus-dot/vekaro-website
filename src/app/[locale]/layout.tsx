@@ -42,6 +42,12 @@ export async function generateMetadata({
     routing.locales.map((l) => [l, `/${l}`]),
   );
 
+  const OG_LOCALES: Record<string, string> = {
+    pl: "pl_PL",
+    en: "en_US",
+    uk: "uk_UA",
+  };
+
   return {
     title: t("title"),
     description: t("description"),
@@ -60,6 +66,22 @@ export async function generateMetadata({
     robots: IS_PREVIEW_ENV
       ? { index: false, follow: false }
       : { index: true, follow: true },
+    // The actual preview image comes from opengraph-image.tsx (file-based
+    // convention — Next.js auto-generates og:image/twitter:image from it).
+    // These fields fill in the rest of what link-preview crawlers look for.
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      url: `/${locale}`,
+      siteName: "Vekaro",
+      locale: OG_LOCALES[locale] ?? "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("title"),
+      description: t("description"),
+    },
   };
 }
 
