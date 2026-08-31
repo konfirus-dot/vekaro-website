@@ -45,7 +45,9 @@
 
 - **Next.js** з **TypeScript**
 - Деплой: **SEOHOST.pl**, тариф **SSD NVMe SH3** (підтримує Node.js через DirectAdmin)
-- Розробка: поки без GitHub — локальна розробка, GitHub підключимо пізніше
+- Розробка: проєкт на GitHub — https://github.com/konfirus-dot/vekaro-website (публічний репозиторій,
+  гілка `main`, перший коміт `dcec177` "Initial commit: Vekaro website scaffold"). Наступний крок —
+  підключити цей репозиторій до Vercel для прев'ю-деплою (див. TODO нижче)
 - Верстка: **responsive / mobile-first**
 - **SEO**:
   - семантичний HTML
@@ -215,7 +217,7 @@
 - [x] Сторінки послуг `/services/{short-term,long-term,business}` — SEO (title/description/hreflang/canonical, sitemap 12 URL); усі три наповнені повним контентом (hero + автопарк + SEO-блок + FAQ)
 - [x] README.md з інструкцією запуску
 - [x] .env.example
-- [ ] GitHub (пізніше)
+- [x] GitHub — https://github.com/konfirus-dot/vekaro-website
 - [ ] Figma / дизайн-система (пізніше)
 
 ---
@@ -391,12 +393,25 @@ rgba(255,255,255,0.1)` + `padding-top: 24px`), щоб нижній рядок н
   й сторінки послуги): без змінної — `Allow: /` + `index, follow`; з `NEXT_PUBLIC_SITE_ENV=preview`
   — `Disallow: /` + `noindex, nofollow`
 
-**Налаштування на Vercel — потрібно зробити вручну в дашборді** (не можу зробити сам, немає доступу
-до Vercel-акаунта): у Project Settings → Environment Variables додати `NEXT_PUBLIC_SITE_ENV=preview`
-для Preview/Production-деплоїв, поки сайт на `*.vercel.app`. Задокументовано в `.env.example`.
+**Налаштовано на Vercel** (проєкт `vekaro-website`, акаунт `konfirus-dot`, автодеплой з GitHub-репо
+на push у `main`): `NEXT_PUBLIC_SITE_ENV=preview` і `NEXT_PUBLIC_SITE_URL=https://vekaro-website.vercel.app`
+додані в Settings → Environment Variables (Production and Preview) як Config-змінні. Прев'ю-URL:
+https://vekaro-website.vercel.app — перевірено `curl`: `Disallow: /` в robots.txt,
+`noindex, nofollow` в meta на всіх сторінках.
 
 **TODO перед фінальним запуском на постійному домені:** прибрати або змінити
-`NEXT_PUBLIC_SITE_ENV` на `production` у Vercel — і noindex зникне автоматично.
+`NEXT_PUBLIC_SITE_ENV` на `production` і оновити `NEXT_PUBLIC_SITE_URL` на реальний домен
+(`vekaro.pl`) у Vercel — і noindex зникне автоматично.
+
+**Знайдений і виправлений баг:** `metadataBase: new URL(SITE_URL)` у layout.tsx валив увесь
+production-білд на Vercel (`TypeError: Invalid URL`), коли значення `NEXT_PUBLIC_SITE_URL` в
+дашборді Vercel було випадково вписане неправильно (буквально текст `"NEXT_PUBLIC_SITE_URL"`
+замість URL — людська помилка при заповненні форми). Виправлено на двох рівнях: (1) саме значення
+в Vercel-дашборді, (2) захист у коді — `SITE_URL` тепер обчислюється через `resolveSiteUrl()`
+(`src/lib/constants.ts`), яка валідує через `new URL()` у `try/catch` і мовчки відкочується на
+`http://localhost:3000`, якщо значення відсутнє АБО не є валідним URL. Тепер помилкове значення
+змінної середовища ніколи не завалить весь білд — той самий "safe by default" підхід, що й у
+`IS_PREVIEW_ENV`.
 - Семантика перевірена: рівно один `<h1>` на сторінці (Hero), по одному `<h2>` на секцію (`Services`,
   Advantages, About, PromoBanner, Contact) — усі однакового розміру (2rem/3rem), крім PromoBanner
   (менший, не рівнозначна за вагою секція). `<h3>` — вкладені підзаголовки: картки напрямків оренди,

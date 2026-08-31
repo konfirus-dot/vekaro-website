@@ -15,7 +15,23 @@ export const CURRENCY = "PLN";
 export const PRICE_FROM = "50 PLN";
 
 // TODO: set NEXT_PUBLIC_SITE_URL once the production domain is decided
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+//
+// Validated rather than used directly: metadataBase does `new URL(SITE_URL)`
+// on every page, so a malformed value here (e.g. an env var misconfigured on
+// the hosting dashboard) would otherwise crash the entire production build.
+// Falls back to localhost — same safe-by-default behavior as an unset var.
+function resolveSiteUrl(): string {
+  const value = process.env.NEXT_PUBLIC_SITE_URL;
+  if (!value) return "http://localhost:3000";
+  try {
+    new URL(value);
+    return value;
+  } catch {
+    return "http://localhost:3000";
+  }
+}
+
+export const SITE_URL = resolveSiteUrl();
 
 // Preview/production switch for search-engine indexing. The site isn't live
 // on its final domain yet, so as long as SITE_URL doesn't point there, every
