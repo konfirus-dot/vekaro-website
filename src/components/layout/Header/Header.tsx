@@ -34,11 +34,16 @@ function ChatIcon() {
 }
 
 // Rendered twice: once inside the mobile dropdown, once in the always-visible
-// desktop row — see .navContacts / .desktopContacts in Header.module.css.
-function ContactControls() {
+// desktop row — see .navContacts / .desktopContacts in Header.module.css. The
+// mobile dropdown panel is full-width and left-aligned, so its trigger sits
+// near the left edge of the screen — the opposite of the desktop row, which
+// sits at the top-right corner. languageAlign passes the correct anchor
+// through to LanguageSwitcher for each context (same class of bug, and same
+// fix, as the footer's LanguageSwitcher instance).
+function ContactControls({ languageAlign = "right" }: { languageAlign?: "left" | "right" }) {
   return (
     <>
-      <LanguageSwitcher />
+      <LanguageSwitcher align={languageAlign} />
       <a href={PHONE_HREF} className={styles.iconLink} aria-label={PHONE_DISPLAY}>
         <PhoneIcon />
       </a>
@@ -179,7 +184,7 @@ export function Header() {
             </Link>
 
             <div className={styles.navContacts}>
-              <ContactControls />
+              <ContactControls languageAlign="left" />
             </div>
           </nav>
         </div>

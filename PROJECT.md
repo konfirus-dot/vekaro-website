@@ -370,6 +370,20 @@ rgba(255,255,255,0.1)` + `padding-top: 24px`), щоб нижній рядок н
 Перевірено через `getComputedStyle` на 1470px: `right: 0` застосувався, dropdown лишається в межах
 viewport.
 
+**Той самий баг був і в мобільному гамбургер-меню Header.** `LanguageSwitcher` там рендериться
+всередині `ContactControls()` (спільна функція, викликається двічі — `.navContacts` для мобільного
+випадного меню, `.desktopContacts` для десктопного верхнього рядка). У `.navContacts` (мобільна
+панель на всю ширину, `justify-content` не задано → `flex-start`) тригер стоїть біля **лівого** краю,
+на відміну від `.desktopContacts`, де він біля правого. `ContactControls` без пропів завжди
+використовував `align="right"` за замовчуванням — правильно для десктопу, але ламало мобільне меню
+так само, як і в футері. Виправлено: `ContactControls` тепер приймає `languageAlign?: "left" |
+"right"` (default `"right"`) і прокидає його в `LanguageSwitcher`; виклик у `.navContacts` —
+`<ContactControls languageAlign="left" />`, у `.desktopContacts` — без змін (`<ContactControls />`,
+default `"right"`). Оскільки `.navContacts` видима лише до 1024px, а `.desktopContacts` — лише від
+1024px, тут не знадобилась медіа-запитна логіка з `.dropdownAlignLeft` — досить статичного
+`align="left"` для мобільного виклику, бо десктопна гілка того самого CSS-класу просто ніколи не
+активується для прихованого елемента.
+
 ### Адаптивність
 
 Один брейкпоінт `1024px` перемикає layout з мобільного/планшетного стеку на десктопну композицію
