@@ -24,9 +24,15 @@ type LanguageSwitcherProps = {
   // for instances near the bottom of the viewport (e.g. the footer copy),
   // where a downward dropdown would overflow off-screen.
   direction?: "down" | "up";
+  // "left" anchors the dropdown's left edge to the trigger (opens rightward)
+  // instead of the default right edge (opens leftward). The footer trigger
+  // sits near the left edge of the screen on mobile (stacked, left-aligned
+  // bottom bar) — opening leftward from there pushes half the dropdown off
+  // screen, so the footer instance uses "left" here too.
+  align?: "left" | "right";
 };
 
-export function LanguageSwitcher({ direction = "down" }: LanguageSwitcherProps) {
+export function LanguageSwitcher({ direction = "down", align = "right" }: LanguageSwitcherProps) {
   const t = useTranslations("nav");
   const locale = useLocale();
   const pathname = usePathname();
@@ -72,7 +78,13 @@ export function LanguageSwitcher({ direction = "down" }: LanguageSwitcherProps) 
 
       {isOpen && (
         <ul
-          className={direction === "up" ? `${styles.dropdown} ${styles.dropdownUp}` : styles.dropdown}
+          className={[
+            styles.dropdown,
+            direction === "up" ? styles.dropdownUp : "",
+            align === "left" ? styles.dropdownAlignLeft : "",
+          ]
+            .filter(Boolean)
+            .join(" ")}
           role="listbox"
         >
           {routing.locales.map((loc) => (

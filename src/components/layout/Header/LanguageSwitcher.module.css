@@ -56,6 +56,24 @@
   bottom: calc(100% + 8px);
 }
 
+/* Opens rightward instead of leftward — for the footer trigger, which sits
+   near the left edge of the viewport on mobile (stacked bottom bar,
+   left-aligned) where anchoring by the right edge pushes the dropdown half
+   off-screen to the left. At 1024px+ the footer's bottom bar switches to a
+   row with the trigger on the *right* (same position as the header one),
+   so this flips back to the default right-anchored behavior there. */
+.dropdown.dropdownAlignLeft {
+  right: auto;
+  left: 0;
+}
+
+@media (min-width: 1024px) {
+  .dropdown.dropdownAlignLeft {
+    left: auto;
+    right: 0;
+  }
+}
+
 .option {
   width: 100%;
   padding: 6px 12px;

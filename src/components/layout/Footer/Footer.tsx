@@ -137,7 +137,7 @@ export function Footer() {
         <p className={styles.rights}>
           © {new Date().getFullYear()} Vekaro. {tFooter("rights")}
         </p>
-        <LanguageSwitcher direction="up" />
+        <LanguageSwitcher direction="up" align="left" />
       </Container>
     </footer>
   );
