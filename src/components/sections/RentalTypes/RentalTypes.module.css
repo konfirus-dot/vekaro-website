@@ -1,0 +1,79 @@
+/* Mobile/tablet: cards stacked, one per row. */
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.cardImage {
+  object-fit: cover;
+  transition: transform 300ms ease;
+}
+
+/* Photo zooms in slightly on hover, eases back a touch on press for a tactile feel. */
+.card:hover .cardImage {
+  transform: scale(1.06);
+}
+
+.card:active .cardImage {
+  transform: scale(1.02);
+}
+
+/* Dark gradient so the title/text stay legible over any part of the photo. */
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.88) 0%,
+    rgba(0, 0, 0, 0.75) 22%,
+    rgba(0, 0, 0, 0.25) 45%,
+    rgba(0, 0, 0, 0) 62%
+  );
+}
+
+.cardContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  height: 100%;
+  padding: 28px 24px;
+}
+
+.cardTitle {
+  font-size: 1.375rem;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.cardText {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* Desktop: exactly 3 large cards in a row. */
+@media (min-width: 1024px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .cardTitle {
+    font-size: 1.75rem;
+  }
+
+  .cardContent {
+    padding: 32px;
+  }
+}

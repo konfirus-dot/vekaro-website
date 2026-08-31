@@ -1,0 +1,52 @@
+.section {
+  padding-block: 40px;
+}
+
+.title {
+  margin-bottom: 24px;
+  font-size: 2rem;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.fleetHeader {
+  margin-top: 48px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.fleetTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.fleetSubtitle {
+  max-width: 42ch;
+  margin-top: 8px;
+  margin-inline: auto;
+  font-size: 0.95rem;
+  opacity: 0.75;
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-block: 64px;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .fleetHeader {
+    margin-top: 64px;
+    margin-bottom: 32px;
+  }
+
+  .fleetTitle {
+    font-size: 1.5rem;
+  }
+
+  .fleetSubtitle {
+    font-size: 1rem;
+  }
+}

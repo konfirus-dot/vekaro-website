@@ -1,0 +1,119 @@
+.footer {
+  margin-top: 64px;
+  padding-block: 32px;
+  border-top: 1px solid var(--foreground);
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.875rem;
+}
+
+.heading {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.hours {
+  margin-top: 4px;
+  opacity: 0.75;
+}
+
+.location {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.75;
+  font-size: 0.8125rem;
+}
+
+/* Plain footer links (phone, service pages, company/legal links) — dimmed
+   by default, lift to full opacity + accent color on hover, tiny press
+   feedback on active. Scoped to this explicit class (not a `.column a`
+   descendant selector) so it never leaks onto .socialLink, which needs its
+   own hover treatment. */
+.link {
+  color: inherit;
+  opacity: 0.75;
+  transition:
+    opacity 180ms ease,
+    color 180ms ease,
+    transform 100ms ease;
+}
+
+.link:hover {
+  opacity: 1;
+  color: var(--accent);
+}
+
+.link:active {
+  transform: scale(0.97);
+}
+
+.socialRow {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.socialLink {
+  composes: iconButton from "../../ui/IconButton/IconButton.module.css";
+  background: var(--accent);
+  border: none;
+  color: #ffffff;
+  transition:
+    transform 180ms ease,
+    filter 180ms ease;
+}
+
+.socialLink:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.socialLink:active {
+  transform: translateY(0) scale(0.94);
+  filter: brightness(0.95);
+}
+
+.bottomBar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.rights {
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .column {
+    flex: 1;
+  }
+
+  .bottomBar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+}

@@ -1,0 +1,94 @@
+.section {
+  padding-block: 40px;
+}
+
+/* Mobile/tablet: text above, office photo below (stacked, as always). */
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.title {
+  font-size: 2rem;
+  line-height: 1.15;
+}
+
+.description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: #f2f1ee;
+  color: #171717;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.stat svg {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.photo {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.photoImage {
+  object-fit: cover;
+}
+
+/* Desktop: text and photo side by side via CSS Grid. align-items: stretch
+   (the grid default, spelled out here since it's load-bearing) makes both
+   columns match the row height, which the photo's aspect-ratio sets — the
+   text column then never visually exceeds the photo's height. The text is
+   top-aligned (justify-content: flex-start) within that stretched height,
+   and the paragraph is line-clamped as a safety margin for longer copy or
+   narrower photos. */
+@media (min-width: 1024px) {
+  .inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    gap: 64px;
+  }
+
+  .text {
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+
+  .description {
+    display: -webkit-box;
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+}

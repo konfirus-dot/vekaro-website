@@ -1,0 +1,90 @@
+.root {
+  position: relative;
+}
+
+.trigger {
+  composes: iconButton from "../../ui/IconButton/IconButton.module.css";
+  background: var(--accent);
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  transition:
+    transform 150ms ease,
+    filter 150ms ease;
+}
+
+.trigger:hover:not(:disabled) {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+}
+
+.trigger:active:not(:disabled) {
+  transform: scale(0.92);
+  filter: brightness(0.95);
+}
+
+.trigger:disabled {
+  cursor: default;
+}
+
+.pending {
+  opacity: 0.5;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 72px;
+  padding: 4px;
+  list-style: none;
+  background: var(--background);
+  border: 1px solid var(--foreground);
+  border-radius: 8px;
+}
+
+/* Opens upward instead of downward — for triggers near the bottom of the
+   viewport (footer), where a downward dropdown would overflow off-screen.
+   Compound selector (not just `.dropdownUp`) to reliably win over `.dropdown`
+   regardless of build output order — same reasoning as `.header.scrolled`. */
+.dropdown.dropdownUp {
+  top: auto;
+  bottom: calc(100% + 8px);
+}
+
+.option {
+  width: 100%;
+  padding: 6px 12px;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  color: var(--foreground);
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+
+.option:hover {
+  background: rgba(237, 237, 237, 0.4);
+}
+
+.option:active {
+  background: rgba(237, 237, 237, 0.6);
+}
+
+.active {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+.active:hover {
+  background: var(--foreground);
+  opacity: 0.85;
+}

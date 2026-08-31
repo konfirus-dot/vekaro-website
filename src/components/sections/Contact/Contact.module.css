@@ -1,0 +1,63 @@
+.section {
+  padding-block: 40px;
+}
+
+/* Mobile/tablet: contact info stacked above the map. */
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.title {
+  margin-bottom: 8px;
+  font-size: 2rem;
+  line-height: 1.15;
+}
+
+.phone {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.hours,
+.area {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.messengers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-block: 16px;
+}
+
+.faqWrap {
+  min-width: 0;
+}
+
+.faqTitle {
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+/* Desktop: info and FAQ side by side. */
+@media (min-width: 1024px) {
+  .inner {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 64px;
+  }
+
+  .info,
+  .faqWrap {
+    flex: 1;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+}

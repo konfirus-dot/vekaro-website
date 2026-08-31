@@ -1,0 +1,275 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--background);
+  border-bottom: 1px solid rgba(237, 237, 237, 0.2);
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease;
+}
+
+/* Once the page has scrolled, content passes underneath the sticky header —
+   swap the solid fill for a translucent blur so that's visible, while
+   keeping enough opacity for text/icon contrast. Header is always on its
+   own fixed dark theme (theme-dark, applied in Header.tsx), so the black is
+   hardcoded here rather than themed. backdrop-filter itself is set inline
+   in Header.tsx — see the comment there for why.
+
+   Selector is `.header.scrolled` (compound), not just `.scrolled`: both
+   this rule and the global `.theme-dark` utility set `background`, with
+   equal specificity (one class each) — whichever stylesheet happens to be
+   concatenated later in the build wins, which was silently theme-dark
+   (opaque) instead of this translucency. The compound selector bumps
+   specificity so this rule reliably wins regardless of build output order. */
+.header.scrolled {
+  background: rgba(10, 10, 10, 0.6);
+  border-bottom-color: rgba(237, 237, 237, 0.08);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 76px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: opacity 150ms ease;
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+.logo:active {
+  opacity: 0.6;
+}
+
+.contacts {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.iconLink {
+  composes: iconButton from "../../ui/IconButton/IconButton.module.css";
+  background: var(--accent);
+  border: none;
+  color: #ffffff;
+  transition:
+    transform 150ms ease,
+    filter 150ms ease;
+}
+
+.iconLink:hover {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+}
+
+.iconLink:active {
+  transform: scale(0.92);
+  filter: brightness(0.95);
+}
+
+.toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  width: 34px;
+  height: 34px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 150ms ease;
+}
+
+.toggle span {
+  display: block;
+  height: 2px;
+  background: var(--foreground);
+  transition: opacity 150ms ease;
+}
+
+.toggle:hover span {
+  opacity: 0.7;
+}
+
+.toggle:active {
+  transform: scale(0.9);
+}
+
+/* Mobile/tablet (up to 1024px): nav collapses into a dropdown under the bar. */
+.nav {
+  display: none;
+  position: absolute;
+  top: 76px;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  background: var(--background);
+  border-bottom: 1px solid var(--foreground);
+}
+
+.navOpen {
+  display: flex;
+}
+
+.navLink {
+  transition:
+    color 150ms ease,
+    opacity 150ms ease;
+}
+
+.navLink:hover {
+  opacity: 0.7;
+}
+
+.navLink:active {
+  opacity: 0.5;
+}
+
+/* Scrollspy: highlights the nav item for whichever section is in view. */
+.navLinkActive {
+  color: var(--accent);
+}
+
+.navItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Hover mega-menu-lite for "Oferta" — desktop only (see media query below).
+   Hidden by default so it never renders/interferes with the mobile dropdown
+   nav, which has its own vertical layout and no concept of hover. */
+.servicesDropdown {
+  display: none;
+}
+
+/* Mobile/tablet: language + phone + WhatsApp live inside the dropdown, below
+   the nav links, so the top bar shows only the hamburger toggle. */
+.navContacts {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--foreground);
+}
+
+.desktopContacts {
+  display: none;
+}
+
+/* Desktop (1024px+): full horizontal bar, no hamburger — controls move to
+   the always-visible top-right row instead of the (now unused) dropdown. */
+@media (min-width: 1024px) {
+  .toggle {
+    display: none;
+  }
+
+  .nav {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    padding: 0;
+    border: none;
+    background: transparent;
+  }
+
+  .navContacts {
+    display: none;
+  }
+
+  .desktopContacts {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* servicesDropdown sits flush against the trigger (top: 100%, no margin)
+     and pushes its *visible* card down via padding-top instead — that way
+     the invisible padding still counts as part of the hoverable element,
+     so moving the mouse straight down from the "Oferta" link into the
+     dropdown never crosses a dead gap that would drop the :hover state. */
+  .servicesDropdown {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+    min-width: 220px;
+    padding-top: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+    pointer-events: none;
+    transition:
+      opacity 180ms ease,
+      transform 180ms ease,
+      visibility 180ms;
+  }
+
+  .navItem:hover .servicesDropdown,
+  .navItem:focus-within .servicesDropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .servicesDropdownInner {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 8px;
+    background: var(--background);
+    border: 1px solid rgba(237, 237, 237, 0.15);
+    border-radius: 12px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  .servicesDropdownLink {
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: var(--foreground);
+    opacity: 0.85;
+    font-size: 0.875rem;
+    font-weight: 600;
+    white-space: nowrap;
+    transition:
+      opacity 150ms ease,
+      color 150ms ease,
+      background-color 150ms ease;
+  }
+
+  .servicesDropdownLink:hover {
+    opacity: 1;
+    color: var(--accent);
+    background: rgba(237, 237, 237, 0.08);
+  }
+
+  .servicesDropdownLink:active {
+    opacity: 0.7;
+  }
+}

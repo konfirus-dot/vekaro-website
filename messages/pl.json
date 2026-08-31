@@ -1,0 +1,282 @@
+{
+  "metadata": {
+    "title": "Vekaro - wynajem samochodów w Warszawie",
+    "description": "Vekaro - wynajem samochodów osobowych w Warszawie. Krótkoterminowy, długoterminowy, dla kurierów i firm. Zadzwoń: +48 789 085 345."
+  },
+  "nav": {
+    "home": "Strona główna",
+    "services": "Oferta",
+    "shortTerm": "Wynajem krótkoterminowy",
+    "longTerm": "Wynajem długoterminowy",
+    "about": "O nas",
+    "fleet": "Flota",
+    "contact": "Kontakt",
+    "callNow": "Zadzwoń teraz",
+    "language": "Język",
+    "menuToggle": "Menu"
+  },
+  "hero": {
+    "title": "Wynajem samochodów w Warszawie",
+    "subtitle": "Krótkoterminowo, długoterminowo i dla firm - szybko, bez zbędnych formalności.",
+    "cta": "Zadzwoń: +48 789 085 345"
+  },
+  "sloganBanner": {
+    "headlineLines": [
+      "Wynajem bez zbędnych formalności",
+      "Auto odbierzesz w 10 minut"
+    ],
+    "subtitle": "Bez papierologii, bez zbędnych umów - po prostu szybko i wygodnie."
+  },
+  "advantages": {
+    "title": "Dlaczego Vekaro",
+    "items": [
+      { "title": "Szybki kontakt", "text": "Telefon lub wiadomość - i auto już na Ciebie czeka" },
+      { "title": "Zadbane auta", "text": "Serwisowane samochody w nienagannym stanie" },
+      { "title": "Elastyczne warunki", "text": "Wynajem na dobę, miesiąc lub dłużej - dopasowany do Ciebie" }
+    ]
+  },
+  "rentalTypes": {
+    "title": "Nasze usługi",
+    "viewDetails": "Zobacz szczegóły",
+    "shortTerm": {
+      "title": "Wynajem krótkoterminowy",
+      "text": "Od 24 godzin do miesiąca - idealne na wyjazd, weekend lub nagłą potrzebę."
+    },
+    "longTerm": {
+      "title": "Wynajem długoterminowy",
+      "text": "Od miesiąca wzwyż. Cena ustalana indywidualnie."
+    },
+    "business": {
+      "title": "Dla biznesu",
+      "text": "Dla kurierów, firm dostawczych, ubezpieczeniowych i innych podmiotów."
+    }
+  },
+  "shortTermPage": {
+    "hero": {
+      "title": "Wynajem krótkoterminowy samochodu w Warszawie",
+      "description": "Potrzebujesz auta na kilka dni, weekend albo dłużej? Zadzwoń lub napisz, a auto odbierzesz nawet w 10 minut - bez zbędnych formalności."
+    },
+    "seo": {
+      "definition": {
+        "title": "Czym jest wynajem krótkoterminowy?",
+        "text": "Wynajem krótkoterminowy to najem samochodu na okres od 24 godzin do miesiąca. To rozwiązanie dla osób, które potrzebują auta doraźnie - bez podpisywania długich umów i bez rezerwacji online. W Vekaro cały proces załatwiasz jednym telefonem, a samochód czeka na Ciebie gotowy do jazdy."
+      },
+      "whenToRent": {
+        "title": "Kiedy warto wynająć auto na krótko?",
+        "items": [
+          "Wyjazd służbowy lub spotkanie w mieście - gdy własny samochód jest niedostępny lub nie masz go w Warszawie.",
+          "Weekendowy wypad - szybki dostęp do auta bez angażowania własnego pojazdu.",
+          "Samochód zastępczy - kiedy Twoje auto jest w naprawie, a Ty nie możesz zostać bez transportu.",
+          "Nagła potrzeba - czasem auto jest po prostu potrzebne tu i teraz, bez planowania z wyprzedzeniem."
+        ]
+      },
+      "whyVekaro": {
+        "title": "Dlaczego Vekaro?",
+        "items": [
+          "Bez zbędnych formalności - minimum papierologii, maksimum wygody.",
+          "Auto w 10 minut - od telefonu do kluczyków w Twojej dłoni.",
+          "Zadbane samochody - regularnie serwisowana flota w dobrym stanie technicznym.",
+          "Tylko Warszawa - znamy miasto i jesteśmy zawsze pod ręką."
+        ]
+      },
+      "howItWorks": {
+        "title": "Jak to działa?",
+        "steps": [
+          "Zadzwoń lub napisz na WhatsApp/Telegram.",
+          "Ustal termin i wybierz auto z naszej floty.",
+          "Odbierz samochód - gotowy, czysty i zatankowany."
+        ]
+      }
+    }
+  },
+  "longTermPage": {
+    "hero": {
+      "title": "Wynajem długoterminowy samochodu w Warszawie",
+      "description": "Potrzebujesz auta na miesiąc lub dłużej? Zadzwoń, a ustalimy warunki dopasowane do Twoich potrzeb, bez zbędnych formalności i bez wpłaty wstępnej."
+    },
+    "seo": {
+      "definition": {
+        "title": "Czym jest wynajem długoterminowy?",
+        "text": "Wynajem długoterminowy to najem samochodu na okres od jednego miesiąca wzwyż. W przeciwieństwie do leasingu nie musisz martwić się o wpłatę własną ani wieloletnie zobowiązanie. Cena i warunki ustalane są indywidualnie, w zależności od okresu i Twoich potrzeb. Wystarczy jeden telefon, a resztę omówimy razem."
+      },
+      "whyLongTerm": {
+        "title": "Kiedy warto wybrać wynajem długoterminowy?",
+        "items": [
+          "Praca lub kontrakt w Warszawie na dłuższy okres, kiedy zakup auta się nie opłaca.",
+          "Chcesz uniknąć kosztów serwisu, ubezpieczenia i wymiany opon, które są po naszej stronie.",
+          "Nie chcesz zamrażać gotówki w zakupie auta, które z czasem traci na wartości.",
+          "Potrzebujesz przewidywalnego kosztu miesięcznego zamiast nieplanowanych wydatków."
+        ]
+      },
+      "whyVekaro": {
+        "title": "Dlaczego Vekaro?",
+        "items": [
+          "Bez wpłaty wstępnej i bez zbędnych formalności.",
+          "Warunki i cena ustalane indywidualnie do Twojej sytuacji.",
+          "Zadbane, regularnie serwisowane samochody.",
+          "Tylko Warszawa, więc jesteśmy zawsze blisko i szybko reagujemy."
+        ]
+      },
+      "howItWorks": {
+        "title": "Jak to działa?",
+        "steps": [
+          "Zadzwoń lub napisz na WhatsApp/Telegram.",
+          "Omówimy okres wynajmu i ustalimy warunki dopasowane do Ciebie.",
+          "Odbierz samochód i korzystaj z niego przez cały okres najmu."
+        ]
+      }
+    },
+    "faq": {
+      "title": "Najczęściej zadawane pytania",
+      "items": [
+        {
+          "question": "Jaki jest minimalny okres wynajmu długoterminowego?",
+          "answer": "Wynajem długoterminowy zaczyna się od jednego miesiąca."
+        },
+        {
+          "question": "Czy cena jest stała, czy zależy od okresu?",
+          "answer": "Cena ustalana jest indywidualnie, w zależności od długości wynajmu i Twoich potrzeb. Zadzwoń, a przygotujemy dopasowaną ofertę."
+        },
+        {
+          "question": "Czy serwis i ubezpieczenie są wliczone?",
+          "answer": "Tak, bieżące utrzymanie samochodu jest po naszej stronie. Szczegóły omawiamy indywidualnie przy kontakcie."
+        },
+        {
+          "question": "Czy mogę wyjechać wynajętym autem za granicę?",
+          "answer": "Nie, nasze samochody można użytkować wyłącznie na terenie Polski."
+        }
+      ]
+    }
+  },
+  "businessPage": {
+    "hero": {
+      "title": "Wynajem samochodów dla firm i towarzystw ubezpieczeniowych",
+      "description": "Wynajmij samochód na firmę, nie jako osoba prywatna. Współpracujemy z firmami, towarzystwami ubezpieczeniowymi i przedsiębiorcami, którzy potrzebują dodatkowego pojazdu."
+    },
+    "seo": {
+      "definition": {
+        "title": "Czym jest wynajem samochodu dla firm?",
+        "text": "To ta sama oferta co wynajem krótkoterminowy i długoterminowy, z jedną różnicą. Samochód wynajmujesz na firmę, a nie jako osoba prywatna. To rozwiązanie dla przedsiębiorców, firm ubezpieczeniowych oraz innych firm z branży wynajmu, które potrzebują dodatkowego pojazdu do swojej floty. Warunki współpracy ustalamy indywidualnie, podczas rozmowy z naszym przedstawicielem."
+      },
+      "whoItsFor": {
+        "title": "Dla kogo jest ta oferta?",
+        "items": [
+          "Towarzystwa ubezpieczeniowe, które potrzebują samochodu zastępczego dla swoich klientów na czas naprawy.",
+          "Firmy wynajmu i inne przedsiębiorstwa, które potrzebują dodatkowego pojazdu do własnej floty.",
+          "Przedsiębiorcy, którzy chcą wynająć samochód na firmę zamiast prywatnie."
+        ]
+      },
+      "whyVekaro": {
+        "title": "Dlaczego Vekaro?",
+        "items": [
+          "Proste warunki współpracy, ustalane indywidualnie z naszym przedstawicielem.",
+          "Zadbane, regularnie serwisowane samochody.",
+          "Szybki kontakt telefoniczny, bez zbędnych formalności na starcie.",
+          "Tylko Warszawa, więc jesteśmy zawsze blisko i szybko reagujemy."
+        ]
+      },
+      "howItWorks": {
+        "title": "Jak wygląda współpraca?",
+        "steps": [
+          "Zadzwoń lub napisz na WhatsApp/Telegram i opisz swoje potrzeby.",
+          "Nasz przedstawiciel omówi warunki i szczegóły umowy podczas spotkania.",
+          "Odbierz samochód i korzystaj z niego zgodnie z ustalonymi warunkami."
+        ]
+      }
+    },
+    "faq": {
+      "title": "Najczęściej zadawane pytania",
+      "items": [
+        {
+          "question": "Jakie firmy mogą skorzystać z tej oferty?",
+          "answer": "Współpracujemy z firmami ubezpieczeniowymi, innymi firmami z branży wynajmu oraz przedsiębiorcami, którzy chcą wynająć samochód na firmę."
+        },
+        {
+          "question": "Czy oferujecie samochody zastępcze dla towarzystw ubezpieczeniowych?",
+          "answer": "Tak, to jeden z głównych kierunków naszej współpracy z firmami ubezpieczeniowymi."
+        },
+        {
+          "question": "Jak wygląda proces podpisania umowy?",
+          "answer": "Szczegóły i warunki ustalamy indywidualnie podczas spotkania z naszym przedstawicielem. Zadzwoń, aby to umówić."
+        },
+        {
+          "question": "Czy mogę wynająć więcej niż jeden samochód?",
+          "answer": "Tak, obsługujemy zarówno pojedyncze zamówienia, jak i większą liczbę pojazdów. Skontaktuj się z nami, aby omówić szczegóły."
+        }
+      ]
+    }
+  },
+  "breadcrumbs": {
+    "label": "Ścieżka nawigacyjna"
+  },
+  "promo": {
+    "title": "Potrzebujesz auta już dziś?",
+    "subtitle": "Zadzwoń, a otrzymasz je w 10 minut",
+    "cta": "Zadzwoń teraz"
+  },
+  "about": {
+    "title": "O firmie",
+    "paragraph": "Vekaro działa na warszawskim rynku wynajmu samochodów od ponad 7 lat. Nasz zespół jest niewielki, ale zawsze dostępny. Nie obiecujemy pracy całą dobę, ale gdy pojawia się nietypowa sytuacja, szukamy rozwiązania, a nie odsyłamy klienta z niczym. Mamy własny serwis samochodowy z doświadczonymi mechanikami, dzięki czemu nasza flota jest zawsze w dobrym stanie technicznym.",
+    "stats": [
+      "7+ lat na rynku",
+      "5000+ zadowolonych klientów",
+      "Własny serwis samochodowy"
+    ],
+    "officePhotoAlt": "Nasze biuro"
+  },
+  "fleet": {
+    "sectionTitle": "Nasza flota",
+    "sectionSubtitle": "Wybierz samochód dopasowany do Twoich potrzeb i wymagań.",
+    "fiatTipo": { "name": "Fiat Tipo", "priceFrom": "od 50 zł / doba" },
+    "skodaCitigo": { "name": "Skoda Citigo", "priceFrom": "od 50 zł / doba" }
+  },
+  "contact": {
+    "title": "Kontakt",
+    "phone": "+48 789 085 345",
+    "hours": "Godziny pracy: 8:00-18:00",
+    "areaNote": "Obsługujemy tylko Warszawę",
+    "whatsapp": "WhatsApp",
+    "telegram": "Telegram",
+    "instagram": "Instagram",
+    "callCta": "Zadzwoń teraz"
+  },
+  "faq": {
+    "title": "Najczęściej zadawane pytania",
+    "items": [
+      {
+        "question": "Czy mogę wyjechać wynajętym autem za granicę?",
+        "answer": "Nie, nasze samochody można użytkować wyłącznie na terenie Polski."
+      },
+      {
+        "question": "Jak zarezerwować samochód?",
+        "answer": "Wystarczy zadzwonić lub napisać na WhatsApp/Telegram - nie ma rezerwacji online."
+      },
+      {
+        "question": "Jakie samochody macie dostępne?",
+        "answer": "Obecnie Fiat Tipo i Skoda Citigo, flotę sukcesywnie powiększamy."
+      },
+      {
+        "question": "Jaki jest minimalny okres wynajmu?",
+        "answer": "Wynajem krótkoterminowy zaczyna się od 24 godzin."
+      }
+    ]
+  },
+  "footer": {
+    "location": "Polska, Warszawa",
+    "workingHours": "Godziny pracy: 8:00-18:00",
+    "servicesTitle": "Nasza oferta",
+    "companyColumn": {
+      "title": "Firma"
+    },
+    "legalTitle": "Informacje prawne",
+    "privacyPolicy": "Polityka prywatności",
+    "rights": "Wszelkie prawa zastrzeżone."
+  },
+  "cookies": {
+    "message": "Używamy plików cookie, aby poprawić działanie strony i analizować ruch.",
+    "accept": "Akceptuję",
+    "reject": "Odrzuć",
+    "settings": "Ustawienia",
+    "privacyLink": "Polityka prywatności"
+  }
+}

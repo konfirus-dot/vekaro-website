@@ -1,0 +1,51 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-width: 96px;
+  padding: 16px;
+  border-radius: 40px;
+  border: 1px solid var(--foreground);
+  background: transparent;
+  color: var(--foreground);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+  transition:
+    background-color 150ms ease,
+    color 150ms ease,
+    transform 100ms ease;
+}
+
+.button:hover {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+.button:active {
+  transform: scale(0.96);
+}
+
+/* Outline-only on both, per current design direction — differentiate once
+   the real design system defines distinct primary/secondary styles. */
+.primary,
+.secondary {
+  background: transparent;
+  color: var(--foreground);
+}
+
+/* Mobile/tablet (up to 1024px): a block CTA takes the full width of its
+   container. From 1024px up it becomes a compact, content-sized button. */
+.block {
+  width: 100%;
+  white-space: normal;
+}
+
+@media (min-width: 1024px) {
+  .block {
+    width: auto;
+  }
+}

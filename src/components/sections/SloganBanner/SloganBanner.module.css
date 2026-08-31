@@ -1,0 +1,47 @@
+.banner {
+  --accent-text: #171008;
+
+  padding-block: 40px;
+  background: var(--accent);
+  color: var(--accent-text);
+  text-align: center;
+}
+
+.headline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.75rem;
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  /* font-weight already maxes out at 900 — the stroke pushes it visually heavier still. */
+  -webkit-text-stroke: 1px var(--accent-text);
+}
+
+.line {
+  display: block;
+}
+
+.subtitle {
+  margin-top: 16px;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+@media (min-width: 1024px) {
+  .banner {
+    padding-block: 64px;
+  }
+
+  .headline {
+    font-size: 3.5rem;
+  }
+
+  .subtitle {
+    margin-top: 20px;
+    font-size: 1.125rem;
+  }
+}

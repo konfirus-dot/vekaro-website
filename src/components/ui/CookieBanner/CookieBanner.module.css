@@ -1,0 +1,40 @@
+.banner {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  background: var(--background);
+  border: 1px solid var(--foreground);
+  border-radius: 4px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.message {
+  font-size: 0.875rem;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+@media (min-width: 1024px) {
+  .banner {
+    left: auto;
+    right: 24px;
+    bottom: 24px;
+    max-width: 420px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .actions {
+    flex-shrink: 0;
+  }
+}

@@ -1,0 +1,71 @@
+.hero {
+  padding-block: 40px;
+}
+
+/* Mobile/tablet: stacked (text, then image). */
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.title {
+  font-size: 2rem;
+  line-height: 1.15;
+}
+
+.subtitle {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.imageWrap {
+  position: relative;
+  aspect-ratio: 4 / 3;
+}
+
+/* Bleeds past imageWrap's own box so the glow doesn't visibly stop at a hard edge. */
+.glow {
+  position: absolute;
+  inset: -15%;
+  background: radial-gradient(
+    ellipse at center,
+    var(--gradient-spot) 0%,
+    var(--gradient-spot) 30%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.image {
+  object-fit: contain;
+  padding: 24px;
+}
+
+/* Desktop: recomposed as a two-column layout, text and photo side by side. */
+@media (min-width: 1024px) {
+  .hero {
+    padding-block: 80px;
+  }
+
+  .inner {
+    flex-direction: row;
+    align-items: center;
+    gap: 64px;
+  }
+
+  .text,
+  .imageWrap {
+    flex: 1;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+}

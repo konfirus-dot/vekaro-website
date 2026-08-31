@@ -1,0 +1,31 @@
+.breadcrumbs {
+  margin-bottom: 24px;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
+}
+
+.homeLink {
+  display: flex;
+  align-items: center;
+  color: var(--foreground);
+  opacity: 0.6;
+  transition: opacity 150ms ease;
+}
+
+.homeLink:hover {
+  opacity: 1;
+}
+
+.separator {
+  opacity: 0.4;
+}
+
+.current {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
