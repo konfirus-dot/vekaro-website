@@ -20,6 +20,14 @@ html {
   height: 100%;
   max-width: 100vw;
   overflow-x: hidden;
+  /* Header is `position: sticky; top: 0` at 76px tall (see .bar in
+     Header.module.css). Without this, jumping to an anchor (#services,
+     #about, #contact from the nav) scrolls the target flush to the very
+     top of the viewport, right underneath the header, hiding its heading.
+     scroll-padding-top reserves that space so anchor scrolling stops with
+     enough clearance — applies to every current and future anchor target
+     in one place, no need to repeat it per section. */
+  scroll-padding-top: 92px;
 }
 
 body {
