@@ -19,7 +19,7 @@ export function Contact() {
   const faqItems = tFaq.raw("items") as FaqItem[];
 
   return (
-    <section id="contact" className={styles.section}>
+    <section className={styles.section}>
       <Container className={styles.inner}>
         <div className={styles.info}>
           <h2 className={styles.title}>{t("title")}</h2>

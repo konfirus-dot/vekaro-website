@@ -82,8 +82,21 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
+  const [isServicesDropdownForceHidden, setIsServicesDropdownForceHidden] = useState(false);
 
   const closeMenu = () => setIsOpen(false);
+
+  // The "Oferta" dropdown opens on CSS :hover/:focus-within, not JS state —
+  // clicking the link itself doesn't move the cursor away, and the click
+  // also focuses the link, so both conditions stay true and the dropdown
+  // stays stuck open over the Services section it just scrolled to. Force it
+  // shut for the rest of this hover session; it resets the moment the mouse
+  // actually leaves, so the very next real hover behaves normally again.
+  const closeServicesDropdown = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    closeMenu();
+    setIsServicesDropdownForceHidden(true);
+    event.currentTarget.blur();
+  };
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > SCROLLED_THRESHOLD);
@@ -145,8 +158,15 @@ export function Header() {
           </Link>
 
           <nav className={isOpen ? `${styles.nav} ${styles.navOpen}` : styles.nav}>
-            <div className={styles.navItem}>
-              <Link href="/#services" className={navLinkClass("services")} onClick={closeMenu}>
+            <div
+              className={
+                isServicesDropdownForceHidden
+                  ? `${styles.navItem} ${styles.dropdownForceHidden}`
+                  : styles.navItem
+              }
+              onMouseLeave={() => setIsServicesDropdownForceHidden(false)}
+            >
+              <Link href="/#services" className={navLinkClass("services")} onClick={closeServicesDropdown}>
                 {t("services")}
               </Link>
 

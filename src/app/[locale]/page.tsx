@@ -14,21 +14,37 @@ export default function Home() {
       <Reveal>
         <SloganBanner />
       </Reveal>
-      <Reveal>
-        <Services />
-      </Reveal>
+      {/* id lives on this stable, untransformed wrapper rather than on
+          <Services>'s own <section> — that section is a Reveal child, so
+          while its reveal transition hasn't fired yet it briefly sits at
+          `translateY(24px)`. Next's anchor-scroll math reads the target's
+          rect at click time, so scrolling to an id still inside the Reveal
+          transform landed 24px short of the settled position, leaving the
+          preceding section peeking out from under the sticky header. A
+          wrapper outside Reveal keeps the scroll target's rect stable no
+          matter what the reveal animation is doing. Same reasoning for
+          #about and #contact below. */}
+      <div id="services">
+        <Reveal>
+          <Services />
+        </Reveal>
+      </div>
       <Reveal>
         <Advantages />
       </Reveal>
-      <Reveal>
-        <About />
-      </Reveal>
+      <div id="about">
+        <Reveal>
+          <About />
+        </Reveal>
+      </div>
       <Reveal>
         <PromoBanner />
       </Reveal>
-      <Reveal>
-        <Contact />
-      </Reveal>
+      <div id="contact">
+        <Reveal>
+          <Contact />
+        </Reveal>
+      </div>
     </main>
   );
 }

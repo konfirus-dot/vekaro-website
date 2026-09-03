@@ -40,7 +40,7 @@ export function About() {
   const stats = t.raw("stats") as string[];
 
   return (
-    <section id="about" className={styles.section}>
+    <section className={styles.section}>
       <Container className={styles.inner}>
         <div className={styles.text}>
           <h2 className={styles.title}>{t("title")}</h2>

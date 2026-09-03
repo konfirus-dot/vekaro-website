@@ -30,6 +30,22 @@ html {
   scroll-padding-top: 92px;
 }
 
+/* #services sits directly below the orange SloganBanner. The 15px buffer
+   above (92px padding - 77px header height) is invisible for #about/#contact
+   since it lands on plain white background, but for #services that sliver
+   exposes the SloganBanner's orange peeking out from under the header.
+   scroll-margin-top on the target STACKS with (does not override)
+   scroll-padding-top on the scroller — the browser enforces
+   scroll-padding-top + scroll-margin-top of clearance above the target. A
+   negative value here cancels out exactly the 15px buffer that's causing the
+   problem, bringing this one anchor's effective clearance down to 77px (the
+   header's own height: 76px min-height + 1px border, see .bar in
+   Header.module.css) so the banner is fully covered instead of merely mostly
+   covered. */
+#services {
+  scroll-margin-top: -15px;
+}
+
 body {
   min-height: 100%;
   max-width: 100vw;

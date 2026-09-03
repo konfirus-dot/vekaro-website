@@ -7,6 +7,18 @@
   transition:
     background-color 200ms ease,
     border-color 200ms ease;
+  /* Mobile Safari lazily promotes `position: sticky` elements onto their own
+     GPU compositing layer the moment they first start scrolling — that
+     promotion itself causes a one-frame flash (briefly renders without its
+     background, showing the white page through it) before settling back to
+     normal. Forcing the layer to exist from first paint, instead of being
+     created reactively on scroll start, avoids the flash. This is a distinct
+     WebKit quirk from the backdrop-filter sampling issue SCROLLED_THRESHOLD
+     guards against in Header.tsx — that one only kicks in past scrollY 100,
+     this one happens in the very first pixels of any scroll. */
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  will-change: transform;
 }
 
 /* Once the page has scrolled, content passes underneath the sticky header —
@@ -236,6 +248,18 @@
     visibility: visible;
     transform: translateY(0);
     pointer-events: auto;
+  }
+
+  /* Overrides the rule above after clicking "Oferta" (see
+     isServicesDropdownForceHidden in Header.tsx) — four class-level
+     selectors beats the hover rule's three, so this wins regardless of
+     source order, same reasoning as .header.scrolled above. */
+  .navItem.dropdownForceHidden:hover .servicesDropdown,
+  .navItem.dropdownForceHidden:focus-within .servicesDropdown {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+    pointer-events: none;
   }
 
   .servicesDropdownInner {

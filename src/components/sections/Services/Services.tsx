@@ -12,7 +12,7 @@ export function Services() {
   const tFleet = useTranslations("fleet");
 
   return (
-    <section id="services" className={styles.section}>
+    <section className={styles.section}>
       <Container>
         <h2 className={styles.title}>{t("title")}</h2>
         <RentalTypes />
