@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
@@ -27,6 +27,17 @@ const geistMono = Geist_Mono({
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
+
+// Matches the Header's always-on dark theme (theme-dark's --background, see
+// globals.css). Without this, iOS Safari tints its own toolbar/status-bar
+// chrome light by default — when that chrome collapses on the very first
+// pixels of scroll, its light color flashes against the header's dark
+// background for a frame before settling, reading as a white flicker right
+// above the header. Telling Safari the page's own chrome color should be
+// dark removes the mismatch causing that flash.
+export const viewport: Viewport = {
+  themeColor: "#0a0a0a",
+};
 
 export async function generateMetadata({
   params,
