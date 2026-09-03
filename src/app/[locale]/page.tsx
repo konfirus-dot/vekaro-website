@@ -5,17 +5,30 @@ import { Advantages } from "@/components/sections/Advantages/Advantages";
 import { About } from "@/components/sections/About/About";
 import { PromoBanner } from "@/components/sections/PromoBanner/PromoBanner";
 import { Contact } from "@/components/sections/Contact/Contact";
+import { Reveal } from "@/components/ui/Reveal/Reveal";
 
 export default function Home() {
   return (
     <main>
       <Hero />
-      <SloganBanner />
-      <Services />
-      <Advantages />
-      <About />
-      <PromoBanner />
-      <Contact />
+      <Reveal>
+        <SloganBanner />
+      </Reveal>
+      <Reveal>
+        <Services />
+      </Reveal>
+      <Reveal>
+        <Advantages />
+      </Reveal>
+      <Reveal>
+        <About />
+      </Reveal>
+      <Reveal>
+        <PromoBanner />
+      </Reveal>
+      <Reveal>
+        <Contact />
+      </Reveal>
     </main>
   );
 }

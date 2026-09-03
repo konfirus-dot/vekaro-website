@@ -10,6 +10,7 @@ import { PageTransition } from "@/components/ui/PageTransition/PageTransition";
 import { Header } from "@/components/layout/Header/Header";
 import { Footer } from "@/components/layout/Footer/Footer";
 import { CookieBanner } from "@/components/ui/CookieBanner/CookieBanner";
+import { Reveal } from "@/components/ui/Reveal/Reveal";
 import { SITE_URL, IS_PREVIEW_ENV } from "@/lib/constants";
 import "./globals.css";
 
@@ -108,7 +109,9 @@ export default async function LocaleLayout({
           <PageTransition locale={locale}>
             <Header />
             {children}
-            <Footer />
+            <Reveal>
+              <Footer />
+            </Reveal>
             <CookieBanner />
           </PageTransition>
         </NextIntlClientProvider>
