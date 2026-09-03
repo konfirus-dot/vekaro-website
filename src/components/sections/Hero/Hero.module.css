@@ -1,5 +1,13 @@
 .hero {
   padding-block: 40px;
+  /* .glow below intentionally bleeds past .imageWrap's own box for a soft
+     fade instead of a hard edge — contained here (not on .imageWrap itself)
+     so the bleed still reaches past the image but can never push the
+     section, and with it the whole page, wider than the viewport on narrow
+     screens. That was causing horizontal overflow on mobile: the sticky
+     Header (full page width) would then visibly shift/slide sideways when
+     panning, since the page had become scrollable in the X direction. */
+  overflow: hidden;
 }
 
 /* Mobile/tablet: stacked (text, then image). */
