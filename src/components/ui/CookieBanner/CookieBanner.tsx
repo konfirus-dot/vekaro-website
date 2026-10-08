@@ -1,8 +1,9 @@
 "use client";
 
-import { useSyncExternalStore } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/Button/Button";
+import { OPEN_COOKIE_SETTINGS_EVENT } from "./cookieSettings";
 import styles from "./CookieBanner.module.css";
 
 const STORAGE_KEY = "vekaro-cookie-consent";
@@ -24,12 +25,22 @@ function getServerSnapshot() {
 export function CookieBanner() {
   const t = useTranslations("cookies");
   const consent = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+  // Set by a "Cookie settings" button (see cookieSettings.ts): shows the
+  // banner again even though a choice is already stored.
+  const [isReopened, setIsReopened] = useState(false);
 
-  if (consent !== null) {
+  useEffect(() => {
+    const reopen = () => setIsReopened(true);
+    window.addEventListener(OPEN_COOKIE_SETTINGS_EVENT, reopen);
+    return () => window.removeEventListener(OPEN_COOKIE_SETTINGS_EVENT, reopen);
+  }, []);
+
+  if (consent !== null && !isReopened) {
     return null;
   }
 
   const handle = (value: "accepted" | "rejected") => {
+    setIsReopened(false);
     localStorage.setItem(STORAGE_KEY, value);
     window.dispatchEvent(new Event(CHANGE_EVENT));
     // TODO: wire up to Google Consent Mode v2 once GA4 is integrated

@@ -4,6 +4,36 @@
   --gradient-spot: rgba(23, 23, 23, 0.22);
   /* TODO: replace with the real accent color from the Figma design system */
   --accent: #ff5a1f;
+
+  /* Type scale and spacing pattern (see PROJECT.md "Типографіка і відступи").
+     Components use these tokens instead of raw sizes; the desktop values
+     switch in the media query below, so components need no breakpoint of
+     their own for them. Checked by the `design-audit` agent
+     (.claude/agents/design-audit.md). */
+  --font-display: 1.75rem; /* SloganBanner headline */
+  --font-h1: 2.25rem; /* page title, one per page */
+  --font-h2: 2rem; /* section title */
+  --font-h3: 1.5rem; /* card / sub-section title */
+  --font-h4: 1.125rem; /* small title: fleet card, FAQ question */
+  --font-label: 0.875rem; /* small bold label above a block */
+  --font-body: 1rem;
+
+  --space-section: 40px; /* section padding-block */
+  --space-heading: 24px; /* section title -> its content */
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --font-display: 3.5rem;
+    --font-h1: 3.5rem;
+    --font-h2: 3rem;
+    --font-h3: 1.75rem;
+    --font-h4: 1.25rem;
+    --font-body: 1.125rem;
+
+    --space-section: 64px;
+    --space-heading: 32px;
+  }
 }
 
 /* Fixed dark zone (not tied to OS theme) — used by Header, Hero and Footer

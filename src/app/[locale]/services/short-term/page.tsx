@@ -13,7 +13,8 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale: locale as Locale, namespace: "shortTermPage" });
-  return generateServicePageMetadata(locale, PATH, t("hero.title"), t("hero.description"));
+  // SEO title/description are kept separate from the visible Hero copy.
+  return generateServicePageMetadata(locale, PATH, t("metadata.title"), t("metadata.description"));
 }
 
 export default async function ShortTermServicePage({

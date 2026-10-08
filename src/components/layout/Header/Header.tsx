@@ -5,60 +5,9 @@ import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { Container } from "@/components/ui/Container/Container";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { BookMenu } from "./BookMenu";
 import { Logo } from "@/components/ui/Logo/Logo";
-import { PHONE_DISPLAY, PHONE_HREF, WHATSAPP_HREF } from "@/lib/constants";
 import styles from "./Header.module.css";
-
-function PhoneIcon() {
-  return (
-    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-      <path
-        d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a2 2 0 0 1-2 2C9.5 21 3 14.5 3 6a2 2 0 0 1 1-2Z"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function ChatIcon() {
-  return (
-    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-      <path
-        d="M4 12a8 8 0 1 1 3.2 6.4L4 20l1.2-3.6A7.96 7.96 0 0 1 4 12Z"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-// Rendered twice: once inside the mobile dropdown, once in the always-visible
-// desktop row — see .navContacts / .desktopContacts in Header.module.css. The
-// mobile dropdown panel is full-width and left-aligned, so its trigger sits
-// near the left edge of the screen — the opposite of the desktop row, which
-// sits at the top-right corner. languageAlign passes the correct anchor
-// through to LanguageSwitcher for each context (same class of bug, and same
-// fix, as the footer's LanguageSwitcher instance).
-function ContactControls({ languageAlign = "right" }: { languageAlign?: "left" | "right" }) {
-  return (
-    <>
-      <LanguageSwitcher align={languageAlign} />
-      <a href={PHONE_HREF} className={styles.iconLink} aria-label={PHONE_DISPLAY}>
-        <PhoneIcon />
-      </a>
-      <a
-        href={WHATSAPP_HREF}
-        className={styles.iconLink}
-        aria-label="WhatsApp"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <ChatIcon />
-      </a>
-    </>
-  );
-}
 
 const NAV_SECTION_IDS = ["services", "about", "contact"] as const;
 
@@ -87,11 +36,12 @@ export function Header() {
   const closeMenu = () => setIsOpen(false);
 
   // The "Oferta" dropdown opens on CSS :hover/:focus-within, not JS state —
-  // clicking the link itself doesn't move the cursor away, and the click
-  // also focuses the link, so both conditions stay true and the dropdown
-  // stays stuck open over the Services section it just scrolled to. Force it
-  // shut for the rest of this hover session; it resets the moment the mouse
-  // actually leaves, so the very next real hover behaves normally again.
+  // clicking "Oferta" or one of the service links inside it doesn't move the
+  // cursor away, and the click also focuses the link, so both conditions stay
+  // true and the dropdown stays stuck open (the header persists across page
+  // navigations, so it stays open on the new page too). Force it shut for the
+  // rest of this hover session; it resets the moment the mouse actually
+  // leaves, so the very next real hover behaves normally again.
   const closeServicesDropdown = (event: React.MouseEvent<HTMLAnchorElement>) => {
     closeMenu();
     setIsServicesDropdownForceHidden(true);
@@ -107,7 +57,11 @@ export function Header() {
   }, []);
 
   // Scrollspy: highlight whichever nav section is currently passing through
-  // a thin band near the vertical center of the viewport.
+  // a thin band near the vertical center of the viewport. The highlight
+  // stays on through the non-nav sections in between (Advantages,
+  // PromoBanner); when a section drops back below the band while scrolling
+  // up, it hands off to the previous nav section — or to none above the
+  // first one, so the Hero area has nothing highlighted.
   useEffect(() => {
     const sections = NAV_SECTION_IDS.map((id) => document.getElementById(id)).filter(
       (el): el is HTMLElement => el !== null,
@@ -118,8 +72,18 @@ export function Header() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
+          const id = entry.target.id;
+
           if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
+            setActiveSection(id);
+            return;
+          }
+
+          const bandTop = entry.rootBounds?.top ?? 0;
+          if (entry.boundingClientRect.top >= bandTop) {
+            const index = sections.findIndex((section) => section.id === id);
+            const previousId = index > 0 ? sections[index - 1].id : null;
+            setActiveSection((current) => (current === id ? previousId : current));
           }
         });
       },
@@ -175,21 +139,21 @@ export function Header() {
                   <Link
                     href="/services/short-term"
                     className={styles.servicesDropdownLink}
-                    onClick={closeMenu}
+                    onClick={closeServicesDropdown}
                   >
                     {tRentalTypes("shortTerm.title")}
                   </Link>
                   <Link
                     href="/services/long-term"
                     className={styles.servicesDropdownLink}
-                    onClick={closeMenu}
+                    onClick={closeServicesDropdown}
                   >
                     {tRentalTypes("longTerm.title")}
                   </Link>
                   <Link
                     href="/services/business"
                     className={styles.servicesDropdownLink}
-                    onClick={closeMenu}
+                    onClick={closeServicesDropdown}
                   >
                     {tRentalTypes("business.title")}
                   </Link>
@@ -204,15 +168,16 @@ export function Header() {
             </Link>
 
             <div className={styles.navContacts}>
-              <ContactControls languageAlign="left" />
+              <LanguageSwitcher />
             </div>
           </nav>
         </div>
 
         <div className={styles.contacts}>
           <div className={styles.desktopContacts}>
-            <ContactControls />
+            <LanguageSwitcher />
           </div>
+          <BookMenu />
           <button
             type="button"
             className={styles.toggle}

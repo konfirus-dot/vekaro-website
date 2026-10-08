@@ -1,10 +1,10 @@
 .section {
-  padding-block: 40px;
+  padding-block: var(--space-section);
 }
 
 .title {
-  margin-bottom: 24px;
-  font-size: 2rem;
+  margin-bottom: var(--space-heading);
+  font-size: var(--font-h2);
   line-height: 1.15;
   text-align: center;
 }
@@ -16,7 +16,7 @@
 }
 
 .fleetTitle {
-  font-size: 1.25rem;
+  font-size: var(--font-h3);
   font-weight: 700;
 }
 
@@ -29,21 +29,9 @@
 }
 
 @media (min-width: 1024px) {
-  .section {
-    padding-block: 64px;
-  }
-
-  .title {
-    font-size: 3rem;
-  }
-
   .fleetHeader {
     margin-top: 64px;
     margin-bottom: 32px;
-  }
-
-  .fleetTitle {
-    font-size: 1.5rem;
   }
 
   .fleetSubtitle {

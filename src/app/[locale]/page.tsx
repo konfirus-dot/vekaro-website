@@ -11,9 +11,8 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      <Reveal>
-        <SloganBanner />
-      </Reveal>
+      {/* No <Reveal>: the banner runs its own word-by-word stamp entrance. */}
+      <SloganBanner />
       {/* id lives on this stable, untransformed wrapper rather than on
           <Services>'s own <section> — that section is a Reveal child, so
           while its reveal transition hasn't fired yet it briefly sits at

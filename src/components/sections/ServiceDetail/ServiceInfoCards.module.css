@@ -1,0 +1,51 @@
+/* Moved unchanged from the three service page modules (.pairedBlocks,
+   .pairedCard, .list), so all pages share one source of truth. */
+
+/* Mobile/tablet: cards stacked. */
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  padding: 28px;
+  background: #f2f1ee;
+  border-radius: 20px;
+}
+
+.title {
+  margin-bottom: 16px;
+  font-size: var(--font-h3);
+  line-height: 1.15;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-left: 20px;
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+.list li::marker {
+  color: var(--accent);
+}
+
+/* Desktop: two equal cards side by side. */
+@media (min-width: 1024px) {
+  .cards {
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .card {
+    flex: 1;
+    padding: 40px;
+  }
+
+  .list {
+    font-size: 1.125rem;
+  }
+}

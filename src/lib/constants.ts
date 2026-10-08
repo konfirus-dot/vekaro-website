@@ -2,9 +2,16 @@ export const PHONE_DISPLAY = "+48 789 085 345";
 export const PHONE_HREF = "tel:+48789085345";
 export const WHATSAPP_HREF = "https://wa.me/48789085345";
 
-// TODO: replace with the real Telegram/Instagram links once provided
-export const TELEGRAM_HREF = "#";
-export const INSTAGRAM_HREF = "#";
+export const TELEGRAM_HREF = "https://t.me/vekaro19";
+export const INSTAGRAM_HREF = "https://www.instagram.com/_vekaro_";
+
+// The site intentionally shows no company name, legal address or data
+// e-mail (demo site, no registered company): the phone number is the only
+// public contact, including in the privacy policy. Don't add those back.
+
+// ISO date (YYYY-MM-DD); formatted per locale on the page. Bump on every
+// change to the policy text.
+export const PRIVACY_POLICY_LAST_UPDATED = "2026-10-08";
 
 export const WORKING_HOURS_OPENS = "08:00";
 export const WORKING_HOURS_CLOSES = "18:00";

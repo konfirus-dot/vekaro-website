@@ -64,11 +64,13 @@
   margin-top: 4px;
 }
 
+/* The brand SVGs in /public/icons carry their own colored background, so
+   the link itself is just a bare 34px hit area — no fill, border or radius. */
 .socialLink {
-  composes: iconButton from "../../ui/IconButton/IconButton.module.css";
-  background: var(--accent);
-  border: none;
-  color: #ffffff;
+  display: inline-flex;
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
   transition:
     transform 180ms ease,
     filter 180ms ease;
@@ -94,9 +96,41 @@
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.bottomLinks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 20px;
+}
+
 .rights {
   font-size: 0.75rem;
   opacity: 0.7;
+}
+
+/* Same dim-to-accent treatment as .link, sized to sit beside .rights. */
+.cookieSettings {
+  padding: 0;
+  background: none;
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: 0.75rem;
+  opacity: 0.7;
+  cursor: pointer;
+  transition:
+    opacity 180ms ease,
+    color 180ms ease,
+    transform 100ms ease;
+}
+
+.cookieSettings:hover {
+  opacity: 1;
+  color: var(--accent);
+}
+
+.cookieSettings:active {
+  transform: scale(0.97);
 }
 
 @media (min-width: 1024px) {

@@ -12,196 +12,451 @@
     "fleet": "Flota",
     "contact": "Kontakt",
     "callNow": "Zadzwoń teraz",
+    "book": "Zarezerwuj",
+    "bookMenuTitle": "Wybierz sposób kontaktu",
+    "bookCall": "Zadzwoń",
+    "close": "Zamknij",
     "language": "Język",
     "menuToggle": "Menu"
   },
   "hero": {
-    "title": "Wynajem samochodów w Warszawie",
-    "subtitle": "Krótkoterminowo, długoterminowo i dla firm - szybko, bez zbędnych formalności.",
+    "title": "Wynajem samochodów w Warszawie.",
+    "titleAccent": "Prosto i na Twoich warunkach.",
+    "subtitle": "Vekaro to lokalna wypożyczalnia samochodów z ponad 7-letnim doświadczeniem. Oferujemy wynajem na dzień, miesiąc lub dłużej - zarówno dla klientów indywidualnych, jak i firm. Zapewniamy zadbane auta, elastyczne warunki i pomoc naszego zespołu na każdym etapie wynajmu.",
     "cta": "Zadzwoń: +48 789 085 345"
   },
   "sloganBanner": {
     "headlineLines": [
-      "Wynajem bez zbędnych formalności",
-      "Auto odbierzesz w 10 minut"
+      "MNIEJ FORMALNOŚCI.",
+      "WIĘCEJ CZASU NA DROGĘ."
     ],
-    "subtitle": "Bez papierologii, bez zbędnych umów - po prostu szybko i wygodnie."
+    "subtitle": "Prosty proces rezerwacji, jasne warunki i szybki odbiór samochodu. W Vekaro skupiamy się na tym, aby wynajem był wygodny od pierwszego kontaktu."
   },
   "advantages": {
-    "title": "Dlaczego Vekaro",
+    "title": "Dlaczego Vekaro?",
     "items": [
-      { "title": "Szybki kontakt", "text": "Telefon lub wiadomość - i auto już na Ciebie czeka" },
-      { "title": "Zadbane auta", "text": "Serwisowane samochody w nienagannym stanie" },
-      { "title": "Elastyczne warunki", "text": "Wynajem na dobę, miesiąc lub dłużej - dopasowany do Ciebie" }
+      { "title": "Bezpośredni kontakt", "text": "Rozmawiasz z naszym zespołem, który pomoże Ci wybrać odpowiedni samochód." },
+      { "title": "Zadbane samochody", "text": "Sprawdzone i regularnie serwisowane auta, gotowe do drogi." },
+      { "title": "Elastyczne warunki", "text": "Wynajmij auto na dzień, miesiąc lub dłużej - tak, jak Ci wygodnie." }
     ]
   },
   "rentalTypes": {
-    "title": "Nasze usługi",
+    "title": "Wybierz wynajem dla siebie",
     "viewDetails": "Zobacz szczegóły",
     "shortTerm": {
       "title": "Wynajem krótkoterminowy",
-      "text": "Od 24 godzin do miesiąca - idealne na wyjazd, weekend lub nagłą potrzebę."
+      "text": "Samochód na weekend, podróż lub codzienne potrzeby. Wynajem już od 24 godzin, na tak długo, jak potrzebujesz."
     },
     "longTerm": {
       "title": "Wynajem długoterminowy",
-      "text": "Od miesiąca wzwyż. Cena ustalana indywidualnie."
+      "text": "Wygodne rozwiązanie, gdy potrzebujesz auta na dłużej. Wynajem od miesiąca z ofertą dopasowaną do Twoich potrzeb."
     },
     "business": {
-      "title": "Dla biznesu",
-      "text": "Dla kurierów, firm dostawczych, ubezpieczeniowych i innych podmiotów."
+      "title": "Wynajem dla firm",
+      "text": "Samochody dla firm, kurierów i dostawców. Elastyczne rozwiązania dopasowane do potrzeb Twojego biznesu."
     }
   },
   "shortTermPage": {
+    "metadata": {
+      "title": "Wynajem krótkoterminowy aut Warszawa | Vekaro",
+      "description": "Wynajem krótkoterminowy samochodów w Warszawie od 24 godzin. Zadbane auta, elastyczne terminy i prosta rezerwacja. Sprawdź ofertę Vekaro."
+    },
     "hero": {
-      "title": "Wynajem krótkoterminowy samochodu w Warszawie",
-      "description": "Potrzebujesz auta na kilka dni, weekend albo dłużej? Zadzwoń lub napisz, a auto odbierzesz nawet w 10 minut - bez zbędnych formalności."
+      "title": "Wynajem krótkoterminowy samochodów w Warszawie",
+      "description": "Potrzebujesz samochodu na weekend, podróż służbową lub kilka dni? W Vekaro wynajmiesz auto już od 24 godzin. Oferujemy zadbane samochody, elastyczne terminy i prosty proces rezerwacji."
     },
     "seo": {
       "definition": {
-        "title": "Czym jest wynajem krótkoterminowy?",
-        "text": "Wynajem krótkoterminowy to najem samochodu na okres od 24 godzin do miesiąca. To rozwiązanie dla osób, które potrzebują auta doraźnie - bez podpisywania długich umów i bez rezerwacji online. W Vekaro cały proces załatwiasz jednym telefonem, a samochód czeka na Ciebie gotowy do jazdy."
+        "title": "Czym jest wynajem krótkoterminowy samochodu?",
+        "text": [
+          "Wynajem krótkoterminowy to wygodne rozwiązanie, gdy potrzebujesz samochodu na jeden dzień, weekend lub kilka tygodni. W Vekaro możesz wynająć auto w Warszawie już od 24 godzin, bez konieczności podejmowania długoterminowych zobowiązań.",
+          "Niezależnie od tego, czy planujesz podróż, spotkania biznesowe czy potrzebujesz samochodu na czas naprawy własnego auta, pomożemy Ci wybrać odpowiedni pojazd. Oferujemy przejrzyste warunki wynajmu i bezpośredni kontakt z naszym zespołem."
+        ]
       },
       "whenToRent": {
-        "title": "Kiedy warto wynająć auto na krótko?",
+        "title": "Kiedy warto wynająć samochód na krótki termin?",
         "items": [
-          "Wyjazd służbowy lub spotkanie w mieście - gdy własny samochód jest niedostępny lub nie masz go w Warszawie.",
-          "Weekendowy wypad - szybki dostęp do auta bez angażowania własnego pojazdu.",
-          "Samochód zastępczy - kiedy Twoje auto jest w naprawie, a Ty nie możesz zostać bez transportu.",
-          "Nagła potrzeba - czasem auto jest po prostu potrzebne tu i teraz, bez planowania z wyprzedzeniem."
+          { "lead": "Podróże służbowe", "text": "wygodny dojazd na spotkania w Warszawie." },
+          { "lead": "Weekendowy wyjazd", "text": "podróżuj bez ograniczeń związanych z rozkładem transportu." },
+          { "lead": "Auto na czas naprawy", "text": "zachowaj mobilność, gdy Twój samochód jest niedostępny." },
+          { "lead": "Codzienne potrzeby", "text": "wynajmij auto na kilka dni, kiedy go potrzebujesz." }
         ]
       },
       "whyVekaro": {
-        "title": "Dlaczego Vekaro?",
+        "title": "Dlaczego warto wybrać Vekaro?",
         "items": [
-          "Bez zbędnych formalności - minimum papierologii, maksimum wygody.",
-          "Auto w 10 minut - od telefonu do kluczyków w Twojej dłoni.",
-          "Zadbane samochody - regularnie serwisowana flota w dobrym stanie technicznym.",
-          "Tylko Warszawa - znamy miasto i jesteśmy zawsze pod ręką."
+          { "lead": "Prosta rezerwacja", "text": "szybki kontakt i przejrzyste warunki wynajmu." },
+          { "lead": "Elastyczny okres wynajmu", "text": "samochód na dzień, weekend lub kilka tygodni." },
+          { "lead": "Zadbane samochody", "text": "regularnie serwisowane auta, gotowe do drogi." },
+          { "lead": "Lokalna wypożyczalnia", "text": "bezpośredni kontakt z naszym zespołem w Warszawie." }
         ]
       },
       "howItWorks": {
-        "title": "Jak to działa?",
+        "title": "Jak wynająć samochód?",
         "steps": [
-          "Zadzwoń lub napisz na WhatsApp/Telegram.",
-          "Ustal termin i wybierz auto z naszej floty.",
-          "Odbierz samochód - gotowy, czysty i zatankowany."
+          { "title": "Skontaktuj się z nami", "text": "Zadzwoń lub napisz, aby sprawdzić dostępność samochodów w Warszawie." },
+          { "title": "Wybierz samochód", "text": "Ustal termin wynajmu, wybierz auto i poznaj warunki rezerwacji." },
+          { "title": "Odbierz auto", "text": "Dopełnij formalności i odbierz przygotowany samochód." }
         ]
       }
-    }
+    },
+    "extraFaq": [
+      {
+        "question": "Czy mogę wynająć samochód na weekend w Warszawie?",
+        "answer": "Tak, w Vekaro możesz wynająć samochód na weekend lub kilka dni. To wygodne rozwiązanie na krótki wyjazd, wizytę u rodziny czy podróż po Polsce. Skontaktuj się z nami, aby sprawdzić dostępność aut w wybranym terminie."
+      },
+      {
+        "question": "Czy mogę wynająć samochód na czas naprawy własnego auta?",
+        "answer": "Tak, wynajem krótkoterminowy sprawdzi się również wtedy, gdy Twój samochód jest w warsztacie. Możesz korzystać z wynajętego auta podczas naprawy, bez konieczności zmiany codziennych planów. Pomożemy Ci wybrać samochód odpowiedni do Twoich potrzeb."
+      },
+      {
+        "question": "Czy mogę przedłużyć wynajem samochodu?",
+        "answer": "Jeśli potrzebujesz samochodu dłużej, skontaktuj się z naszym zespołem przed zakończeniem uzgodnionego okresu wynajmu. Sprawdzimy dostępność pojazdu i możliwość przedłużenia rezerwacji. Warunki przedłużenia ustalimy indywidualnie."
+      }
+    ]
   },
   "longTermPage": {
+    "metadata": {
+      "title": "Wynajem długoterminowy aut Warszawa | Vekaro",
+      "description": "Wynajem długoterminowy samochodów w Warszawie od miesiąca. Elastyczne warunki, zadbane auta i indywidualna oferta. Poznaj Vekaro."
+    },
     "hero": {
-      "title": "Wynajem długoterminowy samochodu w Warszawie",
-      "description": "Potrzebujesz auta na miesiąc lub dłużej? Zadzwoń, a ustalimy warunki dopasowane do Twoich potrzeb, bez zbędnych formalności i bez wpłaty wstępnej."
+      "title": "Wynajem długoterminowy samochodów w Warszawie",
+      "description": "Potrzebujesz samochodu na miesiąc lub dłużej? W Vekaro oferujemy wynajem długoterminowy aut w Warszawie na elastycznych warunkach. Wybierz odpowiedni samochód i ustal z nami okres wynajmu dopasowany do Twoich potrzeb."
     },
     "seo": {
       "definition": {
-        "title": "Czym jest wynajem długoterminowy?",
-        "text": "Wynajem długoterminowy to najem samochodu na okres od jednego miesiąca wzwyż. W przeciwieństwie do leasingu nie musisz martwić się o wpłatę własną ani wieloletnie zobowiązanie. Cena i warunki ustalane są indywidualnie, w zależności od okresu i Twoich potrzeb. Wystarczy jeden telefon, a resztę omówimy razem."
+        "title": "Czym jest wynajem długoterminowy samochodu?",
+        "text": [
+          "Wynajem długoterminowy to wygodne rozwiązanie dla osób i firm, które potrzebują samochodu na okres od jednego miesiąca. Pozwala korzystać z auta na co dzień bez konieczności jego zakupu.",
+          "W Vekaro oferujemy długoterminowy wynajem samochodów w Warszawie z indywidualnie ustalanymi warunkami. Niezależnie od tego, czy potrzebujesz pojazdu do pracy, codziennych dojazdów czy prowadzenia działalności, pomożemy Ci wybrać odpowiednie auto i ustalić szczegóły wynajmu."
+        ]
       },
       "whyLongTerm": {
         "title": "Kiedy warto wybrać wynajem długoterminowy?",
         "items": [
-          "Praca lub kontrakt w Warszawie na dłuższy okres, kiedy zakup auta się nie opłaca.",
-          "Chcesz uniknąć kosztów serwisu, ubezpieczenia i wymiany opon, które są po naszej stronie.",
-          "Nie chcesz zamrażać gotówki w zakupie auta, które z czasem traci na wartości.",
-          "Potrzebujesz przewidywalnego kosztu miesięcznego zamiast nieplanowanych wydatków."
+          {
+            "lead": "Codzienne dojazdy",
+            "text": "korzystaj z samochodu regularnie, bez konieczności jego zakupu."
+          },
+          {
+            "lead": "Praca i obowiązki zawodowe",
+            "text": "wynajmij auto na kilka miesięcy, jeśli potrzebujesz mobilności w Warszawie."
+          },
+          {
+            "lead": "Tymczasowy pobyt",
+            "text": "wygodne rozwiązanie, gdy mieszkasz lub pracujesz w Polsce przez określony czas."
+          },
+          {
+            "lead": "Alternatywa dla zakupu",
+            "text": "korzystaj z samochodu bez angażowania środków w zakup własnego pojazdu."
+          }
         ]
       },
       "whyVekaro": {
-        "title": "Dlaczego Vekaro?",
+        "title": "Dlaczego warto wybrać Vekaro?",
         "items": [
-          "Bez wpłaty wstępnej i bez zbędnych formalności.",
-          "Warunki i cena ustalane indywidualnie do Twojej sytuacji.",
-          "Zadbane, regularnie serwisowane samochody.",
-          "Tylko Warszawa, więc jesteśmy zawsze blisko i szybko reagujemy."
+          {
+            "lead": "Indywidualne warunki",
+            "text": "dopasujemy okres wynajmu i ofertę do Twoich potrzeb."
+          },
+          {
+            "lead": "Przejrzyste zasady",
+            "text": "poznaj warunki i koszty wynajmu przed podpisaniem umowy."
+          },
+          {
+            "lead": "Zadbane samochody",
+            "text": "korzystaj z regularnie serwisowanych pojazdów."
+          },
+          {
+            "lead": "Lokalna wypożyczalnia",
+            "text": "bezpośredni kontakt z naszym zespołem w Warszawie."
+          }
         ]
       },
       "howItWorks": {
-        "title": "Jak to działa?",
+        "title": "Jak wynająć samochód na dłużej?",
         "steps": [
-          "Zadzwoń lub napisz na WhatsApp/Telegram.",
-          "Omówimy okres wynajmu i ustalimy warunki dopasowane do Ciebie.",
-          "Odbierz samochód i korzystaj z niego przez cały okres najmu."
+          {
+            "title": "Skontaktuj się z nami",
+            "text": "Zadzwoń lub napisz, aby sprawdzić dostępność samochodów."
+          },
+          {
+            "title": "Ustal warunki wynajmu",
+            "text": "Wybierz auto, określ okres wynajmu i poznaj indywidualną ofertę."
+          },
+          {
+            "title": "Odbierz samochód",
+            "text": "Dopełnij formalności i korzystaj z auta przez uzgodniony okres."
+          }
         ]
       }
     },
-    "faq": {
-      "title": "Najczęściej zadawane pytania",
-      "items": [
-        {
-          "question": "Jaki jest minimalny okres wynajmu długoterminowego?",
-          "answer": "Wynajem długoterminowy zaczyna się od jednego miesiąca."
-        },
-        {
-          "question": "Czy cena jest stała, czy zależy od okresu?",
-          "answer": "Cena ustalana jest indywidualnie, w zależności od długości wynajmu i Twoich potrzeb. Zadzwoń, a przygotujemy dopasowaną ofertę."
-        },
-        {
-          "question": "Czy serwis i ubezpieczenie są wliczone?",
-          "answer": "Tak, bieżące utrzymanie samochodu jest po naszej stronie. Szczegóły omawiamy indywidualnie przy kontakcie."
-        },
-        {
-          "question": "Czy mogę wyjechać wynajętym autem za granicę?",
-          "answer": "Nie, nasze samochody można użytkować wyłącznie na terenie Polski."
-        }
-      ]
-    }
+    "extraFaq": [
+      {
+        "question": "Na jak długo można wynająć samochód w ramach wynajmu długoterminowego?",
+        "answer": "W Vekaro oferujemy wynajem długoterminowy samochodów w Warszawie na okres od jednego miesiąca. To rozwiązanie dla osób, które potrzebują auta do regularnego użytkowania, ale nie chcą kupować własnego samochodu. Szczegóły i długość wynajmu ustalamy indywidualnie."
+      },
+      {
+        "question": "Czy wynajem długoterminowy samochodu jest dostępny dla osób prywatnych?",
+        "answer": "Tak, z wynajmu długoterminowego w Vekaro mogą korzystać zarówno klienci indywidualni, jak i firmy. To wygodna opcja, jeśli potrzebujesz samochodu do codziennych dojazdów, pracy lub innych obowiązków. Pomożemy Ci wybrać pojazd dopasowany do Twoich potrzeb."
+      },
+      {
+        "question": "Czy mogę przedłużyć wynajem samochodu po zakończeniu umowy?",
+        "answer": "Jeśli chcesz korzystać z samochodu dłużej, skontaktuj się z naszym zespołem przed zakończeniem umowy. Sprawdzimy możliwość przedłużenia wynajmu i przedstawimy dostępne warunki. Wszystkie szczegóły uzgodnimy indywidualnie."
+      }
+    ]
   },
   "businessPage": {
+    "metadata": {
+      "title": "Wynajem samochodów dla firm Warszawa | Vekaro",
+      "description": "Wynajem samochodów dla firm w Warszawie. Auta dla przedsiębiorców, kurierów i dostawców. Elastyczne warunki i indywidualna oferta Vekaro."
+    },
     "hero": {
-      "title": "Wynajem samochodów dla firm i towarzystw ubezpieczeniowych",
-      "description": "Wynajmij samochód na firmę, nie jako osoba prywatna. Współpracujemy z firmami, towarzystwami ubezpieczeniowymi i przedsiębiorcami, którzy potrzebują dodatkowego pojazdu."
+      "title": "Wynajem samochodów dla firm w Warszawie",
+      "description": "Potrzebujesz samochodu do prowadzenia działalności? Vekaro oferuje wynajem aut dla firm, przedsiębiorców i osób pracujących w dostawach. Zapewniamy zadbane pojazdy oraz indywidualne warunki wynajmu dopasowane do potrzeb Twojego biznesu."
     },
     "seo": {
       "definition": {
-        "title": "Czym jest wynajem samochodu dla firm?",
-        "text": "To ta sama oferta co wynajem krótkoterminowy i długoterminowy, z jedną różnicą. Samochód wynajmujesz na firmę, a nie jako osoba prywatna. To rozwiązanie dla przedsiębiorców, firm ubezpieczeniowych oraz innych firm z branży wynajmu, które potrzebują dodatkowego pojazdu do swojej floty. Warunki współpracy ustalamy indywidualnie, podczas rozmowy z naszym przedstawicielem."
+        "title": "Na czym polega wynajem samochodów dla firm?",
+        "text": [
+          "Wynajem samochodów dla firm to rozwiązanie dla przedsiębiorców, którzy potrzebują pojazdów do codziennej pracy bez konieczności zakupu własnej floty. Samochód możesz wykorzystać do spotkań z klientami, realizacji usług lub działalności kurierskiej.",
+          "W Vekaro oferujemy wynajem samochodów dla firm w Warszawie na okres dopasowany do potrzeb działalności. Współpracujemy z przedsiębiorcami, firmami świadczącymi usługi dostawcze oraz towarzystwami ubezpieczeniowymi. Dostępność pojazdów, okres wynajmu i warunki współpracy ustalamy indywidualnie."
+        ]
       },
       "whoItsFor": {
-        "title": "Dla kogo jest ta oferta?",
+        "title": "Dla kogo jest wynajem samochodów dla firm?",
         "items": [
-          "Towarzystwa ubezpieczeniowe, które potrzebują samochodu zastępczego dla swoich klientów na czas naprawy.",
-          "Firmy wynajmu i inne przedsiębiorstwa, które potrzebują dodatkowego pojazdu do własnej floty.",
-          "Przedsiębiorcy, którzy chcą wynająć samochód na firmę zamiast prywatnie."
+          {
+            "lead": "Małe i średnie firmy",
+            "text": "samochody do codziennych obowiązków i spotkań biznesowych."
+          },
+          {
+            "lead": "Kurierzy i dostawcy",
+            "text": "pojazdy do realizacji dostaw i usług transportowych."
+          },
+          {
+            "lead": "Przedsiębiorcy",
+            "text": "możliwość korzystania z auta firmowego bez konieczności jego zakupu."
+          },
+          {
+            "lead": "Towarzystwa ubezpieczeniowe",
+            "text": "możliwość ustalenia współpracy w zakresie wynajmu samochodów zastępczych."
+          }
         ]
       },
       "whyVekaro": {
-        "title": "Dlaczego Vekaro?",
+        "title": "Dlaczego warto wybrać Vekaro?",
         "items": [
-          "Proste warunki współpracy, ustalane indywidualnie z naszym przedstawicielem.",
-          "Zadbane, regularnie serwisowane samochody.",
-          "Szybki kontakt telefoniczny, bez zbędnych formalności na starcie.",
-          "Tylko Warszawa, więc jesteśmy zawsze blisko i szybko reagujemy."
+          {
+            "lead": "Indywidualna oferta",
+            "text": "dopasujemy okres wynajmu i warunki do potrzeb Twojej firmy."
+          },
+          {
+            "lead": "Przejrzyste zasady",
+            "text": "poznaj koszty i szczegóły współpracy przed podpisaniem umowy."
+          },
+          {
+            "lead": "Zadbane samochody",
+            "text": "korzystaj z regularnie serwisowanych pojazdów."
+          },
+          {
+            "lead": "Lokalna obsługa",
+            "text": "bezpośredni kontakt z naszym zespołem w Warszawie."
+          }
         ]
       },
       "howItWorks": {
-        "title": "Jak wygląda współpraca?",
+        "title": "Jak wynająć samochód dla firmy?",
         "steps": [
-          "Zadzwoń lub napisz na WhatsApp/Telegram i opisz swoje potrzeby.",
-          "Nasz przedstawiciel omówi warunki i szczegóły umowy podczas spotkania.",
-          "Odbierz samochód i korzystaj z niego zgodnie z ustalonymi warunkami."
+          {
+            "title": "Opowiedz nam o swoich potrzebach",
+            "text": "Zadzwoń lub napisz i powiedz, jakiego samochodu potrzebuje Twoja firma."
+          },
+          {
+            "title": "Ustal warunki współpracy",
+            "text": "Sprawdzimy dostępność pojazdów i przedstawimy indywidualną ofertę wynajmu."
+          },
+          {
+            "title": "Odbierz samochód",
+            "text": "Dopełnij formalności i korzystaj z pojazdu zgodnie z ustalonymi warunkami."
+          }
         ]
       }
     },
-    "faq": {
-      "title": "Najczęściej zadawane pytania",
-      "items": [
+    "extraFaq": [
+      {
+        "question": "Czy Vekaro oferuje wynajem samochodów dla firm w Warszawie?",
+        "answer": "Tak, Vekaro oferuje wynajem samochodów dla firm działających w Warszawie. To rozwiązanie dla przedsiębiorców, którzy potrzebują pojazdów do codziennej pracy, spotkań z klientami lub realizacji usług. Warunki wynajmu dopasowujemy do potrzeb firmy."
+      },
+      {
+        "question": "Czy mogę wynająć samochód do pracy jako kurier lub dostawca?",
+        "answer": "Tak, oferujemy samochody dla osób i firm zajmujących się dostawami oraz usługami kurierskimi. Pomożemy dobrać pojazd odpowiedni do planowanego sposobu użytkowania. Dostępność samochodów i warunki wynajmu ustalamy indywidualnie."
+      },
+      {
+        "question": "Czy firma może wynająć kilka samochodów jednocześnie?",
+        "answer": "Jeśli Twoja firma potrzebuje więcej niż jednego samochodu, skontaktuj się z naszym zespołem. Sprawdzimy dostępność pojazdów i przygotujemy propozycję dopasowaną do liczby aut oraz planowanego okresu wynajmu."
+      }
+    ]
+  },
+  "privacyPage": {
+    "metadata": {
+      "title": "Polityka prywatności i plików cookies | Vekaro",
+      "description": "Dowiedz się, jakie dane zbiera strona Vekaro, w jakim celu i jakie masz prawa. Informacje o plikach cookies i Google Analytics."
+    },
+    "title": "Polityka prywatności i plików cookies",
+    "intro": "Ta strona informacyjna przedstawia ofertę wynajmu samochodów Vekaro w Warszawie. Dbamy o to, aby zbierać jak najmniej danych. Poniżej wyjaśniamy, jakie dane przetwarzamy, w jakim celu i jakie masz prawa.",
+    "sections": [
+      {
+        "title": "Kto jest administratorem Twoich danych",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Administratorem Twoich danych osobowych jest podmiot prowadzący tę stronę. W sprawach dotyczących danych osobowych możesz skontaktować się z nami telefonicznie: {phone}."
+          }
+        ]
+      },
+      {
+        "title": "Jakie dane przetwarzamy i w jakim celu",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Na tej stronie nie ma formularzy rezerwacji ani kont użytkowników. Umowy najmu zawieramy bezpośrednio z naszym przedstawicielem, a zasady przetwarzania danych w związku z umową przekazujemy osobno, przy jej zawarciu."
+          },
+          {
+            "type": "list",
+            "items": [
+              "Dane techniczne (logi serwera): adres IP, typ przeglądarki, data i godzina wejścia oraz odwiedzana podstrona. Cel: zapewnienie bezpieczeństwa i prawidłowego działania strony. Podstawa prawna: prawnie uzasadniony interes administratora (art. 6 ust. 1 lit. f RODO).",
+              "Niezbędne pliki cookies: zapamiętanie wybranego języka oraz Twojego wyboru dotyczącego zgody na cookies. Cel: prawidłowe działanie strony. Podstawa prawna: prawnie uzasadniony interes administratora (art. 6 ust. 1 lit. f RODO).",
+              "Dane analityczne (Google Analytics 4): informacje o tym, jak korzystasz ze strony, na przykład odwiedzane podstrony, źródło wejścia, rodzaj urządzenia i przybliżona lokalizacja. Cel: statystyki odwiedzin i ulepszanie strony. Podstawa prawna: Twoja zgoda (art. 6 ust. 1 lit. a RODO). Analityka uruchamia się dopiero po udzieleniu zgody.",
+              "Dane przekazane podczas kontaktu: gdy dzwonisz lub piszesz do nas na WhatsAppie, Telegramie lub Instagramie, przetwarzamy przekazane przez Ciebie dane, takie jak imię, numer telefonu i treść wiadomości. Cel: odpowiedź na zapytanie i przedstawienie oferty. Podstawa prawna: podjęcie działań na Twoje żądanie przed zawarciem umowy (art. 6 ust. 1 lit. b RODO) oraz prawnie uzasadniony interes administratora polegający na obsłudze zapytań (art. 6 ust. 1 lit. f RODO)."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Pliki cookies",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Pliki cookies to niewielkie pliki tekstowe zapisywane na Twoim urządzeniu. Korzystamy z niezbędnych plików cookies, potrzebnych do działania strony, oraz z analitycznych plików cookies, które zapisujemy dopiero po wyrażeniu przez Ciebie zgody. Zgodę możesz w każdej chwili zmienić lub wycofać, korzystając z linku „Ustawienia cookies” w stopce strony. Możesz też blokować lub usuwać pliki cookies w ustawieniach przeglądarki, jednak część funkcji strony może wtedy przestać działać."
+          },
+          {
+            "type": "cookieTable"
+          },
+          {
+            "type": "cookieSettings"
+          }
+        ]
+      },
+      {
+        "title": "Komu przekazujemy dane",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Twoje dane mogą być przetwarzane przez dostawcę usług hostingowych, który udostępnia nam serwer strony, oraz przez Google w zakresie analityki, wyłącznie po Twojej zgodzie. Jeśli kontaktujesz się z nami przez WhatsApp, Telegram lub Instagram, dane w ramach tych komunikatorów przetwarzają także ich dostawcy, na własnych zasadach opisanych w ich politykach prywatności. Niektórzy z tych dostawców mogą przekazywać dane poza Europejski Obszar Gospodarczy, w tym do Stanów Zjednoczonych. Odbywa się to na podstawie mechanizmów przewidzianych w RODO, takich jak decyzja Komisji Europejskiej o odpowiednim stopniu ochrony lub standardowe klauzule umowne. Nie sprzedajemy Twoich danych."
+          }
+        ]
+      },
+      {
+        "title": "Jak długo przechowujemy dane",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Logi serwera: przez okres wynikający z ustawień dostawcy hostingu, nie dłużej niż jest to konieczne do zapewnienia bezpieczeństwa strony.",
+              "Dane analityczne: zgodnie z ustawieniami przechowywania w naszym koncie Google Analytics, nie dłużej niż 14 miesięcy.",
+              "Wiadomości i dane przekazane podczas kontaktu: przez czas potrzebny do obsługi zapytania. Jeśli dojdzie do zawarcia umowy, dane przetwarzamy na zasadach przekazanych przy jej zawarciu.",
+              "Pliki cookies: przez okresy wskazane w tabeli powyżej."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Twoje prawa",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Masz prawo do:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "dostępu do swoich danych (art. 15 RODO),",
+              "sprostowania danych (art. 16 RODO),",
+              "usunięcia danych (art. 17 RODO),",
+              "ograniczenia przetwarzania (art. 18 RODO),",
+              "przenoszenia danych (art. 20 RODO),",
+              "sprzeciwu wobec przetwarzania opartego na prawnie uzasadnionym interesie (art. 21 RODO),",
+              "cofnięcia zgody w dowolnym momencie, bez wpływu na zgodność z prawem przetwarzania dokonanego przed jej cofnięciem (art. 7 ust. 3 RODO)."
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Aby skorzystać z tych praw, skontaktuj się z nami telefonicznie pod numerem {phone}. Masz też prawo wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych (ul. Stawki 2, 00-193 Warszawa)."
+          }
+        ]
+      },
+      {
+        "title": "Zautomatyzowane podejmowanie decyzji",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Nie podejmujemy wobec Ciebie decyzji w sposób zautomatyzowany, które wywoływałyby skutki prawne."
+          }
+        ]
+      },
+      {
+        "title": "Zmiany polityki",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Aktualną wersję tej polityki publikujemy na tej stronie wraz z datą ostatniej aktualizacji. Data ostatniej aktualizacji: {lastUpdated}."
+          }
+        ]
+      }
+    ],
+    "cookieTable": {
+      "headers": {
+        "name": "Nazwa",
+        "provider": "Dostawca",
+        "purpose": "Cel",
+        "retention": "Okres przechowywania"
+      },
+      "categories": [
         {
-          "question": "Jakie firmy mogą skorzystać z tej oferty?",
-          "answer": "Współpracujemy z firmami ubezpieczeniowymi, innymi firmami z branży wynajmu oraz przedsiębiorcami, którzy chcą wynająć samochód na firmę."
+          "title": "Niezbędne",
+          "rows": [
+            {
+              "name": "NEXT_LOCALE",
+              "provider": "Vekaro (ta strona)",
+              "purpose": "Zapamiętuje wybrany język strony.",
+              "retention": "Do końca sesji przeglądarki"
+            },
+            {
+              "name": "vekaro-cookie-consent",
+              "provider": "Vekaro (ta strona)",
+              "purpose": "Zapamiętuje Twój wybór dotyczący zgody na cookies. Zapisywany w pamięci lokalnej przeglądarki (localStorage), a nie jako plik cookie.",
+              "retention": "Do zmiany lub usunięcia przez użytkownika"
+            }
+          ]
         },
         {
-          "question": "Czy oferujecie samochody zastępcze dla towarzystw ubezpieczeniowych?",
-          "answer": "Tak, to jeden z głównych kierunków naszej współpracy z firmami ubezpieczeniowymi."
-        },
-        {
-          "question": "Jak wygląda proces podpisania umowy?",
-          "answer": "Szczegóły i warunki ustalamy indywidualnie podczas spotkania z naszym przedstawicielem. Zadzwoń, aby to umówić."
-        },
-        {
-          "question": "Czy mogę wynająć więcej niż jeden samochód?",
-          "answer": "Tak, obsługujemy zarówno pojedyncze zamówienia, jak i większą liczbę pojazdów. Skontaktuj się z nami, aby omówić szczegóły."
+          "title": "Statystyka",
+          "rows": [
+            {
+              "name": "_ga",
+              "provider": "Google (google-analytics.com)",
+              "purpose": "Rozróżnia użytkowników na potrzeby statystyk Google Analytics 4.",
+              "retention": "Do 2 lat"
+            },
+            {
+              "name": "_ga_*",
+              "provider": "Google (google-analytics.com)",
+              "purpose": "Przechowuje stan sesji na potrzeby statystyk Google Analytics 4.",
+              "retention": "Do 2 lat"
+            }
+          ]
         }
       ]
     }
@@ -210,16 +465,19 @@
     "label": "Ścieżka nawigacyjna"
   },
   "promo": {
-    "title": "Potrzebujesz auta już dziś?",
-    "subtitle": "Zadzwoń, a otrzymasz je w 10 minut",
+    "title": "Potrzebujesz samochodu w Warszawie?",
+    "subtitle": "Zadzwoń do nas, a pomożemy Ci wybrać auto i ustalić warunki wynajmu dopasowane do Twoich potrzeb.",
     "cta": "Zadzwoń teraz"
   },
   "about": {
-    "title": "O firmie",
-    "paragraph": "Vekaro działa na warszawskim rynku wynajmu samochodów od ponad 7 lat. Nasz zespół jest niewielki, ale zawsze dostępny. Nie obiecujemy pracy całą dobę, ale gdy pojawia się nietypowa sytuacja, szukamy rozwiązania, a nie odsyłamy klienta z niczym. Mamy własny serwis samochodowy z doświadczonymi mechanikami, dzięki czemu nasza flota jest zawsze w dobrym stanie technicznym.",
+    "title": "O Vekaro",
+    "paragraphs": [
+      "Vekaro to lokalna wypożyczalnia samochodów w Warszawie z ponad 7-letnim doświadczeniem. Oferujemy wynajem krótkoterminowy, długoterminowy oraz samochody dla firm, dopasowując warunki do indywidualnych potrzeb klientów.",
+      "Stawiamy na bezpośredni kontakt, przejrzyste zasady i praktyczne rozwiązania. Nasz zespół pomaga wybrać odpowiedni samochód i wspiera klientów na każdym etapie wynajmu. Dzięki własnemu serwisowi samochodowemu i doświadczonym mechanikom dbamy o regularną obsługę techniczną naszej floty."
+    ],
     "stats": [
-      "7+ lat na rynku",
-      "5000+ zadowolonych klientów",
+      "7+ lat doświadczenia",
+      "1000+ zadowolonych klientów",
       "Własny serwis samochodowy"
     ],
     "officePhotoAlt": "Nasze biuro"
@@ -245,19 +503,19 @@
     "items": [
       {
         "question": "Czy mogę wyjechać wynajętym autem za granicę?",
-        "answer": "Nie, nasze samochody można użytkować wyłącznie na terenie Polski."
+        "answer": "Nie, samochody wynajmowane w Vekaro mogą być użytkowane wyłącznie na terenie Polski. Możesz swobodnie podróżować po kraju, jednak wyjazdy za granicę nie są dozwolone. Jeśli planujesz dłuższą trasę, skontaktuj się z nami, aby omówić szczegóły wynajmu."
       },
       {
         "question": "Jak zarezerwować samochód?",
-        "answer": "Wystarczy zadzwonić lub napisać na WhatsApp/Telegram - nie ma rezerwacji online."
+        "answer": "Aby zarezerwować samochód w Vekaro, wystarczy skontaktować się z nami telefonicznie, przez WhatsApp lub Telegram. Nasz zespół pomoże Ci sprawdzić dostępność pojazdów, wybrać odpowiedni model oraz ustalić termin i warunki wynajmu. Obecnie rezerwacje przyjmujemy bezpośrednio, bez systemu rezerwacji online."
       },
       {
-        "question": "Jakie samochody macie dostępne?",
-        "answer": "Obecnie Fiat Tipo i Skoda Citigo, flotę sukcesywnie powiększamy."
+        "question": "Jakie samochody są dostępne w Vekaro?",
+        "answer": "Nasza flota obejmuje obecnie samochody Fiat Tipo oraz Skoda Citigo. Oferujemy pojazdy odpowiednie zarówno do codziennej jazdy po Warszawie, jak i podróży po Polsce. Stopniowo rozwijamy flotę, dlatego aktualną dostępność modeli najlepiej potwierdzić bezpośrednio z naszym zespołem."
       },
       {
-        "question": "Jaki jest minimalny okres wynajmu?",
-        "answer": "Wynajem krótkoterminowy zaczyna się od 24 godzin."
+        "question": "Jaki jest minimalny okres wynajmu samochodu?",
+        "answer": "Minimalny okres wynajmu krótkoterminowego w Vekaro wynosi 24 godziny. Możesz wynająć samochód na jeden dzień, weekend lub dłuższy okres, w zależności od swoich potrzeb. Oferujemy również wynajem długoterminowy oraz rozwiązania dla firm."
       }
     ]
   },
@@ -270,6 +528,7 @@
     },
     "legalTitle": "Informacje prawne",
     "privacyPolicy": "Polityka prywatności",
+    "cookieSettings": "Ustawienia cookies",
     "rights": "Wszelkie prawa zastrzeżone."
   },
   "cookies": {

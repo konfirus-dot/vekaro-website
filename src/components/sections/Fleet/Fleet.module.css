@@ -16,20 +16,6 @@
   color: #171717;
   border-radius: 16px;
   overflow: hidden;
-  transition:
-    transform 200ms ease,
-    box-shadow 200ms ease;
-}
-
-/* Card lifts on hover, settles a touch closer on press for a tactile feel. */
-.fleetCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(23, 23, 23, 0.12);
-}
-
-.fleetCard:active {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 12px rgba(23, 23, 23, 0.1);
 }
 
 .fleetTop {
@@ -40,7 +26,7 @@
 }
 
 .fleetName {
-  font-size: 1.125rem;
+  font-size: var(--font-h4);
   font-weight: 800;
 }
 
@@ -61,8 +47,20 @@
   margin-top: 4px;
 }
 
+/* Same hover language as the rental-type cards (RentalTypes.module.css):
+   the card itself stays put, the photo zooms in slightly on hover and eases
+   back a touch on press, and the CTA button turns brand orange. */
 .fleetImage {
   object-fit: contain;
+  transition: transform 300ms ease;
+}
+
+.fleetCard:hover .fleetImage {
+  transform: scale(1.06);
+}
+
+.fleetCard:active .fleetImage {
+  transform: scale(1.02);
 }
 
 .fleetArrow {
@@ -71,6 +69,16 @@
   background: #ffffff;
   border-color: #171717;
   color: #171717;
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    color 150ms ease;
+}
+
+.fleetArrow:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #171008;
 }
 
 /* Desktop: all 4 cards in a single row, full width. */

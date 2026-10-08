@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { BusinessRentalPage } from "@/components/sections/ServiceDetail/BusinessRentalPage";
+import { PrivacyPolicyPage } from "@/components/sections/PrivacyPolicy/PrivacyPolicyPage";
 import { generateServicePageMetadata } from "@/lib/servicePageMetadata";
 import type { Locale } from "@/i18n/routing";
 
-const PATH = "/services/business";
+const PATH = "/privacy-policy";
 
 export async function generateMetadata({
   params,
@@ -12,12 +12,11 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale: locale as Locale, namespace: "businessPage" });
-  // SEO title/description are kept separate from the visible Hero copy.
+  const t = await getTranslations({ locale: locale as Locale, namespace: "privacyPage" });
   return generateServicePageMetadata(locale, PATH, t("metadata.title"), t("metadata.description"));
 }
 
-export default async function BusinessServicePage({
+export default async function PrivacyPolicyRoute({
   params,
 }: {
   params: Promise<{ locale: string }>;
@@ -25,5 +24,5 @@ export default async function BusinessServicePage({
   const { locale } = await params;
   setRequestLocale(locale as Locale);
 
-  return <BusinessRentalPage locale={locale as Locale} />;
+  return <PrivacyPolicyPage locale={locale as Locale} />;
 }

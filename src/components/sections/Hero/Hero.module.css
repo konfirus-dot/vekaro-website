@@ -6,8 +6,11 @@
      section, and with it the whole page, wider than the viewport on narrow
      screens. That was causing horizontal overflow on mobile: the sticky
      Header (full page width) would then visibly shift/slide sideways when
-     panning, since the page had become scrollable in the X direction. */
-  overflow: hidden;
+     panning, since the page had become scrollable in the X direction.
+     Only the X axis is clipped (`clip`, unlike `hidden`, leaves Y visible),
+     so the Hero's "Book now" popover can extend below the section; the
+     glow's vertical bleed is fully transparent past the image box anyway. */
+  overflow-x: clip;
 }
 
 /* Mobile/tablet: stacked (text, then image). */
@@ -24,12 +27,20 @@
 }
 
 .title {
-  font-size: 2rem;
+  font-size: var(--font-h1);
   line-height: 1.15;
 }
 
+.titleAccent {
+  color: var(--accent);
+}
+
+/* The description is a full paragraph now, so it gets reading line-height
+   and a cap on line length so it doesn't stretch to the full column. */
 .subtitle {
+  max-width: 68ch;
   font-size: 1rem;
+  line-height: 1.6;
   opacity: 0.8;
 }
 
@@ -68,12 +79,18 @@
     gap: 64px;
   }
 
-  .text,
+  /* Text column gets 1.25x the image's share: at 1:1 (~570px) the Polish
+     headline broke into 5 lines; at ~630px it fits in 3 in every language,
+     and the car stays large. */
+  .text {
+    flex: 1.25;
+  }
+
   .imageWrap {
     flex: 1;
   }
 
-  .title {
-    font-size: 3rem;
+  .subtitle {
+    font-size: 1.0625rem;
   }
 }

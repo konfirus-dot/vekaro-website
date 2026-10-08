@@ -1,8 +1,7 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/Container/Container";
-import { Button } from "@/components/ui/Button/Button";
-import { PHONE_HREF } from "@/lib/constants";
+import { BookMenu } from "@/components/layout/Header/BookMenu";
 import styles from "./Hero.module.css";
 
 // TODO: this is a temporary stand-in (not a Vekaro fleet car) — replace with a real
@@ -14,11 +13,12 @@ export function Hero() {
     <section className={`${styles.hero} theme-dark`}>
       <Container className={styles.inner}>
         <div className={styles.text}>
-          <h1 className={styles.title}>{t("title")}</h1>
+          {/* One <h1> for SEO; the second sentence is just tinted accent. */}
+          <h1 className={styles.title}>
+            {t("title")} <span className={styles.titleAccent}>{t("titleAccent")}</span>
+          </h1>
           <p className={styles.subtitle}>{t("subtitle")}</p>
-          <Button href={PHONE_HREF} block>
-            {t("cta")}
-          </Button>
+          <BookMenu size="large" align="left" />
         </div>
 
         <div className={styles.imageWrap}>

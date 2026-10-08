@@ -1,24 +1,8 @@
 "use client";
 
+import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 import styles from "./Faq.module.css";
-
-function ChevronIcon({ open }: { open: boolean }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      width="18"
-      height="18"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      aria-hidden="true"
-      className={open ? styles.chevronOpen : styles.chevron}
-    >
-      <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
 
 type FaqItem = { question: string; answer: string };
 
@@ -40,7 +24,12 @@ export function Faq({ items }: { items: FaqItem[] }) {
                 onClick={() => setOpenIndex(isOpen ? null : index)}
               >
                 <span>{item.question}</span>
-                <ChevronIcon open={isOpen} />
+                <ChevronDown
+                  size={18}
+                  strokeWidth={1.8}
+                  aria-hidden="true"
+                  className={isOpen ? styles.chevronOpen : styles.chevron}
+                />
               </button>
             </h4>
             <div

@@ -1,5 +1,5 @@
 .section {
-  padding-block: 40px;
+  padding-block: var(--space-section);
 }
 
 /* Mobile/tablet: contact info stacked above the map. */
@@ -10,8 +10,8 @@
 }
 
 .title {
-  margin-bottom: 8px;
-  font-size: 2rem;
+  margin-bottom: var(--space-heading);
+  font-size: var(--font-h2);
   line-height: 1.15;
 }
 
@@ -42,6 +42,7 @@
 .faqTitle {
   margin-bottom: 8px;
   font-weight: 700;
+  font-size: var(--font-h3);
 }
 
 /* Desktop: info and FAQ side by side. */
@@ -55,9 +56,5 @@
   .info,
   .faqWrap {
     flex: 1;
-  }
-
-  .title {
-    font-size: 3rem;
   }
 }

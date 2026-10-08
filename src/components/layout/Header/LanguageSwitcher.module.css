@@ -2,25 +2,54 @@
   position: relative;
 }
 
+/* Borderless ghost trigger — deliberately unlike the filled accent "book"
+   button next to it in the header, so it reads as a selector rather than
+   another contact action. Same 34px height keeps the row aligned. */
 .trigger {
-  composes: iconButton from "../../ui/IconButton/IconButton.module.css";
-  background: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 34px;
+  padding: 0 8px 0 12px;
+  background: transparent;
   border: none;
-  color: #ffffff;
+  border-radius: 6px;
+  color: var(--foreground);
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
   cursor: pointer;
   transition:
-    transform 150ms ease,
-    filter 150ms ease;
+    background-color 150ms ease;
 }
 
-.trigger:hover:not(:disabled) {
-  transform: scale(1.08);
-  filter: brightness(1.1);
+.trigger:hover:not(:disabled),
+.trigger[aria-expanded="true"] {
+  background: rgba(237, 237, 237, 0.08);
 }
 
+/* Press dims back below the hover tint — mirrors BookMenu's darker press. */
 .trigger:active:not(:disabled) {
-  transform: scale(0.92);
-  filter: brightness(0.95);
+  background: rgba(237, 237, 237, 0.02);
+}
+
+.chevron {
+  display: inline-flex;
+  transition: transform 150ms ease;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+/* Opening upward (footer), the chevron points the way the list opens. */
+.root:has(.dropdownUp) .chevron {
+  transform: rotate(180deg);
+}
+
+.root:has(.dropdownUp) .chevronOpen {
+  transform: rotate(0deg);
 }
 
 .trigger:disabled {
@@ -31,20 +60,63 @@
   opacity: 0.5;
 }
 
+/* Same look as the header's "Oferta" dropdown (.servicesDropdownInner in
+   Header.module.css): faint border, soft shadow, 180ms fade/slide-in. Kept
+   to the trigger's width, so inner padding is tighter than Oferta's. */
 .dropdown {
   position: absolute;
   top: calc(100% + 8px);
+  left: 0;
   right: 0;
   z-index: 10;
   display: flex;
   flex-direction: column;
   gap: 2px;
-  min-width: 72px;
+  margin: 0;
   padding: 4px;
   list-style: none;
   background: var(--background);
-  border: 1px solid var(--foreground);
-  border-radius: 8px;
+  border: 1px solid rgba(237, 237, 237, 0.15);
+  border-radius: 12px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  animation: dropdownIn 180ms ease;
+}
+
+@keyframes dropdownIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes dropdownUpIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dropdown {
+    animation: none;
+  }
+}
+
+/* Invisible bridge over the 8px gap between trigger and list, so moving the
+   mouse from one to the other never leaves .root and closes a hover-opened
+   list. */
+.dropdown::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 10px;
+}
+
+.dropdown.dropdownUp::before {
+  top: auto;
+  bottom: -10px;
 }
 
 /* Opens upward instead of downward — for triggers near the bottom of the
@@ -54,55 +126,43 @@
 .dropdown.dropdownUp {
   top: auto;
   bottom: calc(100% + 8px);
+  box-shadow: 0 -12px 24px rgba(0, 0, 0, 0.3);
+  animation-name: dropdownUpIn;
 }
 
-/* Opens rightward instead of leftward — for the footer trigger, which sits
-   near the left edge of the viewport on mobile (stacked bottom bar,
-   left-aligned) where anchoring by the right edge pushes the dropdown half
-   off-screen to the left. At 1024px+ the footer's bottom bar switches to a
-   row with the trigger on the *right* (same position as the header one),
-   so this flips back to the default right-anchored behavior there. */
-.dropdown.dropdownAlignLeft {
-  right: auto;
-  left: 0;
-}
-
-@media (min-width: 1024px) {
-  .dropdown.dropdownAlignLeft {
-    left: auto;
-    right: 0;
-  }
-}
-
+/* Mirrors .servicesDropdownLink: dimmed text that turns accent on hover.
+   The current language is marked in accent too, like the scrollspy-active
+   nav link. */
 .option {
   width: 100%;
-  padding: 6px 12px;
+  padding: 8px;
   background: transparent;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   color: var(--foreground);
+  opacity: 0.85;
   font-family: inherit;
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   font-weight: 600;
   text-align: left;
   cursor: pointer;
-  transition: background-color 150ms ease;
+  transition:
+    opacity 150ms ease,
+    color 150ms ease,
+    background-color 150ms ease;
 }
 
 .option:hover {
-  background: rgba(237, 237, 237, 0.4);
+  opacity: 1;
+  color: var(--accent);
+  background: rgba(237, 237, 237, 0.08);
 }
 
 .option:active {
-  background: rgba(237, 237, 237, 0.6);
+  opacity: 0.7;
 }
 
 .active {
-  background: var(--foreground);
-  color: var(--background);
-}
-
-.active:hover {
-  background: var(--foreground);
-  opacity: 0.85;
+  opacity: 1;
+  color: var(--accent);
 }

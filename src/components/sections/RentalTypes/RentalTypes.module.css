@@ -26,39 +26,70 @@
   transform: scale(1.02);
 }
 
-/* Dark gradient so the title/text stay legible over any part of the photo. */
+/* Content sits at the bottom of the card, so the gradient runs bottom-up:
+   dark behind the title/text/button, fading out by ~60% of the card height
+   so the top of the photo stays clear. The soft text-shadow on .cardCopy
+   covers brighter spots in the photo. */
 .cardOverlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.88) 0%,
-    rgba(0, 0, 0, 0.75) 22%,
-    rgba(0, 0, 0, 0.25) 45%,
-    rgba(0, 0, 0, 0) 62%
+    to top,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.65) 30%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0) 60%
   );
 }
 
+.cardCopy {
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.45);
+}
+
+/* Fills the card and pushes its content to the bottom; all cards share the
+   same height and bottom padding, so their buttons line up on desktop
+   without any fixed heights. */
 .cardContent {
   position: relative;
   z-index: 1;
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   align-items: flex-start;
-  gap: 12px;
   height: 100%;
   padding: 28px 24px;
 }
 
 .cardTitle {
-  font-size: 1.375rem;
+  margin-bottom: 16px;
+  color: #ffffff;
+  font-size: var(--font-h3);
   font-weight: 800;
   line-height: 1.15;
 }
 
 .cardText {
+  margin-bottom: 24px;
+  color: rgba(255, 255, 255, 0.85);
   font-size: 0.95rem;
-  opacity: 0.9;
+}
+
+/* Solid white pill instead of the outline Button look; turns brand orange
+   on hover. `.card` prefix outranks Button.module.css's own :hover and
+   variant rules regardless of stylesheet order. Dark text in every state:
+   it reads well on both white and the orange (same pairing as SloganBanner). */
+.card .cardButton {
+  gap: 8px;
+  padding: 14px 20px;
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #171008;
+}
+
+.card .cardButton:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #171008;
 }
 
 /* Desktop: exactly 3 large cards in a row. */
@@ -67,10 +98,6 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
-  }
-
-  .cardTitle {
-    font-size: 1.75rem;
   }
 
   .cardContent {

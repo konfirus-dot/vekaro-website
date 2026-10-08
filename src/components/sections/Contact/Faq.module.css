@@ -26,7 +26,7 @@
   border: none;
   color: inherit;
   font-family: inherit;
-  font-size: 0.95rem;
+  font-size: var(--font-h4);
   font-weight: 600;
   text-align: left;
   cursor: pointer;
@@ -38,9 +38,13 @@
   color: var(--accent);
 }
 
+/* Sized relative to the question text (1.2x its font-size, the original
+   ratio), so the arrow follows --font-h4: 22px mobile / 24px desktop. */
 .chevron,
 .chevronOpen {
   flex-shrink: 0;
+  width: 1.2em;
+  height: 1.2em;
   transition: transform 200ms ease;
 }
 

@@ -1,45 +1,38 @@
 "use client";
 
+import { ChevronDown } from "lucide-react";
 import { useEffect, useRef, useState, useTransition } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { routing, type Locale } from "@/i18n/routing";
 import styles from "./LanguageSwitcher.module.css";
 
-function GlobeIcon() {
-  return (
-    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-      <circle cx="12" cy="12" r="9" />
-      <path
-        d="M3 12h18M12 3c2.5 2.4 3.8 5.6 3.8 9s-1.3 6.6-3.8 9c-2.5-2.4-3.8-5.6-3.8-9S9.5 5.4 12 3Z"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
+// Display labels differ from locale codes: Ukrainian's ISO 639-1 code is
+// "uk", but visitors expect the country-style "UA".
+const LOCALE_LABELS: Record<Locale, string> = {
+  pl: "PL",
+  en: "EN",
+  uk: "UA",
+};
 
 type LanguageSwitcherProps = {
   // "up" opens the dropdown above the trigger instead of below it — needed
   // for instances near the bottom of the viewport (e.g. the footer copy),
   // where a downward dropdown would overflow off-screen.
   direction?: "down" | "up";
-  // "left" anchors the dropdown's left edge to the trigger (opens rightward)
-  // instead of the default right edge (opens leftward). The footer trigger
-  // sits near the left edge of the screen on mobile (stacked, left-aligned
-  // bottom bar) — opening leftward from there pushes half the dropdown off
-  // screen, so the footer instance uses "left" here too.
-  align?: "left" | "right";
 };
 
-export function LanguageSwitcher({ direction = "down", align = "right" }: LanguageSwitcherProps) {
+export function LanguageSwitcher({ direction = "down" }: LanguageSwitcherProps) {
   const t = useTranslations("nav");
-  const locale = useLocale();
+  const locale = useLocale() as Locale;
   const pathname = usePathname();
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
   const [isOpen, setIsOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
+  // True while the mouse is over the switcher and opened it, so a click on the
+  // trigger in that state doesn't toggle the list shut under the cursor.
+  const openedByHoverRef = useRef(false);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -54,7 +47,29 @@ export function LanguageSwitcher({ direction = "down", align = "right" }: Langua
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isOpen]);
 
+  // Hover-to-open is for real mouse pointers only; touch devices fire
+  // emulated mouseenter on tap, which would fight the click toggle.
+  const canHover = () => window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+  const handleMouseEnter = () => {
+    if (!canHover() || isOpen) return;
+    openedByHoverRef.current = true;
+    setIsOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    if (!canHover()) return;
+    openedByHoverRef.current = false;
+    setIsOpen(false);
+  };
+
+  const handleTriggerClick = () => {
+    if (openedByHoverRef.current) return;
+    setIsOpen((v) => !v);
+  };
+
   const handleChange = (loc: Locale) => {
+    openedByHoverRef.current = false;
     setIsOpen(false);
     if (loc === locale) return;
     startTransition(() => {
@@ -63,17 +78,25 @@ export function LanguageSwitcher({ direction = "down", align = "right" }: Langua
   };
 
   return (
-    <div className={styles.root} ref={rootRef}>
+    <div
+      className={styles.root}
+      ref={rootRef}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <button
         type="button"
         className={isPending ? `${styles.trigger} ${styles.pending}` : styles.trigger}
         aria-haspopup="listbox"
         aria-expanded={isOpen}
-        aria-label={`${t("language")}: ${locale.toUpperCase()}`}
+        aria-label={`${t("language")}: ${LOCALE_LABELS[locale]}`}
         disabled={isPending}
-        onClick={() => setIsOpen((v) => !v)}
+        onClick={handleTriggerClick}
       >
-        <GlobeIcon />
+        <span>{LOCALE_LABELS[locale]}</span>
+        <span className={isOpen ? `${styles.chevron} ${styles.chevronOpen}` : styles.chevron}>
+          <ChevronDown size={14} strokeWidth={2} aria-hidden="true" />
+        </span>
       </button>
 
       {isOpen && (
@@ -81,7 +104,6 @@ export function LanguageSwitcher({ direction = "down", align = "right" }: Langua
           className={[
             styles.dropdown,
             direction === "up" ? styles.dropdownUp : "",
-            align === "left" ? styles.dropdownAlignLeft : "",
           ]
             .filter(Boolean)
             .join(" ")}
@@ -96,7 +118,7 @@ export function LanguageSwitcher({ direction = "down", align = "right" }: Langua
                 aria-selected={loc === locale}
                 onClick={() => handleChange(loc)}
               >
-                {loc.toUpperCase()}
+                {LOCALE_LABELS[loc]}
               </button>
             </li>
           ))}

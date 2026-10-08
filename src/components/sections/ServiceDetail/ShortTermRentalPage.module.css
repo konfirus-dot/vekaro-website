@@ -1,10 +1,10 @@
 .hero {
-  padding-block: 40px;
+  padding-block: var(--space-section);
 }
 
 .title {
   margin-bottom: 16px;
-  font-size: 2.25rem;
+  font-size: var(--font-h1);
   line-height: 1.15;
 }
 
@@ -16,7 +16,7 @@
 }
 
 .fleetSection {
-  padding-bottom: 40px;
+  padding-bottom: var(--space-section);
 }
 
 .fleetGrid {
@@ -26,7 +26,7 @@
 }
 
 .seoSection {
-  padding-block: 40px;
+  padding-block: var(--space-section);
   border-top: 1px solid rgba(23, 23, 23, 0.08);
 }
 
@@ -36,26 +36,9 @@
   gap: 40px;
 }
 
-.pairedBlocks {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.pairedCard {
-  padding: 28px;
-  background: #f2f1ee;
-  border-radius: 20px;
-}
-
-.pairedCard .seoTitle {
-  font-size: 1.5rem;
-  margin-bottom: 16px;
-}
-
 .seoTitle {
-  margin-bottom: 16px;
-  font-size: 2rem;
+  margin-bottom: var(--space-heading);
+  font-size: var(--font-h2);
   line-height: 1.15;
 }
 
@@ -65,71 +48,19 @@
   opacity: 0.85;
 }
 
-.list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding-left: 20px;
-  font-size: 1rem;
-  opacity: 0.85;
-}
-
-.list li::marker {
-  color: var(--accent);
-}
-
-.steps {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  list-style: none;
-  counter-reset: step;
-}
-
-.steps li {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  font-size: 1rem;
-  opacity: 0.85;
-  counter-increment: step;
-}
-
-.steps li::before {
-  content: counter(step);
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: var(--accent);
-  color: #ffffff;
-  font-size: 0.9rem;
-  font-weight: 700;
+/* Multi-paragraph SEO text (definition block): space between paragraphs. */
+.seoText + .seoText {
+  margin-top: 16px;
 }
 
 .faqSection {
-  padding-block: 40px;
+  padding-block: var(--space-section);
   border-top: 1px solid rgba(23, 23, 23, 0.08);
 }
 
 @media (min-width: 1024px) {
-  .hero {
-    padding-block: 64px;
-  }
-
-  .title {
-    font-size: 3.5rem;
-  }
-
   .description {
     font-size: 1.125rem;
-  }
-
-  .fleetSection {
-    padding-bottom: 64px;
   }
 
   .fleetGrid {
@@ -138,38 +69,7 @@
     gap: 24px;
   }
 
-  .seoSection {
-    padding-block: 64px;
-  }
-
-  .pairedBlocks {
-    flex-direction: row;
-    gap: 24px;
-  }
-
-  .pairedBlocks > div {
-    flex: 1;
-  }
-
-  .pairedCard {
-    padding: 40px;
-  }
-
-  .pairedCard .seoTitle {
-    font-size: 1.75rem;
-  }
-
-  .seoTitle {
-    font-size: 3rem;
-  }
-
-  .seoText,
-  .list,
-  .steps li {
+  .seoText {
     font-size: 1.125rem;
-  }
-
-  .faqSection {
-    padding-block: 64px;
   }
 }

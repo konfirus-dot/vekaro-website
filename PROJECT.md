@@ -37,7 +37,11 @@
 
 - NIP поки не вказуємо (уточнюється з клієнтом)
 - Без REGON
-- Потрібна сторінка Polityka prywatności (Політика приватності)
+- Сторінка Polityka prywatności створена: `/privacy-policy` (PL/EN/UK), див. TODO нижче
+- **Свідоме рішення:** сайт демо, без зареєстрованої юридичної компанії. На сайті (зокрема в політиці
+  приватності) НЕ показуємо назву компанії, юридичну адресу чи email щодо даних; єдиний публічний
+  контакт: телефон +48 789 085 345. Адміністратор у політиці описаний як "podmiot prowadzący tę stronę".
+  Не додавати назад плейсхолдери `[TODO: назва фірми / адреса / email]`
 
 ---
 
@@ -215,6 +219,7 @@
 - [x] Структура папок під компоненти (Header, Footer, Hero, картки напрямків тощо)
 - [x] Базове SEO — metadata API, sitemap.ts, robots.ts, hreflang, семантична ієрархія заголовків, Analytics-заглушка, Schema.org LocalBusiness (AutoRental) JSON-LD
 - [x] Сторінки послуг `/services/{short-term,long-term,business}` — SEO (title/description/hreflang/canonical, sitemap 12 URL); усі три наповнені повним контентом (hero + автопарк + SEO-блок + FAQ)
+- [x] Сторінка політики приватності і cookies `/privacy-policy` (PL/EN/UK): тексти в `messages/*.json` → `privacyPage`, таблиця cookies, кнопка "Ustawienia cookies" у футері та на сторінці (повторно відкриває `CookieBanner`), sitemap + canonical/hreflang
 - [x] README.md з інструкцією запуску
 - [x] .env.example
 - [x] GitHub — https://github.com/konfirus-dot/vekaro-website
@@ -233,6 +238,34 @@
 Усі інші компоненти самі нічого не знають про тему — просто використовують `var(--foreground)`/
 `var(--background)`, тож автоматично підхоплюють правильні кольори залежно від того, в якій секції
 опинились.
+
+### Типографіка і відступи (дизайн-токени)
+
+Єдина шкала розмірів у `src/app/[locale]/globals.css` (`:root`, десктопні значення в
+`@media (min-width: 1024px)`, тож компонентам не треба власних брейкпоінтів для цих властивостей).
+Зібрана з того, що вже переважало на сайті:
+
+| Токен | Роль | Моб. | Деск. |
+|---|---|---|---|
+| `--font-display` | заголовок SloganBanner | 1.75rem | 3.5rem |
+| `--font-h1` | заголовок сторінки (Hero, сторінки послуг, privacy) | 2.25rem | 3.5rem |
+| `--font-h2` | заголовок секції (Services, Why Vekaro, About, Contact, PromoBanner, SEO-блоки послуг) | 2rem | 3rem |
+| `--font-h3` | заголовок картки/підсекції (картки послуг, "Nasza flota", картки на сторінках послуг, секції privacy, FAQ-заголовок у Contact) | 1.5rem | 1.75rem |
+| `--font-h4` | назва авто у FleetCard, питання FAQ | 1.125rem | 1.25rem |
+| `--font-label` | лейбли переваг у "Why Vekaro" | 0.875rem | 0.875rem |
+| `--font-body` | основний текст (поки що токен лише визначений, див. нижче) | 1rem | 1.125rem |
+| `--space-section` | `padding-block` секцій | 40px | 64px |
+| `--space-heading` | заголовок секції -> контент | 24px | 32px |
+
+- Заголовки беруть токен за роллю, а не лише за тегом: `<h2>` у картці або в юридичному тексті
+  використовує `--font-h3`.
+- Винятки: Hero `padding-block` 40/80px; дрібні розміри UI-елементів (хедер, футер, кнопки,
+  BookMenu, LanguageSwitcher, CookieBanner, Breadcrumbs); таблиця на сторінці privacy.
+- Перевірка: Claude Code агент `design-audit` (`.claude/agents/design-audit.md`) і Cursor-правило
+  `.cursor/rules/design-tokens.mdc`.
+- **Ще не уніфіковано:** розміри основного тексту/описів (0.9-1.0625rem у різних секціях) і
+  внутрішні відступи About (`gap: 20px` між заголовком і текстом). Агент показує їх окремим
+  списком "варто вирішити".
 
 ### Header при скролі (sticky + блюр)
 
@@ -516,7 +549,6 @@ production-білд на Vercel (`TypeError: Invalid URL`), коли значе�
 
 ### TODO / потребує реальних даних
 
-- `src/lib/constants.ts` — `TELEGRAM_HREF` і `INSTAGRAM_HREF` зараз `"#"` (реальні хендли/посилання не надані)
 - `src/lib/constants.ts` → `SITE_URL` — падає на `localhost:3000`, доки не буде обрано продакшн-домен (env `NEXT_PUBLIC_SITE_URL`)
 - **Перед фінальним запуском на постійному домені прибрати/змінити `NEXT_PUBLIC_SITE_ENV` на
   `production`** у налаштуваннях Vercel — інакше сайт лишиться з `noindex`/`Disallow: /` (див.
@@ -529,7 +561,7 @@ production-білд на Vercel (`TypeError: Invalid URL`), коли значе�
   ще немає — **замінити на колір з фінальної дизайн-системи Figma**, коли вона буде готова
 - `LocalBusinessJsonLd` → `openingHoursSpecification` — припущено "щодня 8:00–18:00" (дні тижня не уточнювались), перевірити з клієнтом
 - `LocalBusinessJsonLd` → адреса зараз лише `Warszawa, PL` без вулиці (юридична адреса ще не надана, як і NIP)
-- `CookieBanner` — UI-заглушка згоди на cookies (accept/reject + localStorage), без реального підключення Google Consent Mode v2 / GA4 — це окремий крок
+- `CookieBanner` — UI-заглушка згоди на cookies (accept/reject + localStorage), без реального підключення Google Consent Mode v2 / GA4 — це окремий крок. Банер можна відкрити повторно подією `vekaro-cookie-settings-open` (кнопки "Ustawienia cookies", `src/components/ui/CookieBanner/cookieSettings.ts`); при підключенні GA4 відкликання згоди теж має оновлювати consent-стан
 - `src/components/Analytics/Analytics.tsx` — заглушка, що нічого не рендерить; чекає на реальний GA4 Measurement ID від клієнта (деталі підключення — у TODO-коментарі файлу)
 - `public/images/hero-car-placeholder.png` — тимчасове фото в Hero (не Fiat Tipo/Skoda Citigo,
   походження невідоме, можливе авторське право виробника) — **замінити на реальне фото автопарку
@@ -576,9 +608,23 @@ production-білд на Vercel (`TypeError: Invalid URL`), коли значе�
   `public/images/office-photo-placeholder.jpg` (16px border-radius, той самий, що й у `FleetCard`/
   `PromoBanner`/`RentalTypeCard`) — **як і решта фото на сайті, це тимчасове стокове зображення (не
   реальний офіс Vekaro) — замінити перед запуском**
-  - **Уточнити з клієнтом точну цифру клієнтів (5000+) перед публікацією** — зараз орієнтовне число,
-    не підтверджене клієнтом
-- `/privacy-policy` — посилання у Footer веде на ще не створену сторінку
+  - Кількість клієнтів у бейджі тепер **1000+** (з брифу оновлення секції "O Vekaro"; раніше було
+    орієнтовне 5000+). Опис секції тепер два абзаци (`about.paragraphs`)
+- **Політика приватності (`/privacy-policy`)** — сторінка створена, перед запуском:
+  - у GA4 виставити збереження даних на 14 місяців, коли аналітику буде підключено
+  - звірити таблицю cookies (`privacyPage.cookieTable` у `messages/*.json`) з реальним станом перед
+    запуском: рядки `_ga`/`_ga_*` показані заздалегідь, хоча GA4 ще не підключений; `NEXT_LOCALE`
+    (next-intl) зараз сесійний cookie; згода зберігається в localStorage (`vekaro-cookie-consent`), не в cookie
+  - вказати конкретного хостинг-провайдера в тексті, коли визначимось (зараз Vercel для прев'ю, потім
+    SEOHOST.pl), і за потреби оновити секцію "Komu przekazujemy dane" (усі три мови)
+  - якщо з'явиться форма зворотного дзвінка, Google Ads, Meta Pixel чи інші сервіси, оновити політику
+  - текст не є юридичною консультацією, перед запуском його має переглянути юрист або бухгалтер клієнта
+  - оновлювати `PRIVACY_POLICY_LAST_UPDATED` (`src/lib/constants.ts`) при кожній зміні тексту
+  - **PL-текст частково дописаний редакційно:** у брифі обрізались кінець 4-го пункту секції
+    "Jakie dane przetwarzamy" ("Dane przekazane podczas kontaktu…") і абзац секції "Pliki cookies";
+    обидва фрагменти перекладені з EN-версії, звірити з оригіналом брифу
+  - таблиця cookies (назви, постачальники, призначення, строки) складена за кодом проєкту, а не
+    надана в брифі; переклади цих рядків теж редакційні
 - `/services/short-term`, `/services/long-term`, `/services/business` — SEO-текстові блоки й FAQ на
   всіх трьох написані редакційно (не від клієнта) як розумна заготовка на основі відомих фактів про
   бізнес; варто дати клієнту на звірку/затвердження перед запуском, особливо маркетингові твердження

@@ -1,7 +1,10 @@
+import { MapPin } from "lucide-react";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/Container/Container";
 import { LanguageSwitcher } from "@/components/layout/Header/LanguageSwitcher";
+import { CookieSettingsButton } from "@/components/ui/CookieBanner/CookieSettingsButton";
 import {
   PHONE_DISPLAY,
   PHONE_HREF,
@@ -10,46 +13,6 @@ import {
   INSTAGRAM_HREF,
 } from "@/lib/constants";
 import styles from "./Footer.module.css";
-
-function MapPinIcon() {
-  return (
-    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-      <path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12Z" strokeLinecap="round" strokeLinejoin="round" />
-      <circle cx="12" cy="9" r="2.3" />
-    </svg>
-  );
-}
-
-function WhatsAppIcon() {
-  return (
-    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-      <path
-        d="M4 12a8 8 0 1 1 3.2 6.4L4 20l1.2-3.6A7.96 7.96 0 0 1 4 12Z"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function TelegramIcon() {
-  return (
-    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-      <path d="M22 2 11 13" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M22 2 15 22l-4-9-9-4 20-7Z" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-function InstagramIcon() {
-  return (
-    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-      <rect x="3" y="3" width="18" height="18" rx="5" />
-      <circle cx="12" cy="12" r="4.2" />
-      <circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none" />
-    </svg>
-  );
-}
 
 export function Footer() {
   const tNav = useTranslations("nav");
@@ -67,7 +30,7 @@ export function Footer() {
             {PHONE_DISPLAY}
           </a>
           <span className={styles.location}>
-            <MapPinIcon />
+            <MapPin size={14} strokeWidth={1.8} aria-hidden="true" />
             {tFooter("location")}
           </span>
 
@@ -79,7 +42,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <WhatsAppIcon />
+              <Image src="/icons/whatsapp.svg" alt="" width={34} height={34} />
             </a>
             <a
               href={TELEGRAM_HREF}
@@ -88,7 +51,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <TelegramIcon />
+              <Image src="/icons/telegram.svg" alt="" width={34} height={34} />
             </a>
             <a
               href={INSTAGRAM_HREF}
@@ -97,7 +60,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <InstagramIcon />
+              <Image src="/icons/instagram.svg" alt="" width={34} height={34} />
             </a>
           </div>
         </div>
@@ -134,10 +97,13 @@ export function Footer() {
       </Container>
 
       <Container className={styles.bottomBar}>
-        <p className={styles.rights}>
-          © {new Date().getFullYear()} Vekaro. {tFooter("rights")}
-        </p>
-        <LanguageSwitcher direction="up" align="left" />
+        <div className={styles.bottomLinks}>
+          <p className={styles.rights}>
+            © {new Date().getFullYear()} Vekaro. {tFooter("rights")}
+          </p>
+          <CookieSettingsButton label={tFooter("cookieSettings")} className={styles.cookieSettings} />
+        </div>
+        <LanguageSwitcher direction="up" />
       </Container>
     </footer>
   );

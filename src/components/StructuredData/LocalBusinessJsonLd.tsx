@@ -3,6 +3,8 @@ import type { Locale } from "@/i18n/routing";
 import {
   PHONE_DISPLAY,
   WHATSAPP_HREF,
+  TELEGRAM_HREF,
+  INSTAGRAM_HREF,
   WORKING_HOURS_OPENS,
   WORKING_HOURS_CLOSES,
   CITY,
@@ -52,7 +54,7 @@ export async function LocalBusinessJsonLd({ locale }: { locale: Locale }) {
       addressLocality: CITY,
       addressCountry: COUNTRY_CODE,
     },
-    sameAs: [WHATSAPP_HREF],
+    sameAs: [WHATSAPP_HREF, TELEGRAM_HREF, INSTAGRAM_HREF],
   };
 
   return (

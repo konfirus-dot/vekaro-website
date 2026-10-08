@@ -1,5 +1,5 @@
 .section {
-  padding-block: 40px;
+  padding-block: var(--space-section);
 }
 
 /* Mobile/tablet: text above, photo below. */
@@ -24,7 +24,7 @@
 }
 
 .title {
-  font-size: 1.75rem;
+  font-size: var(--font-h2);
   line-height: 1.15;
 }
 
@@ -83,9 +83,5 @@
   .text,
   .imageWrap {
     flex: 1;
-  }
-
-  .title {
-    font-size: 2.25rem;
   }
 }

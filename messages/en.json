@@ -12,196 +12,451 @@
     "fleet": "Fleet",
     "contact": "Contact",
     "callNow": "Call Now",
+    "book": "Book now",
+    "bookMenuTitle": "Choose how to contact us",
+    "bookCall": "Call",
+    "close": "Close",
     "language": "Language",
     "menuToggle": "Menu"
   },
   "hero": {
-    "title": "Car Rental in Warsaw",
-    "subtitle": "Short-term, long-term, and for businesses - fast, without unnecessary paperwork.",
+    "title": "Car Rental in Warsaw.",
+    "titleAccent": "Simple and on Your Terms.",
+    "subtitle": "Vekaro is a local car rental company with over 7 years of experience. We offer flexible rentals for a day, a month, or longer - for both individuals and businesses. Enjoy well-maintained vehicles, flexible rental options, and support from our team throughout your rental experience.",
     "cta": "Call: +48 789 085 345"
   },
   "sloganBanner": {
     "headlineLines": [
-      "Rent without the paperwork",
-      "Get your car in 10 minutes"
+      "LESS PAPERWORK.",
+      "MORE TIME ON THE ROAD."
     ],
-    "subtitle": "No red tape, no complicated contracts - just fast, easy car rental."
+    "subtitle": "A simple booking process, clear rental terms, and quick vehicle pickup. At Vekaro, we focus on making your rental experience convenient from the very first contact."
   },
   "advantages": {
-    "title": "Why Vekaro",
+    "title": "Why Vekaro?",
     "items": [
-      { "title": "Quick contact", "text": "Call or message - and your car is ready to go" },
-      { "title": "Cars in top shape", "text": "Well-maintained vehicles in excellent condition" },
-      { "title": "Flexible terms", "text": "Daily, monthly or longer - fit to your schedule" }
+      { "title": "Direct communication", "text": "Real people, ready to help you find the right car." },
+      { "title": "Well-maintained cars", "text": "Reliable vehicles, carefully maintained and ready for the road." },
+      { "title": "Flexible rental terms", "text": "Rent for a day, a month, or longer - whatever works for you." }
     ]
   },
   "rentalTypes": {
-    "title": "Our Services",
+    "title": "Find the Right Rental for You",
     "viewDetails": "See details",
     "shortTerm": {
       "title": "Short-term Rental",
-      "text": "From 24 hours to a month - perfect for a trip, weekend, or urgent need."
+      "text": "A car for a weekend, a trip, or everyday needs. Rent from just 24 hours, for as long as you need."
     },
     "longTerm": {
       "title": "Long-term Rental",
-      "text": "From one month onward. Price set individually."
+      "text": "A convenient solution when you need a car for longer. Rent from one month with an offer tailored to your needs."
     },
     "business": {
-      "title": "For Business",
-      "text": "For couriers, delivery companies, insurers and other organizations."
+      "title": "Business Rental",
+      "text": "Vehicles for companies, couriers, and delivery services. Flexible rental solutions tailored to your business needs."
     }
   },
   "shortTermPage": {
+    "metadata": {
+      "title": "Short-term Car Rental in Warsaw | Vekaro",
+      "description": "Rent a car in Warsaw from 24 hours. Well-maintained vehicles, flexible rental periods, and easy booking. Explore Vekaro's short-term rental options."
+    },
     "hero": {
-      "title": "Short-Term Car Rental in Warsaw",
-      "description": "Need a car for a few days, a weekend, or longer? Call or message us, and pick up your car in as little as 10 minutes - no unnecessary paperwork."
+      "title": "Short-term Car Rental in Warsaw",
+      "description": "Need a car for a weekend, a business trip, or a few days? At Vekaro, you can rent a car for as little as 24 hours. We offer well-maintained vehicles, flexible rental periods, and a simple booking process."
     },
     "seo": {
       "definition": {
-        "title": "What is short-term rental?",
-        "text": "Short-term rental means renting a car for anywhere from 24 hours to a month. It's ideal when you need a car right away - no long contracts, no online booking forms. With Vekaro, the whole process happens over a single phone call, and your car is ready to go."
+        "title": "What Is Short-term Car Rental?",
+        "text": [
+          "Short-term car rental is a convenient solution when you need a vehicle for a day, a weekend, or a few weeks. At Vekaro, you can rent a car in Warsaw for as little as 24 hours, without long-term commitments.",
+          "Whether you're planning a trip, attending business meetings, or need a car while yours is being repaired, our team will help you find the right vehicle. We offer clear rental terms and direct communication with our team."
+        ]
       },
       "whenToRent": {
-        "title": "When is short-term rental a good fit?",
+        "title": "When Should You Rent a Car for a Short Period?",
         "items": [
-          "Business trips or meetings - when your own car isn't available or you're not based in Warsaw.",
-          "Weekend getaways - quick access to a car without using your own.",
-          "Replacement car - when your car is in for repairs and you still need to get around.",
-          "Last-minute needs - sometimes you just need a car right now, no planning ahead required."
+          { "lead": "Business trips", "text": "convenient travel to meetings in Warsaw." },
+          { "lead": "Weekend getaways", "text": "travel without depending on public transport schedules." },
+          { "lead": "Car during repairs", "text": "stay mobile while your own vehicle is unavailable." },
+          { "lead": "Everyday needs", "text": "rent a car for a few days whenever you need one." }
         ]
       },
       "whyVekaro": {
-        "title": "Why Vekaro?",
+        "title": "Why Choose Vekaro?",
         "items": [
-          "No unnecessary paperwork - minimum formalities, maximum convenience.",
-          "Car in 10 minutes - from phone call to keys in hand.",
-          "Well-maintained vehicles - regularly serviced fleet in great condition.",
-          "Warsaw only - we know the city and we're always reachable."
+          { "lead": "Simple booking", "text": "direct communication and clear rental terms." },
+          { "lead": "Flexible rental periods", "text": "rent for a day, a weekend, or a few weeks." },
+          { "lead": "Well-maintained cars", "text": "regularly serviced vehicles, ready for the road." },
+          { "lead": "Local rental company", "text": "direct contact with our Warsaw-based team." }
         ]
       },
       "howItWorks": {
-        "title": "How it works",
+        "title": "How to Rent a Car",
         "steps": [
-          "Call or message us on WhatsApp/Telegram.",
-          "Agree on dates and pick a car from our fleet.",
-          "Pick up your car - clean, fueled, and ready."
+          { "title": "Contact us", "text": "Call or message us to check car availability in Warsaw." },
+          { "title": "Choose your car", "text": "Select a vehicle, confirm your rental dates, and review the terms." },
+          { "title": "Pick up your car", "text": "Complete the paperwork and collect your prepared vehicle." }
         ]
       }
-    }
+    },
+    "extraFaq": [
+      {
+        "question": "Can I rent a car for a weekend in Warsaw?",
+        "answer": "Yes, at Vekaro you can rent a car for a weekend or a few days. It's a convenient option for a short trip, visiting family, or traveling around Poland. Contact us to check vehicle availability for your preferred dates."
+      },
+      {
+        "question": "Can I rent a car while my own vehicle is being repaired?",
+        "answer": "Yes, short-term rental is also a practical solution when your car is at the repair shop. You can use a rental vehicle while yours is unavailable and continue with your daily plans. Our team will help you choose a suitable car."
+      },
+      {
+        "question": "Can I extend my car rental period?",
+        "answer": "If you need the car for longer, contact our team before your agreed rental period ends. We'll check vehicle availability and whether an extension is possible. Extension terms will be discussed individually."
+      }
+    ]
   },
   "longTermPage": {
+    "metadata": {
+      "title": "Long-term Car Rental in Warsaw | Vekaro",
+      "description": "Long-term car rental in Warsaw from one month. Flexible rental periods, well-maintained vehicles, and individual offers. Explore Vekaro."
+    },
     "hero": {
-      "title": "Long-Term Car Rental in Warsaw",
-      "description": "Need a car for a month or longer? Call us and we will set up terms that fit your needs, no unnecessary paperwork, no down payment."
+      "title": "Long-term Car Rental in Warsaw",
+      "description": "Need a car for a month or longer? At Vekaro, we offer long-term car rental in Warsaw with flexible terms. Choose a suitable vehicle and arrange a rental period that fits your needs."
     },
     "seo": {
       "definition": {
-        "title": "What is long-term rental?",
-        "text": "Long-term rental means renting a car for one month or more. Unlike leasing, there is no down payment and no multi-year commitment. Price and terms are agreed individually, depending on the rental period and your needs. One call is enough, and we work out the rest together."
+        "title": "What Is Long-term Car Rental?",
+        "text": [
+          "Long-term car rental is a convenient solution for individuals and businesses that need a vehicle for one month or longer. It allows you to use a car regularly without having to buy one.",
+          "At Vekaro, we offer long-term car rental in Warsaw with individually agreed terms. Whether you need a vehicle for work, daily commuting, or business activities, our team will help you choose a suitable car and arrange the rental details."
+        ]
       },
       "whyLongTerm": {
-        "title": "When does long-term rental make sense?",
+        "title": "When Should You Choose Long-term Car Rental?",
         "items": [
-          "You are working or based in Warsaw for an extended period and buying a car isn't worth it.",
-          "You want to avoid service, insurance and tire costs, since we cover them.",
-          "You don't want to tie up your money in a car that loses value over time.",
-          "You want a predictable monthly cost instead of unplanned expenses."
+          {
+            "lead": "Daily commuting",
+            "text": "use a car regularly without having to buy one."
+          },
+          {
+            "lead": "Work and professional needs",
+            "text": "rent a vehicle for several months when you need reliable transport in Warsaw."
+          },
+          {
+            "lead": "Temporary stay",
+            "text": "a convenient option when living or working in Poland for a limited period."
+          },
+          {
+            "lead": "Alternative to buying",
+            "text": "enjoy access to a vehicle without investing in purchasing your own car."
+          }
         ]
       },
       "whyVekaro": {
-        "title": "Why Vekaro?",
+        "title": "Why Choose Vekaro?",
         "items": [
-          "No down payment, no unnecessary paperwork.",
-          "Terms and price agreed individually to fit your situation.",
-          "Well-maintained, regularly serviced cars.",
-          "Warsaw only, so we're always close by and quick to respond."
+          {
+            "lead": "Flexible arrangements",
+            "text": "rental periods and offers tailored to your needs."
+          },
+          {
+            "lead": "Clear rental terms",
+            "text": "understand the conditions and costs before signing an agreement."
+          },
+          {
+            "lead": "Well-maintained cars",
+            "text": "use regularly serviced vehicles."
+          },
+          {
+            "lead": "Local rental company",
+            "text": "communicate directly with our Warsaw-based team."
+          }
         ]
       },
       "howItWorks": {
-        "title": "How it works",
+        "title": "How to Rent a Car Long-term",
         "steps": [
-          "Call or message us on WhatsApp/Telegram.",
-          "We discuss the rental period and set up terms that fit you.",
-          "Pick up your car and use it for the full rental period."
+          {
+            "title": "Contact us",
+            "text": "Call or message us to check vehicle availability."
+          },
+          {
+            "title": "Arrange your rental",
+            "text": "Choose a car, confirm the rental period, and review your individual offer."
+          },
+          {
+            "title": "Pick up your car",
+            "text": "Complete the paperwork and use your vehicle for the agreed rental period."
+          }
         ]
       }
     },
-    "faq": {
-      "title": "Frequently Asked Questions",
-      "items": [
-        {
-          "question": "What's the minimum period for long-term rental?",
-          "answer": "Long-term rental starts from one month."
-        },
-        {
-          "question": "Is the price fixed, or does it depend on the period?",
-          "answer": "Price is agreed individually, based on rental length and your needs. Call us and we'll prepare an offer that fits."
-        },
-        {
-          "question": "Are service and insurance included?",
-          "answer": "Yes, regular car maintenance is on us. We go over the details individually when you contact us."
-        },
-        {
-          "question": "Can I drive the rental car abroad?",
-          "answer": "No, our cars can only be used within Poland."
-        }
-      ]
-    }
+    "extraFaq": [
+      {
+        "question": "What is the minimum period for long-term car rental?",
+        "answer": "At Vekaro, long-term car rental in Warsaw starts from one month. It's a practical solution for people who need a vehicle regularly without buying their own car. Rental duration and terms are agreed individually."
+      },
+      {
+        "question": "Is long-term car rental available for private customers?",
+        "answer": "Yes, Vekaro offers long-term car rental for both individuals and businesses. It's a convenient option for daily commuting, work, or other activities. Our team will help you choose a suitable car."
+      },
+      {
+        "question": "Can I extend my long-term car rental agreement?",
+        "answer": "If you'd like to keep the car for longer, contact our team before your agreement ends. We'll check whether an extension is possible and discuss the available terms with you. All details are agreed individually."
+      }
+    ]
   },
   "businessPage": {
+    "metadata": {
+      "title": "Business Car Rental in Warsaw | Vekaro",
+      "description": "Car rental for businesses in Warsaw. Vehicles for companies, entrepreneurs, couriers, and delivery services. Flexible terms and individual offers from Vekaro."
+    },
     "hero": {
-      "title": "Car Rental for Companies and Insurance Providers",
-      "description": "Rent a car as a business, not as a private individual. We work with companies, insurance providers, and business owners who need an extra vehicle."
+      "title": "Car Rental for Businesses in Warsaw",
+      "description": "Need a vehicle for your business? Vekaro offers car rental for companies, entrepreneurs, and delivery professionals. We provide well-maintained vehicles and individual rental terms tailored to your business needs."
     },
     "seo": {
       "definition": {
-        "title": "What is business car rental?",
-        "text": "It's the same offer as our short-term and long-term rental, with one difference. The car is rented to a company, not a private person. This works for business owners, insurance providers, and other rental companies that need an extra vehicle for their own fleet. Terms are agreed individually, in a conversation with our representative."
+        "title": "What Is Business Car Rental?",
+        "text": [
+          "Business car rental is a practical solution for companies that need vehicles for daily operations without purchasing their own fleet. Rental cars can be used for client meetings, service activities, or courier work.",
+          "At Vekaro, we offer car rental for businesses in Warsaw with rental periods tailored to their needs. We work with entrepreneurs, delivery service providers, and insurance companies. Vehicle availability, rental duration, and cooperation terms are agreed individually."
+        ]
       },
       "whoItsFor": {
-        "title": "Who is this for?",
+        "title": "Who Is Business Car Rental For?",
         "items": [
-          "Insurance providers who need a replacement car for their clients while a vehicle is being repaired.",
-          "Rental companies and other businesses that need an extra vehicle for their fleet.",
-          "Business owners who want to rent a car under their company instead of privately."
+          {
+            "lead": "Small and medium-sized businesses",
+            "text": "vehicles for daily operations and business meetings."
+          },
+          {
+            "lead": "Couriers and delivery services",
+            "text": "cars for deliveries and transport-related activities."
+          },
+          {
+            "lead": "Entrepreneurs",
+            "text": "access to a business vehicle without having to purchase one."
+          },
+          {
+            "lead": "Insurance companies",
+            "text": "rental cooperation options for replacement vehicles."
+          }
         ]
       },
       "whyVekaro": {
-        "title": "Why Vekaro?",
+        "title": "Why Choose Vekaro?",
         "items": [
-          "Simple terms, agreed individually with our representative.",
-          "Well-maintained, regularly serviced cars.",
-          "Quick phone contact, no unnecessary paperwork upfront.",
-          "Warsaw only, so we're always close by and quick to respond."
+          {
+            "lead": "Individual offers",
+            "text": "rental periods and terms tailored to your business needs."
+          },
+          {
+            "lead": "Clear conditions",
+            "text": "understand rental costs and cooperation details before signing an agreement."
+          },
+          {
+            "lead": "Well-maintained cars",
+            "text": "use regularly serviced vehicles."
+          },
+          {
+            "lead": "Local support",
+            "text": "communicate directly with our Warsaw-based team."
+          }
         ]
       },
       "howItWorks": {
-        "title": "How does the cooperation work?",
+        "title": "How to Rent a Car for Your Business",
         "steps": [
-          "Call or message us on WhatsApp/Telegram and describe your needs.",
-          "Our representative will go over the terms and contract details in a meeting.",
-          "Pick up the car and use it under the agreed terms."
+          {
+            "title": "Tell us what you need",
+            "text": "Call or message us and explain what kind of vehicle your business requires."
+          },
+          {
+            "title": "Arrange your rental",
+            "text": "We'll check vehicle availability and prepare an individual rental offer."
+          },
+          {
+            "title": "Pick up your car",
+            "text": "Complete the paperwork and use the vehicle under the agreed rental terms."
+          }
         ]
       }
     },
-    "faq": {
-      "title": "Frequently Asked Questions",
-      "items": [
+    "extraFaq": [
+      {
+        "question": "Does Vekaro offer car rental for businesses in Warsaw?",
+        "answer": "Yes, Vekaro provides car rental solutions for companies operating in Warsaw. Our vehicles can be used for daily business activities, client meetings, and service operations. Rental terms are tailored to your company's needs."
+      },
+      {
+        "question": "Can I rent a car for courier or delivery work?",
+        "answer": "Yes, we offer vehicles for individuals and businesses providing courier and delivery services. Our team can help you choose a suitable car based on how you plan to use it. Vehicle availability and rental terms are discussed individually."
+      },
+      {
+        "question": "Can a company rent multiple cars at once?",
+        "answer": "If your business needs more than one vehicle, contact our team. We'll check availability and discuss rental options based on the number of cars and the required rental period."
+      }
+    ]
+  },
+  "privacyPage": {
+    "metadata": {
+      "title": "Privacy and Cookie Policy | Vekaro",
+      "description": "Learn what data the Vekaro website collects, why, and what rights you have. Information about cookies and Google Analytics."
+    },
+    "title": "Privacy and Cookie Policy",
+    "intro": "This is an informational website presenting Vekaro car rental in Warsaw. We aim to collect as little data as possible. Below we explain what data we process, why, and what rights you have.",
+    "sections": [
+      {
+        "title": "Who controls your data",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The controller of your personal data is the entity operating this website. For any questions about personal data, contact us by phone at {phone}."
+          }
+        ]
+      },
+      {
+        "title": "What data we process and why",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "This website has no booking forms and no user accounts. Rental agreements are concluded in person with our representative, and the rules for processing data in connection with an agreement are provided separately when it is concluded."
+          },
+          {
+            "type": "list",
+            "items": [
+              "Technical data (server logs): IP address, browser type, date and time of the visit, and the page visited. Purpose: keeping the website secure and working properly. Legal basis: the controller's legitimate interest (Art. 6(1)(f) GDPR).",
+              "Necessary cookies: remembering your chosen language and your cookie consent choice. Purpose: the website working properly. Legal basis: the controller's legitimate interest (Art. 6(1)(f) GDPR).",
+              "Analytics data (Google Analytics 4): information about how you use the website, such as pages visited, traffic source, device type and approximate location. Purpose: visit statistics and improving the website. Legal basis: your consent (Art. 6(1)(a) GDPR). Analytics only starts after you give consent.",
+              "Data you provide when contacting us: when you call or message us on WhatsApp, Telegram or Instagram, we process the data you share, such as your name, phone number and message content. Purpose: replying to your inquiry and presenting an offer. Legal basis: taking steps at your request before entering into a contract (Art. 6(1)(b) GDPR) and the controller's legitimate interest in handling inquiries (Art. 6(1)(f) GDPR)."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Cookies",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Cookies are small text files saved on your device. We use necessary cookies, which the website needs to work, and analytics cookies, which we set only after you give consent. You can change or withdraw your consent at any time using the \"Cookie settings\" link in the footer of the page. You can also block or delete cookies in your browser settings, but some functions of the website may then stop working."
+          },
+          {
+            "type": "cookieTable"
+          },
+          {
+            "type": "cookieSettings"
+          }
+        ]
+      },
+      {
+        "title": "Who receives your data",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Your data may be processed by the hosting provider that runs our website server, and by Google for analytics, only with your consent. If you contact us via WhatsApp, Telegram or Instagram, the providers of those messengers also process data within their services, under their own privacy policies. Some of these providers may transfer data outside the European Economic Area, including to the United States. This takes place on the basis of mechanisms provided for in the GDPR, such as a European Commission adequacy decision or standard contractual clauses. We do not sell your data."
+          }
+        ]
+      },
+      {
+        "title": "How long we keep data",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Server logs: for the period set by our hosting provider, and no longer than necessary to keep the website secure.",
+              "Analytics data: according to the retention setting in our Google Analytics account, no longer than 14 months.",
+              "Messages and data shared when contacting us: for as long as needed to handle your inquiry. If an agreement is concluded, we process data under the rules provided when it is concluded.",
+              "Cookies: for the periods shown in the table above."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Your rights",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "You have the right to:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "access your data (Art. 15 GDPR),",
+              "rectify your data (Art. 16 GDPR),",
+              "erase your data (Art. 17 GDPR),",
+              "restrict processing (Art. 18 GDPR),",
+              "data portability (Art. 20 GDPR),",
+              "object to processing based on legitimate interest (Art. 21 GDPR),",
+              "withdraw your consent at any time, without affecting the lawfulness of processing carried out before withdrawal (Art. 7(3) GDPR)."
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "To exercise these rights, contact us by phone at {phone}. You also have the right to lodge a complaint with the President of the Personal Data Protection Office in Poland (ul. Stawki 2, 00-193 Warsaw)."
+          }
+        ]
+      },
+      {
+        "title": "Automated decision-making",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "We do not make automated decisions about you that would produce legal effects."
+          }
+        ]
+      },
+      {
+        "title": "Changes to this policy",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "We publish the current version of this policy on this page together with the date of the last update. Last updated: {lastUpdated}."
+          }
+        ]
+      }
+    ],
+    "cookieTable": {
+      "headers": {
+        "name": "Name",
+        "provider": "Provider",
+        "purpose": "Purpose",
+        "retention": "Retention period"
+      },
+      "categories": [
         {
-          "question": "Which companies can use this offer?",
-          "answer": "We work with insurance providers, other rental companies, and business owners who want to rent a car under their company."
+          "title": "Necessary",
+          "rows": [
+            {
+              "name": "NEXT_LOCALE",
+              "provider": "Vekaro (this website)",
+              "purpose": "Remembers the selected website language.",
+              "retention": "Until the end of the browser session"
+            },
+            {
+              "name": "vekaro-cookie-consent",
+              "provider": "Vekaro (this website)",
+              "purpose": "Remembers your cookie consent choice. Stored in the browser's local storage (localStorage), not as a cookie.",
+              "retention": "Until changed or deleted by the user"
+            }
+          ]
         },
         {
-          "question": "Do you offer replacement cars for insurance providers?",
-          "answer": "Yes, that's one of the main areas of our cooperation with insurance companies."
-        },
-        {
-          "question": "How does the contract process work?",
-          "answer": "Terms and details are agreed individually in a meeting with our representative. Call us to set it up."
-        },
-        {
-          "question": "Can I rent more than one car?",
-          "answer": "Yes, we handle both single orders and larger fleets. Contact us to discuss the details."
+          "title": "Statistics",
+          "rows": [
+            {
+              "name": "_ga",
+              "provider": "Google (google-analytics.com)",
+              "purpose": "Distinguishes users for Google Analytics 4 statistics.",
+              "retention": "Up to 2 years"
+            },
+            {
+              "name": "_ga_*",
+              "provider": "Google (google-analytics.com)",
+              "purpose": "Stores session state for Google Analytics 4 statistics.",
+              "retention": "Up to 2 years"
+            }
+          ]
         }
       ]
     }
@@ -210,16 +465,19 @@
     "label": "Breadcrumb"
   },
   "promo": {
-    "title": "Need a car today?",
-    "subtitle": "Call now, get it in 10 minutes",
+    "title": "Need a Car in Warsaw?",
+    "subtitle": "Give us a call, and we'll help you choose a car and arrange rental terms that suit your needs.",
     "cta": "Call now"
   },
   "about": {
-    "title": "About the Company",
-    "paragraph": "Vekaro has been renting cars in Warsaw for more than 7 years. Our team is small, but always reachable. We don't promise round the clock support, but when something unusual comes up, we look for a solution instead of turning a client away. We run our own car service with experienced mechanics, keeping our fleet in great technical condition.",
+    "title": "About Vekaro",
+    "paragraphs": [
+      "Vekaro is a local car rental company in Warsaw with over 7 years of experience. We offer short-term and long-term car rental, as well as vehicles for businesses, with rental terms tailored to individual needs.",
+      "We focus on direct communication, clear rental conditions, and practical solutions. Our team helps customers choose the right vehicle and provides support throughout the rental process. With our own car service facility and experienced mechanics, we ensure regular maintenance of our fleet."
+    ],
     "stats": [
-      "7+ years on the market",
-      "5000+ satisfied clients",
+      "7+ years of experience",
+      "1000+ satisfied customers",
       "In-house car service"
     ],
     "officePhotoAlt": "Our office"
@@ -245,19 +503,19 @@
     "items": [
       {
         "question": "Can I drive the rental car abroad?",
-        "answer": "No, our cars can only be used within Poland."
+        "answer": "No, Vekaro rental vehicles can only be used within Poland. You can travel throughout the country, but driving across international borders is not permitted. If you're planning a longer trip, contact our team to discuss the rental details."
       },
       {
-        "question": "How do I book a car?",
-        "answer": "Just call or message us on WhatsApp/Telegram - there's no online booking."
+        "question": "How can I book a car?",
+        "answer": "To book a car with Vekaro, simply contact us by phone, WhatsApp, or Telegram. Our team will help you check vehicle availability, choose a suitable model, and confirm your rental dates and terms. We currently accept bookings directly rather than through an online booking system."
       },
       {
-        "question": "What cars are available?",
-        "answer": "Currently Fiat Tipo and Skoda Citigo, with more models being added."
+        "question": "What cars are available at Vekaro?",
+        "answer": "Our current fleet includes the Fiat Tipo and Skoda Citigo. These vehicles are suitable for everyday driving in Warsaw and trips across Poland. We are gradually expanding our fleet, so please contact our team to confirm which models are available for your dates."
       },
       {
-        "question": "What's the minimum rental period?",
-        "answer": "Short-term rental starts from 24 hours."
+        "question": "What is the minimum car rental period?",
+        "answer": "The minimum short-term rental period at Vekaro is 24 hours. You can rent a car for one day, a weekend, or longer, depending on your needs. We also offer long-term rentals and rental solutions for businesses."
       }
     ]
   },
@@ -270,6 +528,7 @@
     },
     "legalTitle": "Legal Information",
     "privacyPolicy": "Privacy Policy",
+    "cookieSettings": "Cookie settings",
     "rights": "All rights reserved."
   },
   "cookies": {

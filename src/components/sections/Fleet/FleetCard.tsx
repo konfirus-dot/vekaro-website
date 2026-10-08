@@ -1,14 +1,7 @@
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { PHONE_HREF } from "@/lib/constants";
 import styles from "./Fleet.module.css";
-
-function ArrowIcon() {
-  return (
-    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-      <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
 
 export function FleetCard({
   name,
@@ -37,7 +30,7 @@ export function FleetCard({
       </div>
 
       <a href={PHONE_HREF} className={styles.fleetArrow} aria-label={name}>
-        <ArrowIcon />
+        <ArrowRight size={18} strokeWidth={1.8} aria-hidden="true" />
       </a>
     </div>
   );

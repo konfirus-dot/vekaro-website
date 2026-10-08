@@ -2,7 +2,13 @@ import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
 import { SITE_URL } from "@/lib/constants";
 
-const PATHS = ["", "/services/short-term", "/services/long-term", "/services/business"];
+const PATHS = [
+  "",
+  "/services/short-term",
+  "/services/long-term",
+  "/services/business",
+  "/privacy-policy",
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return PATHS.flatMap((path) => {

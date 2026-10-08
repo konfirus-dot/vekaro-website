@@ -1,11 +1,12 @@
 import { getTranslations } from "next-intl/server";
 import { Container } from "@/components/ui/Container/Container";
-import { Button } from "@/components/ui/Button/Button";
+import { BookMenu } from "@/components/layout/Header/BookMenu";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs/Breadcrumbs";
 import { BreadcrumbJsonLd } from "@/components/StructuredData/BreadcrumbJsonLd";
 import { FleetCard } from "@/components/sections/Fleet/FleetCard";
 import { Faq } from "@/components/sections/Contact/Faq";
-import { PHONE_HREF } from "@/lib/constants";
+import { ServiceInfoCards, type ServiceInfoCardItem } from "./ServiceInfoCards";
+import { ServiceSteps, type ServiceStep } from "./ServiceSteps";
 import type { Locale } from "@/i18n/routing";
 import styles from "./ShortTermRentalPage.module.css";
 
@@ -15,14 +16,18 @@ type FaqItem = { question: string; answer: string };
 
 export async function ShortTermRentalPage({ locale }: { locale: Locale }) {
   const t = await getTranslations({ locale, namespace: "shortTermPage" });
-  const tHero = await getTranslations({ locale, namespace: "hero" });
   const tFleet = await getTranslations({ locale, namespace: "fleet" });
   const tFaq = await getTranslations({ locale, namespace: "faq" });
 
-  const whenToRentItems = t.raw("seo.whenToRent.items") as string[];
-  const whyVekaroItems = t.raw("seo.whyVekaro.items") as string[];
-  const howItWorksSteps = t.raw("seo.howItWorks.steps") as string[];
-  const faqItems = tFaq.raw("items") as FaqItem[];
+  const definitionParagraphs = t.raw("seo.definition.text") as string[];
+  const whenToRentItems = t.raw("seo.whenToRent.items") as ServiceInfoCardItem[];
+  const whyVekaroItems = t.raw("seo.whyVekaro.items") as ServiceInfoCardItem[];
+  const howItWorksSteps = t.raw("seo.howItWorks.steps") as ServiceStep[];
+  // Shared FAQ (same on every page) followed by short-term-specific questions.
+  const faqItems = [
+    ...(tFaq.raw("items") as FaqItem[]),
+    ...(t.raw("extraFaq") as FaqItem[]),
+  ];
 
   return (
     <main>
@@ -33,7 +38,8 @@ export async function ShortTermRentalPage({ locale }: { locale: Locale }) {
           <Breadcrumbs locale={locale} current={t("hero.title")} />
           <h1 className={styles.title}>{t("hero.title")}</h1>
           <p className={styles.description}>{t("hero.description")}</p>
-          <Button href={PHONE_HREF}>{tHero("cta")}</Button>
+          {/* Same CTA as the homepage Hero: opens the contact options menu. */}
+          <BookMenu size="large" align="left" />
         </Container>
       </section>
 
@@ -58,36 +64,23 @@ export async function ShortTermRentalPage({ locale }: { locale: Locale }) {
         <Container className={styles.seoInner}>
           <div>
             <h2 className={styles.seoTitle}>{t("seo.definition.title")}</h2>
-            <p className={styles.seoText}>{t("seo.definition.text")}</p>
+            {definitionParagraphs.map((paragraph) => (
+              <p key={paragraph} className={styles.seoText}>
+                {paragraph}
+              </p>
+            ))}
           </div>
 
-          <div className={styles.pairedBlocks}>
-            <div className={styles.pairedCard}>
-              <h2 className={styles.seoTitle}>{t("seo.whenToRent.title")}</h2>
-              <ul className={styles.list}>
-                {whenToRentItems.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-
-            <div className={styles.pairedCard}>
-              <h2 className={styles.seoTitle}>{t("seo.whyVekaro.title")}</h2>
-              <ul className={styles.list}>
-                {whyVekaroItems.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
+          <ServiceInfoCards
+            cards={[
+              { title: t("seo.whenToRent.title"), items: whenToRentItems },
+              { title: t("seo.whyVekaro.title"), items: whyVekaroItems },
+            ]}
+          />
 
           <div>
             <h2 className={styles.seoTitle}>{t("seo.howItWorks.title")}</h2>
-            <ol className={styles.steps}>
-              {howItWorksSteps.map((step) => (
-                <li key={step}>{step}</li>
-              ))}
-            </ol>
+            <ServiceSteps steps={howItWorksSteps} />
           </div>
         </Container>
       </section>

@@ -1,5 +1,5 @@
 .section {
-  padding-block: 40px;
+  padding-block: var(--space-section);
 }
 
 /* Mobile/tablet: text above, office photo below (stacked, as always). */
@@ -16,8 +16,15 @@
 }
 
 .title {
-  font-size: 2rem;
+  font-size: var(--font-h2);
   line-height: 1.15;
+}
+
+/* Two description paragraphs, spaced like the service pages' SEO text. */
+.descriptions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .description {
@@ -71,7 +78,7 @@
 @media (min-width: 1024px) {
   .inner {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     align-items: stretch;
     gap: 64px;
   }
@@ -81,14 +88,20 @@
     overflow: hidden;
   }
 
+  /* When the text column is taller than the photo's natural 4:3 height
+     (narrow desktops, ~1024-1200px), the row stretches the photo vertically;
+     without an explicit width, aspect-ratio would then derive a width wider
+     than the column and push the photo past the viewport edge. Pinning the
+     width lets it just fill the taller cell (the image uses object-fit:
+     cover). */
+  .photo {
+    width: 100%;
+  }
+
   .description {
     display: -webkit-box;
     -webkit-line-clamp: 8;
     -webkit-box-orient: vertical;
     overflow: hidden;
-  }
-
-  .title {
-    font-size: 3rem;
   }
 }
