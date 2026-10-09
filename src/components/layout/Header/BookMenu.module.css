@@ -1,5 +1,8 @@
 .root {
   position: relative;
+  /* flex, not block: an inline-flex button in a block sits on a text
+     baseline and leaves a few px below it, misaligning the header row. */
+  display: flex;
 }
 
 /* Accent pill with icon + label. Same 34px height as the language selector
@@ -38,6 +41,48 @@
 
 .trigger:active {
   transform: scale(var(--press-scale));
+}
+
+/* Phones, header only: a bare phone icon in the same 34px box and colour as
+   the menu toggle beside it, with the toggle's states (hover dims, press
+   shrinks by the icon scale). The label is visually hidden but still names
+   the button. */
+@media (max-width: 767px) {
+  .trigger.triggerIconOnMobile {
+    justify-content: center;
+    width: 34px;
+    padding: 0;
+    background: transparent;
+    color: var(--foreground);
+    transition:
+      opacity 150ms ease,
+      transform 100ms ease;
+  }
+
+  .trigger.triggerIconOnMobile svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .trigger.triggerIconOnMobile:hover,
+  .trigger.triggerIconOnMobile[aria-expanded="true"] {
+    background: transparent;
+    opacity: 0.7;
+  }
+
+  .trigger.triggerIconOnMobile:active {
+    background: transparent;
+    transform: scale(var(--press-scale-icon));
+  }
+
+  .triggerIconOnMobile .label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
 }
 
 /* Hero CTA size: same pill as the header button, scaled up to the Hero's

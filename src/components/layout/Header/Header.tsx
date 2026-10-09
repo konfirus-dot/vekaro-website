@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Menu } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { Container } from "@/components/ui/Container/Container";
@@ -180,7 +181,7 @@ export function Header() {
           <div className={styles.desktopContacts}>
             <LanguageSwitcher />
           </div>
-          <BookMenu />
+          <BookMenu iconOnMobile />
           <button
             type="button"
             className={styles.toggle}
@@ -188,9 +189,8 @@ export function Header() {
             aria-label={t("menuToggle")}
             onClick={() => setIsOpen((v) => !v)}
           >
-            <span />
-            <span />
-            <span />
+            {/* Same size and stroke as the phone icon beside it on phones. */}
+            <Menu size={24} strokeWidth={1.8} aria-hidden="true" />
           </button>
         </div>
       </Container>

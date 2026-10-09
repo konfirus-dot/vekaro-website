@@ -65,9 +65,12 @@ type BookMenuProps = {
   // "left" anchors the desktop popover to the trigger's left edge (opens
   // rightward), for triggers near the left side of the page like the Hero.
   align?: "left" | "right";
+  // Header only: on phones the pill becomes a bare phone icon matching the
+  // menu toggle next to it (the label stays for screen readers).
+  iconOnMobile?: boolean;
 };
 
-export function BookMenu({ size = "default", align = "right" }: BookMenuProps) {
+export function BookMenu({ size = "default", align = "right", iconOnMobile = false }: BookMenuProps) {
   const t = useTranslations("nav");
   const [isOpen, setIsOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
@@ -105,13 +108,19 @@ export function BookMenu({ size = "default", align = "right" }: BookMenuProps) {
       <button
         type="button"
         ref={triggerRef}
-        className={size === "large" ? `${styles.trigger} ${styles.triggerLarge}` : styles.trigger}
+        className={[
+          styles.trigger,
+          size === "large" && styles.triggerLarge,
+          iconOnMobile && styles.triggerIconOnMobile,
+        ]
+          .filter(Boolean)
+          .join(" ")}
         aria-haspopup="dialog"
         aria-expanded={isOpen}
         onClick={() => setIsOpen((v) => !v)}
       >
         <Phone size={size === "large" ? 20 : 18} strokeWidth={1.8} aria-hidden="true" />
-        <span>{t("book")}</span>
+        <span className={styles.label}>{t("book")}</span>
       </button>
 
       {isOpen && (

@@ -79,27 +79,25 @@
   gap: 8px;
 }
 
+/* Lucide Menu icon (24px) in a 34px hit area, matching the phone icon of
+   the book button beside it on phones. */
 .toggle {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  gap: 4px;
   width: 34px;
   height: 34px;
+  padding: 0;
   background: transparent;
   border: none;
+  color: var(--foreground);
   cursor: pointer;
-  transition: transform 100ms ease;
+  transition:
+    opacity 150ms ease,
+    transform 100ms ease;
 }
 
-.toggle span {
-  display: block;
-  height: 2px;
-  background: var(--foreground);
-  transition: opacity 150ms ease;
-}
-
-.toggle:hover span {
+.toggle:hover {
   opacity: 0.7;
 }
 
