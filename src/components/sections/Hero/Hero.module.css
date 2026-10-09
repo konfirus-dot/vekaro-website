@@ -122,11 +122,16 @@
     gap: 64px;
   }
 
-  /* Text column gets 1.5x the image's share (~680px at 1280): with Geist
-     the Polish headline needed 4-5 lines at 1.25x; at 1.5x it fits in 3 in
-     every language, and the car stays large. */
+  /* Equal columns: the car gets more room (~600px wide at 1280). The
+     headline steps down to the h2 size here so it still fits in 3 lines in
+     every language at 1280 in the narrower text column; the result is a
+     slightly taller Hero, so the orange banner sits a bit lower. */
   .text {
-    flex: 1.5;
+    flex: 1;
+  }
+
+  .title {
+    font-size: var(--font-h2);
   }
 
   .imageWrap {
