@@ -32,7 +32,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  margin-block: 16px;
+  margin-block: var(--space-block);
 }
 
 .faqWrap {
@@ -40,7 +40,7 @@
 }
 
 .faqTitle {
-  margin-bottom: 8px;
+  margin-bottom: var(--space-stack-sm);
   font-weight: 700;
   font-size: var(--font-h3);
 }

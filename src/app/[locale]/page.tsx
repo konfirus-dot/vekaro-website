@@ -1,6 +1,7 @@
 import { Hero } from "@/components/sections/Hero/Hero";
 import { SloganBanner } from "@/components/sections/SloganBanner/SloganBanner";
 import { Services } from "@/components/sections/Services/Services";
+import { FleetSection } from "@/components/sections/Fleet/FleetSection";
 import { Advantages } from "@/components/sections/Advantages/Advantages";
 import { About } from "@/components/sections/About/About";
 import { PromoBanner } from "@/components/sections/PromoBanner/PromoBanner";
@@ -28,6 +29,9 @@ export default function Home() {
           <Services />
         </Reveal>
       </div>
+      <Reveal>
+        <FleetSection />
+      </Reveal>
       <Reveal>
         <Advantages />
       </Reveal>

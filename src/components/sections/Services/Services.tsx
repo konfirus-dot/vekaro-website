@@ -1,27 +1,19 @@
 import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/Container/Container";
 import { RentalTypes } from "@/components/sections/RentalTypes/RentalTypes";
-import { Fleet } from "@/components/sections/Fleet/Fleet";
 import styles from "./Services.module.css";
 
-// Rental types and fleet used to be two separate sections; they're now one
-// logical "Services" block sharing a single #services anchor — the fleet is
-// presented as a subsection (h3) rather than its own landmark.
+// "Choose your rental" section: heading + the three rental-type cards. The
+// fleet that used to follow as an h3 subsection is now its own section
+// (FleetSection).
 export function Services() {
   const t = useTranslations("rentalTypes");
-  const tFleet = useTranslations("fleet");
 
   return (
     <section className={styles.section}>
       <Container>
         <h2 className={styles.title}>{t("title")}</h2>
         <RentalTypes />
-
-        <div className={styles.fleetHeader}>
-          <h3 className={styles.fleetTitle}>{tFleet("sectionTitle")}</h3>
-          <p className={styles.fleetSubtitle}>{tFleet("sectionSubtitle")}</p>
-        </div>
-        <Fleet />
       </Container>
     </section>
   );

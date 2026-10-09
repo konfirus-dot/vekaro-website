@@ -9,10 +9,12 @@
   gap: 32px;
 }
 
+/* Heading -> paragraphs -> badges, one block step apart; the paragraphs
+   themselves are --space-stack-sm apart (.descriptions). */
 .text {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--space-block);
 }
 
 .title {
@@ -24,7 +26,7 @@
 .descriptions {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: var(--space-stack-sm);
 }
 
 .description {

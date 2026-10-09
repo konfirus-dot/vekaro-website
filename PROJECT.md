@@ -249,13 +249,15 @@
 |---|---|---|---|
 | `--font-display` | заголовок SloganBanner | 1.75rem | 3.5rem |
 | `--font-h1` | заголовок сторінки (Hero, сторінки послуг, privacy) | 2.25rem | 3.5rem |
-| `--font-h2` | заголовок секції (Services, Why Vekaro, About, Contact, PromoBanner, SEO-блоки послуг) | 2rem | 3rem |
-| `--font-h3` | заголовок картки/підсекції (картки послуг, "Nasza flota", картки на сторінках послуг, секції privacy, FAQ-заголовок у Contact) | 1.5rem | 1.75rem |
+| `--font-h2` | заголовок секції (Services, Nasza flota, Why Vekaro, About, Contact, PromoBanner, SEO-блоки послуг) | 2rem | 3rem |
+| `--font-h3` | заголовок картки/підсекції (картки послуг, картки на сторінках послуг, секції privacy, FAQ-заголовок у Contact) | 1.5rem | 1.75rem |
 | `--font-h4` | назва авто у FleetCard, питання FAQ | 1.125rem | 1.25rem |
 | `--font-label` | лейбли переваг у "Why Vekaro" | 0.875rem | 0.875rem |
 | `--font-body` | основний текст (поки що токен лише визначений, див. нижче) | 1rem | 1.125rem |
-| `--space-section` | `padding-block` секцій | 40px | 64px |
+| `--space-section` | `padding-block` секцій | 64px | 96px |
 | `--space-heading` | заголовок секції -> контент | 24px | 32px |
+| `--space-block` | блок -> блок у секції (текст -> кнопка, пункти списку) | 24px | 32px |
+| `--space-stack-sm` | щільні пари: заголовок картки -> текст, абзац -> абзац | 16px | 16px |
 
 - Заголовки беруть токен за роллю, а не лише за тегом: `<h2>` у картці або в юридичному тексті
   використовує `--font-h3`.
@@ -264,8 +266,8 @@
 - Перевірка: Claude Code агент `design-audit` (`.claude/agents/design-audit.md`) і Cursor-правило
   `.cursor/rules/design-tokens.mdc`.
 - **Ще не уніфіковано:** розміри основного тексту/описів (0.9-1.0625rem у різних секціях) і
-  внутрішні відступи About (`gap: 20px` між заголовком і текстом). Агент показує їх окремим
-  списком "варто вирішити".
+  Агент показує їх окремим списком "варто вирішити".
+- "Nasza flota" на головній тепер окрема секція (`FleetSection`, H2), а не H3-підсекція Services.
 
 ### Header при скролі (sticky + блюр)
 

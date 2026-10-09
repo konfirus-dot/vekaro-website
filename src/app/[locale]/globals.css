@@ -18,8 +18,10 @@
   --font-label: 0.875rem; /* small bold label above a block */
   --font-body: 1rem;
 
-  --space-section: 40px; /* section padding-block */
+  --space-section: 64px; /* section padding-block */
   --space-heading: 24px; /* section title -> its content */
+  --space-block: 24px; /* block -> block inside a section (text -> button, list items) */
+  --space-stack-sm: 16px; /* tight pairs: card title -> text, paragraph -> paragraph */
 }
 
 @media (min-width: 1024px) {
@@ -31,8 +33,9 @@
     --font-h4: 1.25rem;
     --font-body: 1.125rem;
 
-    --space-section: 64px;
+    --space-section: 96px;
     --space-heading: 32px;
+    --space-block: 32px;
   }
 }
 

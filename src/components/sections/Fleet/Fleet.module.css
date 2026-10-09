@@ -1,3 +1,27 @@
+/* Homepage section wrapper (FleetSection.tsx). The service pages render the
+   <Fleet> grid on its own, without this header. */
+.section {
+  padding-block: var(--space-section);
+}
+
+.header {
+  margin-bottom: var(--space-heading);
+  text-align: center;
+}
+
+.title {
+  font-size: var(--font-h2);
+  line-height: 1.15;
+}
+
+.subtitle {
+  max-width: 42ch;
+  margin-top: var(--space-stack-sm);
+  margin-inline: auto;
+  font-size: var(--font-body);
+  opacity: 0.75;
+}
+
 /* Mobile/tablet: cards stacked, one per row. */
 .grid {
   display: flex;
@@ -81,11 +105,23 @@
   color: #171008;
 }
 
-/* Desktop: all 4 cards in a single row, full width. */
+/* Desktop: all 4 cards in a single row. The grid defines three shared rows
+   (name + price / photo / arrow) and every card spans them via subgrid, so
+   when one name wraps to two lines ("Skoda Citigo") the other cards' photos
+   and arrow buttons stay on the same lines instead of shifting. */
 @media (min-width: 1024px) {
   .grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: auto auto auto;
+    column-gap: 24px;
+    row-gap: 0;
+  }
+
+  .grid > .fleetCard {
+    display: grid;
+    grid-row: span 3;
+    grid-template-rows: subgrid;
+    row-gap: 8px;
   }
 }
