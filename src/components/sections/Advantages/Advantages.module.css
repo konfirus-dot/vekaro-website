@@ -1,8 +1,17 @@
-/* White section: top padding only. Adjacent white sections would otherwise
-   stack two paddings (bottom + top); the final gap before the footer comes
-   from the footer's own margin-top. See "Відступи між секціями" in PROJECT.md. */
+/* Full-bleed light grey band (same tone as the fleet cards). The section
+   itself spans the viewport; the inner <Container> keeps the content on the
+   shared max-width grid. As a coloured block it carries padding on both
+   sides (like the orange banner), and a white gap of one section step above
+   it so it doesn't butt against the fleet cards. */
 .section {
-  padding-top: var(--space-section);
+  /* Benefit title size: between the h4 and h3 steps of the global scale,
+     so it's set locally for this section only (20px mobile, 24px desktop). */
+  --benefit-title-size: 1.25rem;
+  --benefit-title-lh: 1.2;
+
+  margin-top: var(--space-section);
+  padding-block: var(--space-section);
+  background: #f2f1ee;
 }
 
 .title {
@@ -12,13 +21,11 @@
   text-align: center;
 }
 
-/* Mobile/tablet: stacked column of three. */
-/* Mobile: a little more air between stacked benefits than the standard
-   block step, so each reads as its own unit. */
+/* Mobile/tablet: benefits stacked, one block step apart. */
 .list {
   display: flex;
   flex-direction: column;
-  gap: calc(var(--space-block) * 1.5);
+  gap: var(--space-block);
   list-style: none;
 }
 
@@ -30,35 +37,44 @@
   text-align: left;
 }
 
+/* Icon + title on one line, vertically centred; the title is the primary
+   element of each benefit. */
 .header {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-/* Hierarchy: the large statement (.itemText) leads; icon + label act as a
-   quieter category line above it. */
+.header svg {
+  flex-shrink: 0;
+}
+
 .itemTitle {
-  font-size: var(--font-label);
+  font-size: var(--benefit-title-size);
   font-weight: var(--fw-bold);
-  line-height: var(--lh-secondary);
-  opacity: 0.7;
+  line-height: var(--benefit-title-lh);
 }
 
 .itemText {
-  font-size: var(--font-lead);
-  font-weight: var(--fw-bold);
-  line-height: var(--lh-lead);
+  font-size: var(--font-body);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-body);
 }
 
-/* Desktop: recomposed into a single row. */
+/* Desktop: three equal columns sharing the same top edge. */
 @media (min-width: 1024px) {
+  .section {
+    --benefit-title-size: 1.5rem;
+  }
+
   .list {
     flex-direction: row;
+    align-items: flex-start;
     gap: 64px;
   }
 
   .item {
     flex: 1;
+    min-width: 0;
   }
 }

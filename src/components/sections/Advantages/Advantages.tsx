@@ -23,10 +23,10 @@ export function Advantages() {
             return (
               <li key={item.title} className={styles.item}>
                 <div className={styles.header}>
-                  {/* 32px icon beside the label;
+                  {/* 28px icon beside the benefit title;
                       absoluteStrokeWidth keeps the stroke at exactly 1.75px. */}
                   <Icon
-                    size={32}
+                    size={28}
                     color="#000000"
                     strokeWidth={1.75}
                     absoluteStrokeWidth
