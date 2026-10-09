@@ -16,7 +16,8 @@ export function Faq({ items }: { items: FaqItem[] }) {
 
         return (
           <div key={item.question} className={styles.item}>
-            <h4 className={styles.heading}>
+            {/* h3: questions sit under the FAQ section's h2. */}
+            <h3 className={styles.heading}>
               <button
                 type="button"
                 className={styles.question}
@@ -31,7 +32,7 @@ export function Faq({ items }: { items: FaqItem[] }) {
                   className={isOpen ? styles.chevronOpen : styles.chevron}
                 />
               </button>
-            </h4>
+            </h3>
             <div
               className={isOpen ? `${styles.answerWrap} ${styles.answerWrapOpen}` : styles.answerWrap}
               aria-hidden={!isOpen}

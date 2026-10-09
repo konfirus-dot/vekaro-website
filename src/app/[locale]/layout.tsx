@@ -12,6 +12,7 @@ import { Footer } from "@/components/layout/Footer/Footer";
 import { CookieBanner } from "@/components/ui/CookieBanner/CookieBanner";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
 import { SITE_URL, IS_PREVIEW_ENV } from "@/lib/constants";
+import { OG_LOCALES } from "@/lib/servicePageMetadata";
 import "./globals.css";
 
 // Primary site font. latin-ext covers Polish (ą, ę, ł, ś…), cyrillic covers
@@ -58,12 +59,6 @@ export async function generateMetadata({
   const languages = Object.fromEntries(
     routing.locales.map((l) => [l, `/${l}`]),
   );
-
-  const OG_LOCALES: Record<string, string> = {
-    pl: "pl_PL",
-    en: "en_US",
-    uk: "uk_UA",
-  };
 
   return {
     title: t("title"),

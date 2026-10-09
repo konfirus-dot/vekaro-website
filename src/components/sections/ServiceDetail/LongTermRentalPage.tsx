@@ -48,11 +48,13 @@ export async function LongTermRentalPage({ locale }: { locale: Locale }) {
         <Container>
           <div className={styles.fleetGrid}>
             <FleetCard
+              headingLevel={2}
               image="/images/hero-car-placeholder.png"
               name={tFleet("fiatTipo.name")}
               priceFrom={tFleet("fiatTipo.priceFrom")}
             />
             <FleetCard
+              headingLevel={2}
               image="/images/hero-car-placeholder.png"
               name={tFleet("skodaCitigo.name")}
               priceFrom={tFleet("skodaCitigo.priceFrom")}
