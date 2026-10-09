@@ -62,7 +62,7 @@
 
 .cardTitle {
   margin-bottom: 16px;
-  color: #ffffff;
+  color: var(--color-white);
   font-size: var(--font-h3);
   font-weight: var(--fw-bold);
   line-height: var(--lh-heading);
@@ -82,15 +82,15 @@
 .card .cardButton {
   gap: 8px;
   padding: 14px 20px;
-  background: #ffffff;
-  border-color: #ffffff;
-  color: #171008;
+  background: var(--color-white);
+  border-color: var(--color-white);
+  color: var(--color-ink);
 }
 
 .card .cardButton:hover {
   background: var(--accent);
   border-color: var(--accent);
-  color: #171008;
+  color: var(--color-ink);
 }
 
 /* Desktop: exactly 3 large cards in a row. */

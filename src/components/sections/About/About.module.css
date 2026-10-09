@@ -50,8 +50,8 @@
   gap: 8px;
   padding: 10px 16px;
   border-radius: 999px;
-  background: #f2f1ee;
-  color: #171717;
+  background: var(--color-orange-soft);
+  color: var(--color-ink);
   /* Secondary size (14px) rather than caption: these carry real facts. */
   font-size: var(--font-secondary);
   font-weight: var(--fw-semibold);
@@ -60,7 +60,7 @@
 }
 
 .stat svg {
-  color: var(--accent);
+  color: var(--color-orange-icon);
   flex-shrink: 0;
 }
 

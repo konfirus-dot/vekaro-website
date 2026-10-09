@@ -1,4 +1,4 @@
-/* Full-bleed light grey band (same tone as the fleet cards). The section
+/* Full-bleed warm band (card surface tone). The section
    itself spans the viewport; the inner <Container> keeps the content on the
    shared max-width grid. As a coloured block it carries padding on both
    sides (like the orange banner), and a white gap of one section step above
@@ -11,7 +11,7 @@
 
   margin-top: var(--space-section);
   padding-block: var(--space-section);
-  background: #f2f1ee;
+  background: var(--color-surface);
 }
 
 .title {

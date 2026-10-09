@@ -33,7 +33,7 @@ export default async function OpengraphImage({
           height: "100%",
           width: "100%",
           display: "flex",
-          backgroundColor: "#f2f1ee",
+          backgroundColor: "#f0ede7",
           fontFamily: "sans-serif",
         }}
       >
@@ -53,25 +53,25 @@ export default async function OpengraphImage({
                 width: 36,
                 height: 36,
                 borderRadius: "50%",
-                border: "3px solid #171717",
+                border: "3px solid #171008",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 fontSize: 18,
                 fontWeight: 700,
-                color: "#171717",
+                color: "#171008",
               }}
             >
               V
             </div>
-            <div style={{ display: "flex", fontSize: 24, fontWeight: 700, color: "#171717" }}>Vekaro</div>
+            <div style={{ display: "flex", fontSize: 24, fontWeight: 700, color: "#171008" }}>Vekaro</div>
           </div>
 
-          <div style={{ display: "flex", fontSize: 58, fontWeight: 700, lineHeight: 1.1, color: "#171717" }}>
+          <div style={{ display: "flex", fontSize: 58, fontWeight: 700, lineHeight: 1.1, color: "#171008" }}>
             {t("title")}
           </div>
 
-          <div style={{ display: "flex", fontSize: 28, color: "#171717", opacity: 0.75 }}>
+          <div style={{ display: "flex", fontSize: 28, color: "#171008", opacity: 0.75 }}>
             {t("subtitle")}
           </div>
 

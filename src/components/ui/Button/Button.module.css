@@ -27,7 +27,7 @@
 }
 
 .button:active {
-  transform: scale(0.96);
+  transform: scale(var(--press-scale));
 }
 
 /* Outline-only on both, per current design direction — differentiate once

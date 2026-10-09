@@ -46,6 +46,9 @@
 
 .imageWrap {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   aspect-ratio: 4 / 3;
 }
 
@@ -62,9 +65,49 @@
   pointer-events: none;
 }
 
+/* Car box: same 2:1 ratio as hero-car-fiat-tipo.png, so the ground shadow
+   can be placed relative to the wheels. Full column width (the old photo
+   had 24px of padding on each side), a bit wider still on desktop. The
+   section clips the X axis, so the entrance offset never causes overflow. */
+.car {
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  animation: hero-car-in 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+}
+
 .image {
   object-fit: contain;
-  padding: 24px;
+}
+
+/* Soft ambient shadow on the ground under the tyres. The photo already has
+   its own tight contact shadow right under the wheels, so this one is wider,
+   blurrier and lighter rather than a second copy of it. Positioned against
+   the photo's wheel line (~96% of its height). */
+.groundShadow {
+  position: absolute;
+  left: 8%;
+  right: 10%;
+  bottom: 0;
+  height: 9%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.25) 45%, transparent 72%);
+  filter: blur(6px);
+  pointer-events: none;
+}
+
+@keyframes hero-car-in {
+  from {
+    opacity: 0;
+    transform: translateX(60px) scale(0.96);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .car {
+    animation: none;
+  }
 }
 
 /* Desktop: recomposed as a two-column layout, text and photo side by side. */
@@ -88,5 +131,9 @@
 
   .imageWrap {
     flex: 1;
+  }
+
+  .car {
+    width: 106%;
   }
 }

@@ -486,8 +486,42 @@
   "fleet": {
     "sectionTitle": "Наш автопарк",
     "sectionSubtitle": "Оберіть авто, яке відповідатиме вашим потребам і вимогам.",
-    "fiatTipo": { "name": "Fiat Tipo", "priceFrom": "від 50 zł / доба" },
-    "skodaCitigo": { "name": "Skoda Citigo", "priceFrom": "від 50 zł / доба" }
+    "fiatTipo": { "name": "Fiat Tipo", "priceFrom": "від 50 zł / доба", "description": "Компактний легковий автомобіль, який підійде і для щоденних поїздок Варшавою, і для довших маршрутів." },
+    "fiatPanda": { "name": "Fiat Panda", "priceFrom": "від 50 zł / доба", "description": "Невеликий міський автомобіль, яким легко керувати й паркуватися в центрі міста." },
+    "skodaCitigo": { "name": "Skoda Citigo", "priceFrom": "від 50 zł / доба", "description": "Компактний міський автомобіль для щоденних поїздок і коротких виїздів." },
+    "fordTransit": { "name": "Ford Transit", "priceFrom": "від 50 zł / доба", "description": "Вантажний фургон для перевезення вантажів, переїздів і роботи в доставці." },
+    "modal": {
+      "openDetails": "Деталі: {name}",
+      "close": "Закрити",
+      "specsTitle": "Технічні характеристики",
+      "toConfirm": "Уточнюється",
+      "fuel": "Паливо",
+      "transmission": "Коробка передач",
+      "seats": "Кількість місць",
+      "bodyType": "Тип кузова",
+      "call": "Зателефонувати",
+      "telegram": "Telegram",
+      "whatsapp": "WhatsApp"
+    },
+    "specValues": {
+      "fuel": {
+        "petrol": "Бензин",
+        "diesel": "Дизель",
+        "hybrid": "Гібрид",
+        "lpg": "Бензин + газ (LPG)",
+        "electric": "Електро"
+      },
+      "transmission": {
+        "manual": "Механічна",
+        "automatic": "Автоматична"
+      },
+      "bodyType": {
+        "hatchback": "Хетчбек",
+        "sedan": "Седан",
+        "estate": "Універсал",
+        "cargoVan": "Вантажний фургон"
+      }
+    }
   },
   "contact": {
     "title": "Маєте запитання? Зв'яжіться з нами",

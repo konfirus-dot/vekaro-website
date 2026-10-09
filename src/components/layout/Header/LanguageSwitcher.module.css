@@ -23,17 +23,20 @@
   letter-spacing: 0.04em;
   cursor: pointer;
   transition:
-    background-color 150ms ease;
+    background-color 150ms ease,
+    transform 100ms ease;
 }
 
+/* Site-wide button rule: hover tint, press shrinks (icon-sized scale: the
+   button is only ~50px wide). */
 .trigger:hover:not(:disabled),
+.trigger:active:not(:disabled),
 .trigger[aria-expanded="true"] {
   background: rgba(237, 237, 237, 0.08);
 }
 
-/* Press dims back below the hover tint — mirrors BookMenu's darker press. */
 .trigger:active:not(:disabled) {
-  background: rgba(237, 237, 237, 0.02);
+  transform: scale(var(--press-scale-icon));
 }
 
 .chevron {

@@ -1,0 +1,360 @@
+/* Vehicle details modal.
+   Mobile (<768): full-screen sheet, scrollable content, sticky action bar.
+   Tablet (768-1023): centred card, image on top, scrollable content.
+   Desktop (1024+): centred card sized to its content, image filling the
+   left half at full height, details + actions on the right. */
+
+.dialog {
+  inset: 0;
+  width: 100%;
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: var(--color-white);
+  color: var(--color-ink);
+  overflow: hidden;
+}
+
+.dialog::backdrop {
+  background: rgba(10, 10, 10, 0.55);
+}
+
+/* Opening animation (the modal is mounted already open): backdrop fades in;
+   the sheet slides up on mobile, the card fades and scales in from 768px. */
+.dialog[open] {
+  animation: modal-slide-up 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.dialog[open]::backdrop {
+  animation: modal-fade-in 240ms ease-out;
+}
+
+@keyframes modal-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes modal-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+}
+
+@keyframes modal-zoom-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.96);
+  }
+}
+
+@media (min-width: 768px) {
+  .dialog[open] {
+    animation-name: modal-zoom-in;
+    animation-duration: 260ms;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dialog[open] {
+    animation: modal-fade-in 150ms ease-out;
+  }
+}
+
+.layout {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.close {
+  position: absolute;
+  top: calc(12px + env(safe-area-inset-top, 0px));
+  right: calc(12px + env(safe-area-inset-right, 0px));
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  color: var(--color-ink);
+  cursor: pointer;
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    transform 100ms ease;
+}
+
+.close:active {
+  transform: scale(var(--press-scale-icon));
+}
+
+.close:hover {
+  background: var(--color-canvas);
+  border-color: color-mix(in srgb, var(--color-ink) 24%, transparent);
+}
+
+.close:focus-visible,
+.callButton:focus-visible,
+.messengerButton:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Scrollable content (image, details, actions). The action bar is sticky at
+   the bottom; .info grows so the bar sits at the bottom of the full-screen
+   sheet even when the content is short. */
+.scroll {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.media {
+  position: relative;
+  flex-shrink: 0;
+  aspect-ratio: 4 / 3;
+  background: var(--color-canvas);
+}
+
+.image {
+  object-fit: contain;
+  padding: 24px;
+  /* Same ground shadow as the fleet cards. */
+  filter: drop-shadow(0 6px 4px rgba(0, 0, 0, 0.16)) drop-shadow(0 16px 16px rgba(0, 0, 0, 0.1));
+}
+
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-stack-sm);
+  padding: var(--space-block) calc(16px + env(safe-area-inset-right, 0px)) var(--space-block)
+    calc(16px + env(safe-area-inset-left, 0px));
+}
+
+.name {
+  outline: none;
+  font-size: var(--font-h3);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-heading);
+}
+
+/* Same pill as the price on the fleet cards. */
+.price {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--color-white);
+  border: 1px solid var(--color-ink);
+  font-size: var(--font-caption);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-caption);
+  white-space: nowrap;
+}
+
+.description {
+  font-size: var(--font-body);
+  line-height: var(--lh-body);
+  opacity: 0.85;
+}
+
+/* Compact spec list: icon + label on the left, value on the right. */
+.specList {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-top: 1px solid var(--color-border);
+}
+
+.specRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 10px;
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--font-secondary);
+  line-height: var(--lh-secondary);
+}
+
+.specRow dt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: color-mix(in srgb, var(--color-ink) 70%, transparent);
+}
+
+.specIcon {
+  flex-shrink: 0;
+  color: var(--color-ink);
+}
+
+.specRow dd {
+  font-weight: var(--fw-semibold);
+  text-align: right;
+}
+
+/* Value not confirmed yet: quieter than real values. */
+.specRow dd.specPending {
+  font-weight: var(--fw-regular);
+  color: color-mix(in srgb, var(--color-ink) 55%, transparent);
+}
+
+/* Action bar: sticky at the bottom of the scroll area (mobile/tablet). */
+.actions {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  gap: 12px;
+  padding: 16px calc(16px + env(safe-area-inset-right, 0px)) calc(16px + env(safe-area-inset-bottom, 0px))
+    calc(16px + env(safe-area-inset-left, 0px));
+  background: var(--color-white);
+  border-top: 1px solid var(--color-border);
+}
+
+.callButton {
+  flex: 1 1 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 0;
+  height: 52px;
+  padding: 0 16px;
+  border-radius: 999px;
+  font-size: var(--font-button);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-ui);
+  white-space: nowrap;
+  transition:
+    background-color 150ms ease,
+    transform 100ms ease;
+}
+
+.callButton > * {
+  flex-shrink: 0;
+}
+
+/* Same orange pill and states as the "Zarezerwuj" button (BookMenu). */
+.callButton {
+  background: var(--accent);
+  color: var(--color-white);
+}
+
+.callButton:hover,
+.callButton:active {
+  background: color-mix(in srgb, var(--accent) 85%, #000000);
+}
+
+.callButton:active {
+  transform: scale(var(--press-scale));
+}
+
+/* Square brand icons (Telegram, WhatsApp), same height as the call button. */
+.messengerButton {
+  flex-shrink: 0;
+  display: block;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  overflow: hidden;
+  transition:
+    filter 150ms ease,
+    transform 100ms ease;
+}
+
+.messengerButton img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Site-wide button rule: slightly darker on hover, shrinks on press. */
+.messengerButton:hover,
+.messengerButton:active {
+  filter: brightness(0.85);
+}
+
+.messengerButton:active {
+  transform: scale(var(--press-scale-icon));
+}
+
+/* Tablet: centred card, still stacked. */
+@media (min-width: 768px) {
+  /* fit-content (the <dialog> default) rather than auto: with the dialog's
+     inset: 0, "auto" would stretch it to the full viewport height. */
+  .dialog {
+    width: min(640px, calc(100% - 48px));
+    height: fit-content;
+    max-height: calc(100dvh - 48px);
+    margin: auto;
+    border-radius: 20px;
+  }
+
+  .layout {
+    height: auto;
+    max-height: calc(100dvh - 48px);
+  }
+
+  .close {
+    top: 16px;
+    right: 16px;
+  }
+
+  .info,
+  .actions {
+    padding-inline: 32px;
+  }
+
+  .actions {
+    padding-bottom: 24px;
+  }
+}
+
+/* Desktop: the image spans the full height of the left column; details and
+   actions stack on the right. The card is as tall as the right column, so
+   there is no empty space under the image. */
+@media (min-width: 1024px) {
+  .dialog {
+    width: min(880px, calc(100% - 64px));
+  }
+
+  .scroll {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: 1fr auto;
+  }
+
+  .media {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    aspect-ratio: auto;
+    min-height: 340px;
+  }
+
+  .info {
+    grid-column: 2;
+    padding: 48px 40px 24px;
+  }
+
+  .actions {
+    grid-column: 2;
+    position: static;
+    padding: 0 40px 40px;
+    border-top: none;
+  }
+}

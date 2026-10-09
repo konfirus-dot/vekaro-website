@@ -3,7 +3,7 @@ import { Container } from "@/components/ui/Container/Container";
 import { BookMenu } from "@/components/layout/Header/BookMenu";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs/Breadcrumbs";
 import { BreadcrumbJsonLd } from "@/components/StructuredData/BreadcrumbJsonLd";
-import { FleetCard } from "@/components/sections/Fleet/FleetCard";
+import { Fleet } from "@/components/sections/Fleet/Fleet";
 import { Faq } from "@/components/sections/Contact/Faq";
 import { ServiceInfoCards, type ServiceInfoCardItem } from "./ServiceInfoCards";
 import { ServiceSteps, type ServiceStep } from "./ServiceSteps";
@@ -16,7 +16,6 @@ type FaqItem = { question: string; answer: string };
 
 export async function ShortTermRentalPage({ locale }: { locale: Locale }) {
   const t = await getTranslations({ locale, namespace: "shortTermPage" });
-  const tFleet = await getTranslations({ locale, namespace: "fleet" });
   const tFaq = await getTranslations({ locale, namespace: "faq" });
 
   const definitionParagraphs = t.raw("seo.definition.text") as string[];
@@ -45,20 +44,7 @@ export async function ShortTermRentalPage({ locale }: { locale: Locale }) {
 
       <section className={styles.fleetSection}>
         <Container>
-          <div className={styles.fleetGrid}>
-            <FleetCard
-              headingLevel={2}
-              image="/images/hero-car-placeholder.png"
-              name={tFleet("fiatTipo.name")}
-              priceFrom={tFleet("fiatTipo.priceFrom")}
-            />
-            <FleetCard
-              headingLevel={2}
-              image="/images/hero-car-placeholder.png"
-              name={tFleet("skodaCitigo.name")}
-              priceFrom={tFleet("skodaCitigo.priceFrom")}
-            />
-          </div>
+          <Fleet headingLevel={2} />
         </Container>
       </section>
 

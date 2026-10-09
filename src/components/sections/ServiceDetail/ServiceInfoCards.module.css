@@ -10,7 +10,7 @@
 
 .card {
   padding: 28px;
-  background: #f2f1ee;
+  background: var(--color-surface);
   border-radius: 20px;
 }
 
@@ -31,7 +31,7 @@
 }
 
 .list li::marker {
-  color: var(--accent);
+  color: var(--color-orange-icon);
 }
 
 /* Desktop: two equal cards side by side. */

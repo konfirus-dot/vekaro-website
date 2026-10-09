@@ -1,9 +1,29 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --gradient-spot: rgba(23, 23, 23, 0.22);
-  /* TODO: replace with the real accent color from the Figma design system */
-  --accent: #ff5a1f;
+  /* Colour palette: warm minimalist neutrals around the brand orange.
+     Components use these tokens (or the theme aliases below) instead of raw
+     hex values, so every neutral comes from this one list. */
+  --color-orange: #ff5a1f; /* brand orange: buttons, accents */
+  --color-orange-icon: #d84612; /* deeper orange for icons on light backgrounds */
+  --color-orange-soft: #fff0e8; /* pale orange tint: badges */
+  --color-black: #0a0a0a; /* dark blocks: Hero, header, footer */
+  --color-white: #ffffff;
+  --color-ink: #171008; /* primary text on light backgrounds */
+  --color-canvas: #faf9f6; /* light canvas: fleet cards, contact panel, image wells */
+  --color-surface: #f0ede7; /* card surface: Why Vekaro band, info cards, promo card */
+  --color-border: #e7e1d8; /* subtle borders and dividers */
+
+  /* Theme aliases (light; .theme-dark below swaps them). */
+  --background: var(--color-white);
+  --foreground: var(--color-ink);
+  --gradient-spot: rgba(23, 16, 8, 0.22);
+  --accent: var(--color-orange);
+
+  /* Button feedback, one rule site-wide: hover changes colour, press shrinks
+     the control slightly (no extra darkening). Icon-sized controls shrink
+     more, or the change would be invisible at 34-52px. Use with
+     `transition: transform 100ms ease`. */
+  --press-scale: 0.97; /* buttons, pills, text links styled as buttons */
+  --press-scale-icon: 0.93; /* round/square icon buttons, social icons */
 
   /* Type scale and spacing pattern (see PROJECT.md "Типографіка і відступи").
      Components use these tokens instead of raw values; tablet (768px+) and
@@ -73,7 +93,7 @@
 /* Fixed dark zone (not tied to OS theme) — used by Header, Hero and Footer
    to build the black / white / black rhythm of the page. */
 .theme-dark {
-  --background: #0a0a0a;
+  --background: var(--color-black);
   --foreground: #ededed;
   --gradient-spot: rgba(237, 237, 237, 0.32);
   background: var(--background);

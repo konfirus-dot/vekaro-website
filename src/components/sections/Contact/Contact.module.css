@@ -42,7 +42,7 @@
 
 .detailIcon {
   flex-shrink: 0;
-  color: var(--accent);
+  color: var(--color-orange-icon);
 }
 
 /* Same type as the other detail rows (hours, area): inherits the row's
@@ -55,14 +55,15 @@
   color: var(--accent);
 }
 
-/* Messenger links + call button, in the same grey card used across the site
-   (fleet / service info cards). */
+/* Messenger links + call button, on the light canvas like the fleet cards
+   (lighter than the Why Vekaro band), with the same hairline border. */
 .card {
   display: flex;
   flex-direction: column;
   gap: var(--space-stack-sm);
   padding: 20px;
-  background: #f2f1ee;
+  background: var(--color-canvas);
+  border: 1px solid var(--color-border);
   border-radius: 20px;
 }
 
@@ -79,11 +80,19 @@
   gap: 14px;
   padding: 10px;
   border-radius: 12px;
-  transition: background-color 150ms ease;
+  transition:
+    background-color 150ms ease,
+    transform 100ms ease;
 }
 
-.channel:hover {
-  background: #ffffff;
+/* Site-wide button rule: hover tint, press shrinks (see --press-scale). */
+.channel:hover,
+.channel:active {
+  background: var(--color-white);
+}
+
+.channel:active {
+  transform: scale(var(--press-scale));
 }
 
 .channelName {

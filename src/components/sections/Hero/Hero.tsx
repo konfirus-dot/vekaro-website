@@ -4,8 +4,6 @@ import { Container } from "@/components/ui/Container/Container";
 import { BookMenu } from "@/components/layout/Header/BookMenu";
 import styles from "./Hero.module.css";
 
-// TODO: this is a temporary stand-in (not a Vekaro fleet car) — replace with a real
-// Fiat Tipo / Skoda Citigo photo before launch. See public/images/hero-car-placeholder.png.
 export function Hero() {
   const t = useTranslations("hero");
 
@@ -23,14 +21,21 @@ export function Hero() {
 
         <div className={styles.imageWrap}>
           <div className={styles.glow} aria-hidden="true" />
-          <Image
-            src="/images/hero-car-placeholder.png"
-            alt={t("title")}
-            fill
-            priority
-            sizes="(min-width: 1024px) 50vw, 100vw"
-            className={styles.image}
-          />
+          {/* The car and its ground shadow animate in together (see .car). The
+              box has a fixed 2:1 aspect ratio matching the photo, so nothing
+              shifts while the image loads. data-hero-entrance lets the
+              slogan banner below wait for this animation (SloganStamp). */}
+          <div className={styles.car} data-hero-entrance>
+            <div className={styles.groundShadow} aria-hidden="true" />
+            <Image
+              src="/images/hero-car-fiat-tipo.png"
+              alt={t("title")}
+              fill
+              priority
+              sizes="(min-width: 1024px) 40vw, 100vw"
+              className={styles.image}
+            />
+          </div>
         </div>
       </Container>
     </section>

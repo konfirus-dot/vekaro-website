@@ -89,7 +89,7 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  transition: transform 150ms ease;
+  transition: transform 100ms ease;
 }
 
 .toggle span {
@@ -104,7 +104,7 @@
 }
 
 .toggle:active {
-  transform: scale(0.9);
+  transform: scale(var(--press-scale-icon));
 }
 
 /* Mobile/tablet (up to 1024px): nav collapses into a dropdown under the bar. */

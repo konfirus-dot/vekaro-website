@@ -52,14 +52,14 @@
 }
 
 .list li::marker {
-  color: var(--accent);
+  color: var(--color-orange-icon);
 }
 
 /* Narrow screens scroll the table sideways inside this box instead of
    clipping it or widening the page. */
 .tableScroll {
   overflow-x: auto;
-  border: 1px solid rgba(23, 23, 23, 0.12);
+  border: 1px solid var(--color-border);
   border-radius: 16px;
 }
 
@@ -81,7 +81,7 @@
 .table td {
   padding: 12px 16px;
   vertical-align: top;
-  border-bottom: 1px solid rgba(23, 23, 23, 0.08);
+  border-bottom: 1px solid var(--color-border);
 }
 
 /* Minimum column widths keep the free-text "purpose" column readable on
@@ -101,7 +101,7 @@
 
 .table thead th {
   font-weight: var(--fw-bold);
-  background: #f2f1ee;
+  background: var(--color-surface);
 }
 
 .table tbody:last-child tr:last-child th,
@@ -110,7 +110,8 @@
 }
 
 .category {
-  color: var(--accent);
+  /* Deeper orange: small text, needs more contrast on white than the brand orange. */
+  color: var(--color-orange-icon);
   font-size: var(--font-caption);
   font-weight: var(--fw-bold);
   letter-spacing: 0.06em;

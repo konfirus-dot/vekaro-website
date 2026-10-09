@@ -486,8 +486,42 @@
   "fleet": {
     "sectionTitle": "Our Fleet",
     "sectionSubtitle": "Choose the car that fits your needs and requirements.",
-    "fiatTipo": { "name": "Fiat Tipo", "priceFrom": "from 50 zł / day" },
-    "skodaCitigo": { "name": "Skoda Citigo", "priceFrom": "from 50 zł / day" }
+    "fiatTipo": { "name": "Fiat Tipo", "priceFrom": "from 50 zł / day", "description": "A compact passenger car that works well both for everyday driving in Warsaw and for longer trips." },
+    "fiatPanda": { "name": "Fiat Panda", "priceFrom": "from 50 zł / day", "description": "A small city car that is easy to drive and park in a busy city centre." },
+    "skodaCitigo": { "name": "Skoda Citigo", "priceFrom": "from 50 zł / day", "description": "A compact city car for daily commuting and short trips." },
+    "fordTransit": { "name": "Ford Transit", "priceFrom": "from 50 zł / day", "description": "A cargo van for transporting goods, moving house and delivery work." },
+    "modal": {
+      "openDetails": "Details: {name}",
+      "close": "Close",
+      "specsTitle": "Specifications",
+      "toConfirm": "To be confirmed",
+      "fuel": "Fuel",
+      "transmission": "Gearbox",
+      "seats": "Seats",
+      "bodyType": "Body type",
+      "call": "Call now",
+      "telegram": "Telegram",
+      "whatsapp": "WhatsApp"
+    },
+    "specValues": {
+      "fuel": {
+        "petrol": "Petrol",
+        "diesel": "Diesel",
+        "hybrid": "Hybrid",
+        "lpg": "Petrol + LPG",
+        "electric": "Electric"
+      },
+      "transmission": {
+        "manual": "Manual",
+        "automatic": "Automatic"
+      },
+      "bodyType": {
+        "hatchback": "Hatchback",
+        "sedan": "Sedan",
+        "estate": "Estate",
+        "cargoVan": "Cargo van"
+      }
+    }
   },
   "contact": {
     "title": "Have Questions? Get in Touch",

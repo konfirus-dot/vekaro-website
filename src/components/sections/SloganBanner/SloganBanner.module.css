@@ -1,5 +1,5 @@
 .banner {
-  --accent-text: #171008;
+  --accent-text: var(--color-ink);
 
   padding-block: var(--space-section);
   /* Clips the oversized first frame of the word stamp on narrow screens. */
@@ -81,9 +81,11 @@
 .subtitle {
   margin-top: 16px;
   width: 100%;
-  font-size: var(--font-body);
+  font-size: var(--font-h4);
   font-weight: var(--fw-regular);
-  line-height: var(--lh-body);
+  line-height: var(--lh-secondary);
+  /* Even line lengths instead of a short last line. */
+  text-wrap: balance;
 }
 
 @media (min-width: 1024px) {

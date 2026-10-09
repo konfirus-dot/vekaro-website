@@ -486,8 +486,42 @@
   "fleet": {
     "sectionTitle": "Nasza flota",
     "sectionSubtitle": "Wybierz samochód dopasowany do Twoich potrzeb i wymagań.",
-    "fiatTipo": { "name": "Fiat Tipo", "priceFrom": "od 50 zł / doba" },
-    "skodaCitigo": { "name": "Skoda Citigo", "priceFrom": "od 50 zł / doba" }
+    "fiatTipo": { "name": "Fiat Tipo", "priceFrom": "od 50 zł / doba", "description": "Kompaktowy samochód osobowy, który sprawdzi się zarówno w codziennej jeździe po Warszawie, jak i w dłuższych trasach." },
+    "fiatPanda": { "name": "Fiat Panda", "priceFrom": "od 50 zł / doba", "description": "Niewielkie auto miejskie, łatwe w prowadzeniu i parkowaniu w zatłoczonym centrum." },
+    "skodaCitigo": { "name": "Skoda Citigo", "priceFrom": "od 50 zł / doba", "description": "Kompaktowe auto miejskie do codziennych dojazdów i krótkich wyjazdów." },
+    "fordTransit": { "name": "Ford Transit", "priceFrom": "od 50 zł / doba", "description": "Samochód dostawczy typu furgon do przewozu towarów, przeprowadzek i pracy w dostawach." },
+    "modal": {
+      "openDetails": "Szczegóły: {name}",
+      "close": "Zamknij",
+      "specsTitle": "Dane techniczne",
+      "toConfirm": "Do potwierdzenia",
+      "fuel": "Paliwo",
+      "transmission": "Skrzynia biegów",
+      "seats": "Liczba miejsc",
+      "bodyType": "Typ nadwozia",
+      "call": "Zadzwoń teraz",
+      "telegram": "Telegram",
+      "whatsapp": "WhatsApp"
+    },
+    "specValues": {
+      "fuel": {
+        "petrol": "Benzyna",
+        "diesel": "Diesel",
+        "hybrid": "Hybryda",
+        "lpg": "Benzyna + LPG",
+        "electric": "Elektryczny"
+      },
+      "transmission": {
+        "manual": "Manualna",
+        "automatic": "Automatyczna"
+      },
+      "bodyType": {
+        "hatchback": "Hatchback",
+        "sedan": "Sedan",
+        "estate": "Kombi",
+        "cargoVan": "Furgon (dostawczy)"
+      }
+    }
   },
   "contact": {
     "title": "Masz pytania? Skontaktuj się z nami",

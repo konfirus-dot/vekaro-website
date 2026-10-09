@@ -58,12 +58,12 @@
 }
 
 .link:active {
-  transform: scale(0.97);
+  transform: scale(var(--press-scale));
 }
 
 .socialRow {
   display: flex;
-  gap: 8px;
+  gap: 12px;
   margin-top: 4px;
 }
 
@@ -75,18 +75,18 @@
   width: 34px;
   height: 34px;
   transition:
-    transform 180ms ease,
-    filter 180ms ease;
+    filter 150ms ease,
+    transform 100ms ease;
 }
 
-.socialLink:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.1);
+/* Site-wide button rule: slightly darker on hover, shrinks on press. */
+.socialLink:hover,
+.socialLink:active {
+  filter: brightness(0.85);
 }
 
 .socialLink:active {
-  transform: translateY(0) scale(0.94);
-  filter: brightness(0.95);
+  transform: scale(var(--press-scale-icon));
 }
 
 .bottomBar {
@@ -137,7 +137,7 @@
 }
 
 .cookieSettings:active {
-  transform: scale(0.97);
+  transform: scale(var(--press-scale));
 }
 
 @media (min-width: 1024px) {

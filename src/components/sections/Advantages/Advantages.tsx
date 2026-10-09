@@ -27,7 +27,7 @@ export function Advantages() {
                       absoluteStrokeWidth keeps the stroke at exactly 1.75px. */}
                   <Icon
                     size={28}
-                    color="#000000"
+                    color="currentColor"
                     strokeWidth={1.75}
                     absoluteStrokeWidth
                     aria-hidden="true"

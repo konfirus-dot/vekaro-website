@@ -8,8 +8,26 @@ const STAMP_DURATION_MS = 320;
 
 type State = "pending" | "stamping" | "static";
 
+// Point on the Hero car's entrance timeline (incl. its 0.1s delay) after
+// which the banner may start. The ease-out curve has done ~90% of the motion
+// by then, so the car already looks settled; waiting for the full 1.3s left
+// the banner visibly empty.
+const HERO_SETTLED_MS = 600;
+
+// Resolves once the Hero car's entrance has visually settled (immediately if
+// it already has, or if there is none: reduced motion, other pages), so the
+// page animates in sequence: Hero first, then this banner.
+function heroEntranceSettled(): Promise<void> {
+  const car = document.querySelector("[data-hero-entrance]");
+  const animation = car?.getAnimations()[0];
+  const elapsed = Number(animation?.currentTime ?? Infinity);
+  const remaining = animation?.playState === "running" ? HERO_SETTLED_MS - elapsed : 0;
+  return new Promise((resolve) => setTimeout(resolve, Math.max(0, remaining)));
+}
+
 // Headline words "stamp" onto the banner one after another the first time it
-// scrolls into view on each page load. Reduced-motion users get the static
+// scrolls into view on each page load, but not before the Hero's car has
+// settled into place. Reduced-motion users get the static
 // text. The full text is always in the DOM; words are only hidden visually
 // until stamped.
 export function SloganStamp({ lines, subtitle }: { lines: string[]; subtitle: string }) {
@@ -19,6 +37,7 @@ export function SloganStamp({ lines, subtitle }: { lines: string[]; subtitle: st
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    let cancelled = false;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -26,15 +45,25 @@ export function SloganStamp({ lines, subtitle }: { lines: string[]; subtitle: st
         observer.disconnect();
 
         const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        setState(reducedMotion ? "static" : "stamping");
+        if (reducedMotion) {
+          setState("static");
+          return;
+        }
+        heroEntranceSettled().then(() => {
+          if (!cancelled) setState("stamping");
+        });
       },
-      // Fire once the headline is a little way into the viewport, so the
-      // stamp is actually seen rather than playing just off-screen.
-      { rootMargin: "0px 0px -10% 0px" },
+      // Fire once most of the headline is on screen, so the stamp is actually
+      // seen. (A margin-only trigger fired with just a few pixels visible
+      // when the banner sat at the bottom edge of the first screen.)
+      { threshold: 0.6 },
     );
 
     observer.observe(el);
-    return () => observer.disconnect();
+    return () => {
+      cancelled = true;
+      observer.disconnect();
+    };
   }, []);
 
   let wordIndex = 0;

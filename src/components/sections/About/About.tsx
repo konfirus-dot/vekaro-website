@@ -37,11 +37,9 @@ export function About() {
           </div>
         </div>
 
-        {/* TODO: temporary stock photo, not the real Vekaro office — replace
-            before launch, same as the other placeholder photos on the site. */}
         <div className={styles.photo}>
           <Image
-            src="/images/office-photo-placeholder.jpg"
+            src="/images/office-image.png"
             alt={t("officePhotoAlt")}
             fill
             sizes="(min-width: 1024px) 50vw, 100vw"

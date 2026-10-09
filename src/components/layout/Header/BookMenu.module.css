@@ -14,25 +14,30 @@
   background: var(--accent);
   border: none;
   border-radius: 999px;
-  color: #ffffff;
+  color: var(--color-white);
   font-family: inherit;
   font-size: var(--font-button);
   font-weight: var(--fw-semibold);
   line-height: var(--lh-ui);
   white-space: nowrap;
   cursor: pointer;
-  transition: filter 150ms ease;
+  transition:
+    background-color 150ms ease,
+    transform 100ms ease;
 }
 
-/* Color-only feedback, no movement — same language as the neighboring
-   LanguageSwitcher trigger. Stays in the hover state while its menu is open. */
+/* Site-wide button rule (see --press-scale in globals.css). Hover (and the
+   open-menu state): the orange darkens. Press: same darker orange (touch
+   screens have no hover), and the pill shrinks slightly. The shade is mixed
+   from --accent so it follows it if it changes. */
 .trigger:hover,
+.trigger:active,
 .trigger[aria-expanded="true"] {
-  filter: brightness(1.12);
+  background: color-mix(in srgb, var(--accent) 85%, #000000);
 }
 
 .trigger:active {
-  filter: brightness(0.9);
+  transform: scale(var(--press-scale));
 }
 
 /* Hero CTA size: same pill as the header button, scaled up to the Hero's
@@ -106,7 +111,7 @@
   height: 36px;
   border-radius: 50%;
   background: var(--accent);
-  color: #ffffff;
+  color: var(--color-white);
 }
 
 .optionText {

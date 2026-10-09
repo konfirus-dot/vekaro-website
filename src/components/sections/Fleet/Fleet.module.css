@@ -40,8 +40,10 @@
   gap: 8px;
   padding: 20px;
   /* TODO: replace with the real card background from the Figma design system */
-  background: #f2f1ee;
-  color: #171717;
+  background: var(--color-canvas);
+  /* The canvas is only a shade off white, so a hairline border defines the card. */
+  border: 1px solid var(--color-border);
+  color: var(--color-ink);
   border-radius: 16px;
   overflow: hidden;
 }
@@ -62,8 +64,8 @@
 .fleetPrice {
   padding: 8px 14px;
   border-radius: 999px;
-  background: #ffffff;
-  border: 1px solid #171717;
+  background: var(--color-white);
+  border: 1px solid var(--color-ink);
   font-size: var(--font-caption);
   font-weight: var(--fw-semibold);
   white-space: nowrap;
@@ -82,6 +84,9 @@
    back a touch on press, and the CTA button turns brand orange. */
 .fleetImage {
   object-fit: contain;
+  /* Ground shadow following the car's silhouette (transparent PNG): a tight
+     contact shadow plus a wider soft one. */
+  filter: drop-shadow(0 6px 4px rgba(0, 0, 0, 0.16)) drop-shadow(0 16px 16px rgba(0, 0, 0, 0.1));
   transition: transform 300ms ease;
 }
 
@@ -96,19 +101,24 @@
 .fleetArrow {
   composes: iconButton from "../../ui/IconButton/IconButton.module.css";
   align-self: flex-start;
-  background: #ffffff;
-  border-color: #171717;
-  color: #171717;
+  background: var(--color-white);
+  border-color: var(--color-ink);
+  color: var(--color-ink);
   transition:
     background-color 150ms ease,
     border-color 150ms ease,
-    color 150ms ease;
+    color 150ms ease,
+    transform 100ms ease;
+}
+
+.fleetArrow:active {
+  transform: scale(var(--press-scale-icon));
 }
 
 .fleetArrow:hover {
   background: var(--accent);
   border-color: var(--accent);
-  color: #171008;
+  color: var(--color-ink);
 }
 
 /* Desktop: all 4 cards in a single row. The grid defines three shared rows
