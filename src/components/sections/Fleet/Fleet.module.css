@@ -84,9 +84,6 @@
    back a touch on press, and the CTA button turns brand orange. */
 .fleetImage {
   object-fit: contain;
-  /* Ground shadow following the car's silhouette (transparent PNG): a tight
-     contact shadow plus a wider soft one. */
-  filter: drop-shadow(0 6px 4px rgba(0, 0, 0, 0.16)) drop-shadow(0 16px 16px rgba(0, 0, 0, 0.1));
   transition: transform 300ms ease;
 }
 

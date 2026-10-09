@@ -133,8 +133,6 @@
 .image {
   object-fit: contain;
   padding: 24px;
-  /* Same ground shadow as the fleet cards. */
-  filter: drop-shadow(0 6px 4px rgba(0, 0, 0, 0.16)) drop-shadow(0 16px 16px rgba(0, 0, 0, 0.1));
 }
 
 .info {
