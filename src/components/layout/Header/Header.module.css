@@ -57,9 +57,9 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
+  /* Brand wordmark: fixed size, intentionally outside the heading scale. */
   font-size: 1.125rem;
-  letter-spacing: 0.02em;
   white-space: nowrap;
   flex-shrink: 0;
   transition: opacity 150ms ease;
@@ -129,6 +129,9 @@
   transition:
     color 150ms ease,
     opacity 150ms ease;
+  font-size: var(--font-nav);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-ui);
 }
 
 .navLink:hover {
@@ -259,8 +262,9 @@
     border-radius: 8px;
     color: var(--foreground);
     opacity: 0.85;
-    font-size: 0.875rem;
-    font-weight: 600;
+    font-size: var(--font-nav);
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-ui);
     white-space: nowrap;
     transition:
       opacity 150ms ease,

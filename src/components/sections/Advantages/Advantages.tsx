@@ -23,10 +23,10 @@ export function Advantages() {
             return (
               <li key={item.title} className={styles.item}>
                 <div className={styles.header}>
-                  {/* Same 28px footprint as the logo placeholder it replaced;
+                  {/* 32px icon beside the label;
                       absoluteStrokeWidth keeps the stroke at exactly 1.75px. */}
                   <Icon
-                    size={28}
+                    size={32}
                     color="#000000"
                     strokeWidth={1.75}
                     absoluteStrokeWidth

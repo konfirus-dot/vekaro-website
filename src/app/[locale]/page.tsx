@@ -6,6 +6,7 @@ import { Advantages } from "@/components/sections/Advantages/Advantages";
 import { About } from "@/components/sections/About/About";
 import { PromoBanner } from "@/components/sections/PromoBanner/PromoBanner";
 import { Contact } from "@/components/sections/Contact/Contact";
+import { FaqSection } from "@/components/sections/Contact/FaqSection";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
 
 export default function Home() {
@@ -23,7 +24,7 @@ export default function Home() {
           preceding section peeking out from under the sticky header. A
           wrapper outside Reveal keeps the scroll target's rect stable no
           matter what the reveal animation is doing. Same reasoning for
-          #about and #contact below. */}
+          #about, #faq and #contact below. */}
       <div id="services">
         <Reveal>
           <Services />
@@ -43,6 +44,11 @@ export default function Home() {
       <Reveal>
         <PromoBanner />
       </Reveal>
+      <div id="faq">
+        <Reveal>
+          <FaqSection />
+        </Reveal>
+      </div>
       <div id="contact">
         <Reveal>
           <Contact />

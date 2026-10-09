@@ -10,6 +10,7 @@
     "longTerm": "Long-term Rental",
     "about": "About",
     "fleet": "Fleet",
+    "faq": "FAQ",
     "contact": "Contact",
     "callNow": "Call Now",
     "book": "Book now",
@@ -489,7 +490,8 @@
     "skodaCitigo": { "name": "Skoda Citigo", "priceFrom": "from 50 zł / day" }
   },
   "contact": {
-    "title": "Contact",
+    "title": "Have Questions? Get in Touch",
+    "description": "We'll help you choose the right car and arrange rental terms that suit your needs.",
     "phone": "+48 789 085 345",
     "hours": "Working hours: 8:00-18:00",
     "areaNote": "We only operate in Warsaw",

@@ -1,19 +1,24 @@
+/* White section: top padding only. Adjacent white sections would otherwise
+   stack two paddings (bottom + top); the final gap before the footer comes
+   from the footer's own margin-top. See "Відступи між секціями" in PROJECT.md. */
 .section {
-  padding-block: var(--space-section);
+  padding-top: var(--space-section);
 }
 
 .title {
   margin-bottom: var(--space-heading);
   font-size: var(--font-h2);
-  line-height: 1.15;
+  line-height: var(--lh-heading);
   text-align: center;
 }
 
 /* Mobile/tablet: stacked column of three. */
+/* Mobile: a little more air between stacked benefits than the standard
+   block step, so each reads as its own unit. */
 .list {
   display: flex;
   flex-direction: column;
-  gap: var(--space-block);
+  gap: calc(var(--space-block) * 1.5);
   list-style: none;
 }
 
@@ -28,18 +33,22 @@
 .header {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
 }
 
+/* Hierarchy: the large statement (.itemText) leads; icon + label act as a
+   quieter category line above it. */
 .itemTitle {
   font-size: var(--font-label);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-secondary);
+  opacity: 0.7;
 }
 
 .itemText {
-  font-size: 1.375rem;
-  font-weight: 700;
-  line-height: 1.25;
+  font-size: var(--font-lead);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-lead);
 }
 
 /* Desktop: recomposed into a single row. */

@@ -14,7 +14,7 @@
   flex-direction: column;
   align-items: center;
   font-size: var(--font-display);
-  font-weight: 900;
+  font-weight: var(--fw-black);
   line-height: 1.08;
   letter-spacing: -0.01em;
   text-transform: uppercase;
@@ -81,13 +81,13 @@
 .subtitle {
   margin-top: 16px;
   width: 100%;
-  font-size: 1rem;
-  font-weight: 400;
+  font-size: var(--font-body);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-body);
 }
 
 @media (min-width: 1024px) {
   .subtitle {
     margin-top: 20px;
-    font-size: 1.125rem;
   }
 }

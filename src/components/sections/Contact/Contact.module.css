@@ -1,60 +1,129 @@
+/* White section: top padding only. Adjacent white sections would otherwise
+   stack two paddings (bottom + top); the final gap before the footer comes
+   from the footer's own margin-top. See "Відступи між секціями" in PROJECT.md. */
 .section {
-  padding-block: var(--space-section);
+  padding-top: var(--space-section);
 }
 
-/* Mobile/tablet: contact info stacked above the map. */
+/* Mobile/tablet: details above the messenger card. */
 .inner {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: var(--space-block);
 }
 
 .title {
-  margin-bottom: var(--space-heading);
-  font-size: var(--font-h2);
-  line-height: 1.15;
-}
-
-.phone {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 1.25rem;
-  font-weight: 700;
-}
-
-.hours,
-.area {
-  font-size: 0.9rem;
-  opacity: 0.8;
-}
-
-.messengers {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin-block: var(--space-block);
-}
-
-.faqWrap {
-  min-width: 0;
-}
-
-.faqTitle {
   margin-bottom: var(--space-stack-sm);
-  font-weight: 700;
-  font-size: var(--font-h3);
+  font-size: var(--font-h2);
+  line-height: var(--lh-heading);
 }
 
-/* Desktop: info and FAQ side by side. */
+.description {
+  max-width: 46ch;
+  font-size: var(--font-body);
+  line-height: var(--lh-body);
+  opacity: 0.85;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: var(--space-block);
+  list-style: none;
+}
+
+.details li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: var(--font-body);
+}
+
+.detailIcon {
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+/* Same type as the other detail rows (hours, area): inherits the row's
+   body text. Only the hover colour marks it as a link. */
+.phone {
+  transition: color 150ms ease;
+}
+
+.phone:hover {
+  color: var(--accent);
+}
+
+/* Messenger links + call button, in the same grey card used across the site
+   (fleet / service info cards). */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-stack-sm);
+  padding: 20px;
+  background: #f2f1ee;
+  border-radius: 20px;
+}
+
+.channels {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  list-style: none;
+}
+
+.channel {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px;
+  border-radius: 12px;
+  transition: background-color 150ms ease;
+}
+
+.channel:hover {
+  background: #ffffff;
+}
+
+.channelName {
+  flex: 1;
+  font-size: var(--font-h4);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-h4);
+}
+
+.channelArrow {
+  flex-shrink: 0;
+  opacity: 0.6;
+  transition:
+    opacity 150ms ease,
+    transform 150ms ease;
+}
+
+.channel:hover .channelArrow {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
+.card .callButton {
+  width: 100%;
+}
+
+/* Desktop: two columns, details left, card right. */
 @media (min-width: 1024px) {
   .inner {
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     gap: 64px;
   }
 
   .info,
-  .faqWrap {
+  .card {
     flex: 1;
+  }
+
+  .card {
+    padding: 32px;
   }
 }

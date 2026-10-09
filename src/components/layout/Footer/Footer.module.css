@@ -1,5 +1,7 @@
+/* White gap above the dark footer = one section spacing, the same as
+   between any two white sections (they carry top padding only). */
 .footer {
-  margin-top: 64px;
+  margin-top: var(--space-section);
   padding-block: 32px;
   border-top: 1px solid var(--foreground);
 }
@@ -14,11 +16,12 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  font-size: 0.875rem;
+  font-size: var(--font-secondary);
+  line-height: var(--lh-secondary);
 }
 
 .heading {
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   margin-bottom: 4px;
 }
 
@@ -32,7 +35,7 @@
   align-items: center;
   gap: 6px;
   opacity: 0.75;
-  font-size: 0.8125rem;
+  font-size: var(--font-secondary);
 }
 
 /* Plain footer links (phone, service pages, company/legal links) — dimmed
@@ -104,8 +107,10 @@
 }
 
 .rights {
-  font-size: 0.75rem;
+  font-size: var(--font-caption);
   opacity: 0.7;
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-caption);
 }
 
 /* Same dim-to-accent treatment as .link, sized to sit beside .rights. */
@@ -115,13 +120,15 @@
   border: none;
   color: inherit;
   font-family: inherit;
-  font-size: 0.75rem;
+  font-size: var(--font-caption);
   opacity: 0.7;
   cursor: pointer;
   transition:
     opacity 180ms ease,
     color 180ms ease,
     transform 100ms ease;
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-caption);
 }
 
 .cookieSettings:hover {

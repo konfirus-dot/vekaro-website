@@ -29,7 +29,7 @@ export function About() {
               const Icon = STAT_ICONS[index];
               return (
                 <span key={stat} className={styles.stat}>
-                  <Icon size={16} strokeWidth={1.8} aria-hidden="true" />
+                  <Icon size={18} strokeWidth={1.8} aria-hidden="true" />
                   {stat}
                 </span>
               );

@@ -14,14 +14,19 @@ import { Reveal } from "@/components/ui/Reveal/Reveal";
 import { SITE_URL, IS_PREVIEW_ENV } from "@/lib/constants";
 import "./globals.css";
 
+// Primary site font. latin-ext covers Polish (ą, ę, ł, ś…), cyrillic covers
+// Ukrainian; without them those glyphs fall back to another font mid-word.
 const geistSans = Geist({
   variable: "--font-geist-sans",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext", "cyrillic"],
 });
 
+// Only used for code-like text (cookie names in the privacy policy table),
+// so it isn't preloaded on every page.
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  preload: false,
 });
 
 export function generateStaticParams() {

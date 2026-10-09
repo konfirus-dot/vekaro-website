@@ -26,6 +26,7 @@
 }
 
 .current {
-  font-size: 0.95rem;
-  font-weight: 500;
+  font-size: var(--font-secondary);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-secondary);
 }

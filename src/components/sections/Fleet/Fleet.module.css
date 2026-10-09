@@ -1,7 +1,10 @@
 /* Homepage section wrapper (FleetSection.tsx). The service pages render the
    <Fleet> grid on its own, without this header. */
+/* White section: top padding only. Adjacent white sections would otherwise
+   stack two paddings (bottom + top); the final gap before the footer comes
+   from the footer's own margin-top. See "Відступи між секціями" in PROJECT.md. */
 .section {
-  padding-block: var(--space-section);
+  padding-top: var(--space-section);
 }
 
 .header {
@@ -11,7 +14,7 @@
 
 .title {
   font-size: var(--font-h2);
-  line-height: 1.15;
+  line-height: var(--lh-heading);
 }
 
 .subtitle {
@@ -20,6 +23,7 @@
   margin-inline: auto;
   font-size: var(--font-body);
   opacity: 0.75;
+  line-height: var(--lh-body);
 }
 
 /* Mobile/tablet: cards stacked, one per row. */
@@ -51,7 +55,8 @@
 
 .fleetName {
   font-size: var(--font-h4);
-  font-weight: 800;
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-h4);
 }
 
 .fleetPrice {
@@ -59,9 +64,10 @@
   border-radius: 999px;
   background: #ffffff;
   border: 1px solid #171717;
-  font-size: 0.75rem;
-  font-weight: 700;
+  font-size: var(--font-caption);
+  font-weight: var(--fw-semibold);
   white-space: nowrap;
+  line-height: var(--lh-caption);
 }
 
 .fleetImageWrap {

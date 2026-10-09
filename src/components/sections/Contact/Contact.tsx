@@ -1,7 +1,8 @@
+import Image from "next/image";
+import { ArrowUpRight, Clock, MapPin, Phone } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/Container/Container";
 import { Button } from "@/components/ui/Button/Button";
-import { Faq } from "./Faq";
 import {
   PHONE_DISPLAY,
   PHONE_HREF,
@@ -11,44 +12,60 @@ import {
 } from "@/lib/constants";
 import styles from "./Contact.module.css";
 
-type FaqItem = { question: string; answer: string };
+// Same brand icons as the footer and the header's contact menu.
+const CHANNELS = [
+  { key: "whatsapp", href: WHATSAPP_HREF, icon: "/icons/whatsapp.svg" },
+  { key: "telegram", href: TELEGRAM_HREF, icon: "/icons/telegram.svg" },
+  { key: "instagram", href: INSTAGRAM_HREF, icon: "/icons/instagram.svg" },
+] as const;
 
+// Two columns on desktop: heading, description and contact details on the
+// left; messenger links and the call button in a card on the right.
+// Stacked on mobile.
 export function Contact() {
   const t = useTranslations("contact");
-  const tFaq = useTranslations("faq");
-  const faqItems = tFaq.raw("items") as FaqItem[];
 
   return (
     <section className={styles.section}>
       <Container className={styles.inner}>
         <div className={styles.info}>
           <h2 className={styles.title}>{t("title")}</h2>
-          <a href={PHONE_HREF} className={styles.phone}>
-            {PHONE_DISPLAY}
-          </a>
-          <p className={styles.hours}>{t("hours")}</p>
-          <p className={styles.area}>{t("areaNote")}</p>
+          <p className={styles.description}>{t("description")}</p>
 
-          <div className={styles.messengers}>
-            <a href={WHATSAPP_HREF} target="_blank" rel="noopener noreferrer">
-              {t("whatsapp")}
-            </a>
-            <a href={TELEGRAM_HREF} target="_blank" rel="noopener noreferrer">
-              {t("telegram")}
-            </a>
-            <a href={INSTAGRAM_HREF} target="_blank" rel="noopener noreferrer">
-              {t("instagram")}
-            </a>
-          </div>
-
-          <Button href={PHONE_HREF} block>
-            {t("callCta")}
-          </Button>
+          <ul className={styles.details}>
+            <li>
+              <Phone size={20} strokeWidth={1.8} aria-hidden="true" className={styles.detailIcon} />
+              <a href={PHONE_HREF} className={styles.phone}>
+                {PHONE_DISPLAY}
+              </a>
+            </li>
+            <li>
+              <Clock size={20} strokeWidth={1.8} aria-hidden="true" className={styles.detailIcon} />
+              <span>{t("hours")}</span>
+            </li>
+            <li>
+              <MapPin size={20} strokeWidth={1.8} aria-hidden="true" className={styles.detailIcon} />
+              <span>{t("areaNote")}</span>
+            </li>
+          </ul>
         </div>
 
-        <div className={styles.faqWrap}>
-          <h3 className={styles.faqTitle}>{tFaq("title")}</h3>
-          <Faq items={faqItems} />
+        <div className={styles.card}>
+          <ul className={styles.channels}>
+            {CHANNELS.map(({ key, href, icon }) => (
+              <li key={key}>
+                <a href={href} target="_blank" rel="noopener noreferrer" className={styles.channel}>
+                  <Image src={icon} alt="" width={40} height={40} />
+                  <span className={styles.channelName}>{t(key)}</span>
+                  <ArrowUpRight size={18} strokeWidth={2} aria-hidden="true" className={styles.channelArrow} />
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          <Button href={PHONE_HREF} block className={styles.callButton}>
+            {t("callCta")}
+          </Button>
         </div>
       </Container>
     </section>

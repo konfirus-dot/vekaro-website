@@ -10,6 +10,7 @@
     "longTerm": "Wynajem długoterminowy",
     "about": "O nas",
     "fleet": "Flota",
+    "faq": "FAQ",
     "contact": "Kontakt",
     "callNow": "Zadzwoń teraz",
     "book": "Zarezerwuj",
@@ -489,7 +490,8 @@
     "skodaCitigo": { "name": "Skoda Citigo", "priceFrom": "od 50 zł / doba" }
   },
   "contact": {
-    "title": "Kontakt",
+    "title": "Masz pytania? Skontaktuj się z nami",
+    "description": "Pomożemy Ci wybrać odpowiedni samochód i ustalić warunki wynajmu dopasowane do Twoich potrzeb.",
     "phone": "+48 789 085 345",
     "hours": "Godziny pracy: 8:00-18:00",
     "areaNote": "Obsługujemy tylko Warszawę",

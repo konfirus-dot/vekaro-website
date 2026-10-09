@@ -1,5 +1,8 @@
+/* White section: top padding only. Adjacent white sections would otherwise
+   stack two paddings (bottom + top); the final gap before the footer comes
+   from the footer's own margin-top. See "Відступи між секціями" in PROJECT.md. */
 .section {
-  padding-block: var(--space-section);
+  padding-top: var(--space-section);
 }
 
 /* Mobile/tablet: text above, office photo below (stacked, as always). */
@@ -19,7 +22,7 @@
 
 .title {
   font-size: var(--font-h2);
-  line-height: 1.15;
+  line-height: var(--lh-heading);
 }
 
 /* Two description paragraphs, spaced like the service pages' SEO text. */
@@ -30,8 +33,8 @@
 }
 
 .description {
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: var(--font-body);
+  line-height: var(--lh-body);
   opacity: 0.85;
 }
 
@@ -49,9 +52,11 @@
   border-radius: 999px;
   background: #f2f1ee;
   color: #171717;
-  font-size: 0.8125rem;
-  font-weight: 700;
+  /* Secondary size (14px) rather than caption: these carry real facts. */
+  font-size: var(--font-secondary);
+  font-weight: var(--fw-semibold);
   white-space: nowrap;
+  line-height: var(--lh-caption);
 }
 
 .stat svg {

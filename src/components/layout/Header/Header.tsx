@@ -9,7 +9,7 @@ import { BookMenu } from "./BookMenu";
 import { Logo } from "@/components/ui/Logo/Logo";
 import styles from "./Header.module.css";
 
-const NAV_SECTION_IDS = ["services", "about", "contact"] as const;
+const NAV_SECTION_IDS = ["services", "about", "faq", "contact"] as const;
 
 // backdrop-filter: blur(40px) needs real rendered pixels above the header to
 // sample from. Near the very top of the document there aren't enough of
@@ -162,6 +162,9 @@ export function Header() {
             </div>
             <Link href="/#about" className={navLinkClass("about")} onClick={closeMenu}>
               {t("about")}
+            </Link>
+            <Link href="/#faq" className={navLinkClass("faq")} onClick={closeMenu}>
+              {t("faq")}
             </Link>
             <Link href="/#contact" className={navLinkClass("contact")} onClick={closeMenu}>
               {t("contact")}

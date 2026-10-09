@@ -16,8 +16,10 @@
   border-radius: 6px;
   color: var(--foreground);
   font-family: inherit;
-  font-size: 0.8125rem;
-  font-weight: 600;
+  /* Short uppercase code (PL/EN/UA): caption size; tracking kept for legibility. */
+  font-size: var(--font-caption);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-caption);
   letter-spacing: 0.04em;
   cursor: pointer;
   transition:
@@ -142,8 +144,9 @@
   color: var(--foreground);
   opacity: 0.85;
   font-family: inherit;
-  font-size: 0.875rem;
-  font-weight: 600;
+  font-size: var(--font-secondary);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-secondary);
   text-align: left;
   cursor: pointer;
   transition:

@@ -27,10 +27,11 @@
   color: inherit;
   font-family: inherit;
   font-size: var(--font-h4);
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   text-align: left;
   cursor: pointer;
   transition: color 150ms ease;
+  line-height: var(--lh-h4);
 }
 
 .question:hover,
@@ -66,9 +67,10 @@
   overflow: hidden;
   min-height: 0;
   padding-bottom: 16px;
-  font-size: 0.9rem;
+  font-size: var(--font-body);
   opacity: 0;
   transition: opacity 200ms ease;
+  line-height: var(--lh-body);
 }
 
 .answerWrapOpen .answer {

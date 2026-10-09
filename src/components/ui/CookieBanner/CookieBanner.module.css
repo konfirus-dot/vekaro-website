@@ -15,7 +15,8 @@
 }
 
 .message {
-  font-size: 0.875rem;
+  font-size: var(--font-secondary);
+  line-height: var(--lh-secondary);
 }
 
 .actions {

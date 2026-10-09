@@ -16,8 +16,9 @@
   border-radius: 999px;
   color: #ffffff;
   font-family: inherit;
-  font-size: 0.8125rem;
-  font-weight: 600;
+  font-size: var(--font-button);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-ui);
   white-space: nowrap;
   cursor: pointer;
   transition: filter 150ms ease;
@@ -46,7 +47,6 @@
   width: 100%;
   height: 52px;
   padding: 0 28px;
-  font-size: 0.95rem;
 }
 
 @media (min-width: 1024px) {
@@ -62,8 +62,9 @@
 
 .title {
   margin: 0;
-  font-size: 0.8125rem;
-  font-weight: 600;
+  font-size: var(--font-caption);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-caption);
   opacity: 0.6;
 }
 
@@ -114,12 +115,14 @@
 }
 
 .optionLabel {
-  font-size: 0.9375rem;
-  font-weight: 600;
+  font-size: var(--font-button);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-ui);
 }
 
 .optionDetail {
-  font-size: 0.8125rem;
+  font-size: var(--font-caption);
+  line-height: var(--lh-caption);
   opacity: 0.7;
 }
 

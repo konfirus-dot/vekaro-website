@@ -1,8 +1,9 @@
 /* Spacing and type scale follow the service pages
    (ServiceDetail/ShortTermRentalPage.module.css), toned down for a long,
    read-through legal text in a narrow column. */
+/* Bottom gap comes from the footer's margin-top. */
 .page {
-  padding-block: var(--space-section);
+  padding-top: var(--space-section);
 }
 
 .column {
@@ -12,13 +13,13 @@
 .title {
   margin-bottom: 16px;
   font-size: var(--font-h1);
-  line-height: 1.15;
+  line-height: var(--lh-heading);
 }
 
 .intro {
   margin-bottom: 8px;
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: var(--font-body);
+  line-height: var(--lh-body);
   opacity: 0.85;
 }
 
@@ -31,12 +32,12 @@
 
 .sectionTitle {
   font-size: var(--font-h3);
-  line-height: 1.2;
+  line-height: var(--lh-heading);
 }
 
 .text {
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: var(--font-body);
+  line-height: var(--lh-body);
   opacity: 0.85;
 }
 
@@ -45,8 +46,8 @@
   flex-direction: column;
   gap: 10px;
   padding-left: 20px;
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: var(--font-body);
+  line-height: var(--lh-body);
   opacity: 0.85;
 }
 
@@ -71,8 +72,8 @@
   width: 100%;
   min-width: 720px;
   border-collapse: collapse;
-  font-size: 0.875rem;
-  line-height: 1.5;
+  font-size: var(--font-secondary);
+  line-height: var(--lh-secondary);
   text-align: left;
 }
 
@@ -99,7 +100,7 @@
 }
 
 .table thead th {
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   background: #f2f1ee;
 }
 
@@ -110,33 +111,24 @@
 
 .category {
   color: var(--accent);
-  font-size: 0.75rem;
-  font-weight: 700;
+  font-size: var(--font-caption);
+  font-weight: var(--fw-bold);
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
 .cookieName {
-  font-weight: 400;
+  font-weight: var(--fw-regular);
   white-space: nowrap;
 }
 
 .cookieName code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 0.8125rem;
+  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: var(--font-caption);
 }
 
 @media (min-width: 1024px) {
-  .intro {
-    font-size: 1.125rem;
-  }
-
   .section {
     padding-top: 40px;
-  }
-
-  .text,
-  .list {
-    font-size: 1.0625rem;
   }
 }

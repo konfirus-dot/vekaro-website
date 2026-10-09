@@ -1,0 +1,10 @@
+/* White section: top padding only (see "Відступи між секціями" in PROJECT.md). */
+.section {
+  padding-top: var(--space-section);
+}
+
+.title {
+  margin-bottom: var(--space-heading);
+  font-size: var(--font-h2);
+  line-height: var(--lh-heading);
+}
